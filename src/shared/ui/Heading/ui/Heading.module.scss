@@ -1,0 +1,19 @@
+.heading {
+  font-weight: 600;
+  color: var(--primary-300);
+
+  &.large {
+    font-size: 76px;
+    line-height: 94px;
+  }
+
+  &.medium {
+    font-size: 62px;
+    line-height: 80px;
+  }
+
+  &.small {
+    font-size: 54px;
+    line-height: 70px;
+  }
+}

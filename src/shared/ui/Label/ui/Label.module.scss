@@ -1,0 +1,19 @@
+.label {
+  font-weight: 600;
+  color: var(--base-black);
+
+  &.large {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  &.medium {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  &.small {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}

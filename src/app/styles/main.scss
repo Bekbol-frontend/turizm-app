@@ -1,0 +1,6 @@
+@use "./var/var";
+@use "./reset/reset";
+
+body {
+  font-family: var(--font-geist);
+}

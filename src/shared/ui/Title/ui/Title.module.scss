@@ -1,0 +1,19 @@
+.title {
+  font-weight: 600;
+  color: var(--base-black);
+
+  &.large {
+    font-size: 34px;
+    line-height: 44px;
+  }
+
+  &.medium {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  &.small {
+    font-size: 28px;
+    line-height: 38px;
+  }
+}

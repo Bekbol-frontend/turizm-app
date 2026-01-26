@@ -1,0 +1,21 @@
+.paragraph {
+  font-weight: 600;
+  color: var(--base-black);
+
+  &.large {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  &.medium {
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 500;
+  }
+
+  &.small {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 500;
+  }
+}
