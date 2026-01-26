@@ -1,0 +1,28 @@
+.btn {
+  padding: 15px 20px;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: var(--rounded);
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+
+  &.primary {
+    background-color: var(--primary-300);
+    color: var(--base-white);
+
+    &:hover {
+      background-color: var(--primary-550);
+    }
+  }
+
+  &.secondary {
+    background-color: var(--secondary-350);
+    color: var(--primary-300);
+
+    &:hover {
+      background-color: var(--secondary-250);
+    }
+  }
+}

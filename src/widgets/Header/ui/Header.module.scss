@@ -15,7 +15,13 @@
     .right {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 40px;
+
+      .phoneAndLang {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
     }
   }
 }

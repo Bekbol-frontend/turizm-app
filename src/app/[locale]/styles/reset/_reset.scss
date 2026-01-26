@@ -6,3 +6,24 @@
   box-sizing: border-box;
   outline: none;
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  display: inline-flex;
+}
+
+span {
+  display: inline-flex;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  display: inline-flex;
+  font-family: var(--font-geist);
+}

@@ -2,7 +2,9 @@
 
 import { usePathname, useRouter } from "@/shared/config/i18n/routing";
 import { useLocale } from "next-intl";
+import ArrowDropDown from "@/shared/assets/icons/arrow-drop-down-line.svg";
 import styles from "./SwitchLang.module.scss";
+import Image from "next/image";
 
 type Langs = "uz" | "qq" | "ru" | "en";
 type Lang = Record<Langs, string>;
@@ -34,7 +36,10 @@ export default function SwitchLang() {
 
   return (
     <div className={styles.switchLangWrapper}>
-      <span>{lang[locale as Langs]}</span>
+      <span className={styles.currentLang}>
+        {lang[locale as Langs]}{" "}
+        <Image src={ArrowDropDown} width={20} height={20} alt="icon" />
+      </span>
       <div className={styles.langsWrapper}>
         <div className={styles.langs}>
           {languages.map((lang) => (
