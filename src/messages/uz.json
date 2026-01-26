@@ -1,4 +1,11 @@
 {
+  "Navigation": {
+    "home": "Bosh sahifa",
+    "about": "Biz haqimizda",
+    "contact": "Bog'lanish",
+    "catalog": "Katalog",
+    "reviews": "Sharhlar"
+  },
   "Home": {
     "title": "Bosh sahifa uz"
   }

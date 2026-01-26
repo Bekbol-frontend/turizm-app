@@ -4,6 +4,7 @@ import { Link } from "@/shared/config/i18n/routing";
 import styles from "./HeaderMenuLink.module.scss";
 import { clsx } from "@/shared/lib/clsx";
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 interface IProps {
   name: string;
@@ -13,6 +14,7 @@ interface IProps {
 
 function HeaderMenuLink({ name, path, className = "" }: IProps) {
   const pathname = usePathname();
+  const t = useTranslations("Navigation");
 
   return (
     <Link
@@ -22,7 +24,7 @@ function HeaderMenuLink({ name, path, className = "" }: IProps) {
         [styles.active]: pathname === path,
       })}
     >
-      {name}
+      {t(name)}
     </Link>
   );
 }

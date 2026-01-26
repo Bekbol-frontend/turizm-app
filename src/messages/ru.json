@@ -1,4 +1,11 @@
 {
+  "Navigation": {
+    "home": "Главная",
+    "about": "О нас",
+    "contact": "Контакты",
+    "catalog": "Каталог туров",
+    "reviews": "Отзывы"
+  },
   "Home": {
     "title": "Bosh sahifa ru"
   }

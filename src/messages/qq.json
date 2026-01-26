@@ -1,4 +1,11 @@
 {
+  "Navigation": {
+    "home": "Bas bet",
+    "about": "Biz haqqımızda",
+    "contact": "Baylanıs",
+    "catalog": "Katalog",
+    "reviews": "Sholıwlar"
+  },
   "Home": {
     "title": "Bosh sahifa qq"
   }

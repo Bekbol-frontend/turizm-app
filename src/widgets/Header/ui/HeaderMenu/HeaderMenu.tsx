@@ -1,32 +1,33 @@
-import Link from "next/link";
 import styles from "./HeaderMenu.module.scss";
 import { appRoutes } from "@/shared/config/routeConfig";
 import HeaderMenuLink from "../HeaderMenuLink/HeaderMenuLink";
 
 const menuItems = [
   {
-    name: "Home",
+    name: "home",
     path: appRoutes.home,
   },
   {
-    name: "Catalog",
+    name: "catalog",
     path: appRoutes.catalog,
   },
   {
-    name: "About",
+    name: "about",
     path: appRoutes.about,
   },
   {
-    name: "Reviews",
+    name: "reviews",
     path: appRoutes.reviews,
   },
   {
-    name: "Contacts",
+    name: "contact",
     path: appRoutes.contacts,
   },
 ];
 
 function HeaderMenu() {
+  
+
   return (
     <div className={styles.menuWrapper}>
       {menuItems.map((el) => (

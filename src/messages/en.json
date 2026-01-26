@@ -1,4 +1,11 @@
 {
+  "Navigation": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "catalog": "Catalog",
+    "reviews": "Reviews"
+  },
   "Home": {
     "title": "Bosh sahifa en"
   }
