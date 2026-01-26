@@ -1,11 +1,12 @@
 import { Label } from "@/shared/ui/Label";
+import { useTranslations } from "next-intl";
 
 function HomePage() {
+  const t = useTranslations("Home");
+
   return (
     <div>
-      <Label type="large">Large</Label>
-      <Label type="medium">Medium</Label>
-      <Label type="small">Small</Label>
+      <Label type="large">{t("title")}</Label>
     </div>
   );
 }

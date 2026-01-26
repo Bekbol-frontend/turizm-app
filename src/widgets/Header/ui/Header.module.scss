@@ -1,0 +1,21 @@
+.header {
+  background-color: var(--base-white);
+  border-bottom: 1px solid var(--base-border);
+  box-shadow: rgba(144, 156, 176, 0.1);
+  height: 100px;
+  display: flex;
+  align-items: center;
+
+  .headerInner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+}

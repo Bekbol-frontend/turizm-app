@@ -11,13 +11,13 @@ interface IProps {
 
 function Label({ children, type = "large", className = "" }: IProps) {
   return (
-    <h1
+    <h3
       className={clsx([styles.label, className], {
         [styles[type]]: true,
       })}
     >
       {children}
-    </h1>
+    </h3>
   );
 }
 

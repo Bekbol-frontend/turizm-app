@@ -1,0 +1,15 @@
+.logo {
+  display: inline-flex;
+  position: relative;
+  width: 80px;
+  height: 80px;
+
+  .img {
+    object-fit: cover;
+  }
+
+  .link {
+    position: absolute;
+    inset: 0;
+  }
+}

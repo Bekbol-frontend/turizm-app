@@ -1,0 +1,56 @@
+.switchLangWrapper {
+  display: inline-flex;
+  position: relative;
+  border: 1.5px solid var(--base-border);
+  padding: 14px 20px;
+  border-radius: var(--rounded);
+  cursor: pointer;
+
+  &:hover {
+    .langsWrapper {
+      opacity: 1;
+      pointer-events: all;
+      visibility: visible;
+    }
+  }
+
+  .langsWrapper {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 120px;
+    overflow: hidden;
+    padding-top: 10px;
+
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+
+    transition:
+      opacity 0.2s ease-in-out,
+      visibility 0.2s ease-in-out;
+
+    .langs {
+      background-color: var(--base-white);
+      border: 1px solid var(--base-border);
+      border-radius: var(--rounded);
+      display: flex;
+      flex-direction: column;
+
+      .lang {
+        border-bottom: 1px solid var(--base-border);
+        display: inline-flex;
+        padding: 8px 10px;
+        cursor: pointer;
+
+        &:last-child {
+          border: none;
+        }
+
+        &:hover {
+          background-color: var(--base-bg);
+        }
+      }
+    }
+  }
+}

@@ -11,13 +11,13 @@ interface IProps {
 
 function Paragraph({ children, type = "large", className = "" }: IProps) {
   return (
-    <h1
+    <p
       className={clsx([styles.paragraph, className], {
         [styles[type]]: true,
       })}
     >
       {children}
-    </h1>
+    </p>
   );
 }
 
