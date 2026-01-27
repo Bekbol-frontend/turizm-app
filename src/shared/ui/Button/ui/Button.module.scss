@@ -8,6 +8,12 @@
     background-color 0.2s ease-in-out,
     color 0.2s ease-in-out;
 
+  @media screen and (max-width: 768px) {
+    padding: 10px 15px;
+    font-weight: 500;
+    font-size: 14px;
+  }
+
   &.primary {
     background-color: var(--primary-300);
     color: var(--base-white);

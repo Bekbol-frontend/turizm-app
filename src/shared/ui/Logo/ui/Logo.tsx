@@ -3,19 +3,22 @@ import styles from "./Logo.module.scss";
 import { clsx } from "@/shared/lib/clsx";
 import Link from "next/link";
 import { appRoutes } from "@/shared/config/routeConfig";
+import { useResponsive } from "@/shared/lib/useResponsive";
 
 interface IProps {
   className?: string;
 }
 
 function Logo({ className = "" }: IProps) {
+  const { mobile } = useResponsive();
+
   return (
     <div className={clsx([styles.logo, className])}>
       <Image
         src="/logo.svg"
         alt="Toktarbay aga tours"
-        width={80}
-        height={80}
+        width={mobile ? 60 : 80}
+        height={mobile ? 60 : 80}
         className={styles.img}
         priority
       />

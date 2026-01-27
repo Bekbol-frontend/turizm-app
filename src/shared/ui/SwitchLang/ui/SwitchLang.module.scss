@@ -63,7 +63,8 @@
           border: none;
         }
 
-        &:hover {
+        &:hover,
+        &.active {
           background-color: var(--base-bg);
         }
       }

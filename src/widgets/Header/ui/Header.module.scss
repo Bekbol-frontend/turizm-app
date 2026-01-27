@@ -21,6 +21,16 @@
         display: flex;
         align-items: center;
         gap: 20px;
+
+        @media screen and (max-width: 768px) {
+          gap: 10px;
+        }
+
+        .menuBtn {
+          padding: 10px;
+          align-items: center;
+          justify-content: center;
+        }
       }
     }
   }

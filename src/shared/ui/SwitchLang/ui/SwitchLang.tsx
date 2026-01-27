@@ -5,6 +5,7 @@ import { useLocale } from "next-intl";
 import ArrowDropDown from "@/shared/assets/icons/arrow-drop-down-line.svg";
 import styles from "./SwitchLang.module.scss";
 import Image from "next/image";
+import { clsx } from "@/shared/lib/clsx";
 
 type Langs = "uz" | "qq" | "ru" | "en";
 type Lang = Record<Langs, string>;
@@ -46,7 +47,9 @@ export default function SwitchLang() {
             <span
               key={lang.code}
               onClick={() => handleChange(lang.code)}
-              className={styles.lang}
+              className={clsx([styles.lang], {
+                [styles.active]: lang.code === locale,
+              })}
             >
               {lang.name}
             </span>
