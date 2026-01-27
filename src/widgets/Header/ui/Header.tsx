@@ -13,8 +13,6 @@ import MenuIcon from "@/shared/assets/icons/menu.svg";
 function Header() {
   const { mobile } = useResponsive();
 
-  console.log(mobile);
-
   return (
     <header className={styles.header}>
       <Container>
