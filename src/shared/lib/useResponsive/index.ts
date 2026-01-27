@@ -5,10 +5,10 @@ export function useResponsive() {
 
   useEffect(() => {
     function resizeWindow() {
-      if (window.innerWidth < 550) {
-        setMobile(true);
-      } else {
+      if (window.innerWidth > 850) {
         setMobile(false);
+      } else {
+        setMobile(true);
       }
     }
 
