@@ -1,0 +1,42 @@
+.bannerSwiper {
+  clip-path: polygon(0 0, 100% 0, 100% 87%, 0% 100%);
+  overflow: hidden;
+
+  .swiperItem {
+    min-height: 80vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .innerItem {
+      text-align: center;
+      max-width: 750px;
+      width: 100%;
+      margin-inline: auto;
+
+      .titleOne {
+        color: var(--primary-250);
+      }
+
+      .titleTwo {
+        color: var(--primary-300);
+        margin-block: 10px;
+      }
+
+      .titleThree {
+        color: var(--gray-250);
+        margin-bottom: 50px;
+      }
+
+      .btnWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+    }
+  }
+}

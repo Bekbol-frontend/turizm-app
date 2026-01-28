@@ -2,7 +2,7 @@
   display: inline-flex;
   position: relative;
   border: 1px solid var(--base-border);
-  padding: 15px 20px;
+  padding: 10px 20px;
   border-radius: var(--rounded);
   cursor: pointer;
 
@@ -36,6 +36,7 @@
     left: 0;
     width: 150px;
     padding-top: 10px;
+    z-index: 10;
 
     opacity: 0;
     pointer-events: none;

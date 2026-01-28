@@ -1,1 +1,1 @@
-export { default as Paragraph } from "./ui/Paragraph.module.scss";
+export { default as Paragraph } from "./ui/Paragraph";

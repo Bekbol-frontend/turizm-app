@@ -1,5 +1,11 @@
+import BannerSwiper from "./BannerSwiper/BannerSwiper";
+
 function Banner() {
-  return <div>Banner</div>;
+  return (
+    <section>
+      <BannerSwiper />
+    </section>
+  );
 }
 
 export default Banner;
