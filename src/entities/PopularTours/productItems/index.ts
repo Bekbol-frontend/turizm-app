@@ -23,7 +23,7 @@ export const productItems: IProduct[] = [
     day: "2 дня / 1 ночь",
     ball: {
       count: "3,509",
-      rating: 4.8,
+      rating: 1.8,
     },
     name: "«Звездная ночь и шепот моря»",
     price: "от 3,215,000 сўм",
@@ -36,7 +36,7 @@ export const productItems: IProduct[] = [
     day: "2 дня / 1 ночь",
     ball: {
       count: "3,509",
-      rating: 5,
+      rating: 4.5,
     },
     name: "«Звездная ночь и шепот моря»",
     price: "от 3,215,000 сўм",
@@ -49,7 +49,7 @@ export const productItems: IProduct[] = [
     day: "2 дня / 1 ночь",
     ball: {
       count: "3,509",
-      rating: 5,
+      rating: 3.5,
     },
     name: "«Звездная ночь и шепот моря»",
     price: "от 3,215,000 сўм",
@@ -62,7 +62,7 @@ export const productItems: IProduct[] = [
     day: "2 дня / 1 ночь",
     ball: {
       count: "3,509",
-      rating: 5,
+      rating: 3.5,
     },
     name: "«Звездная ночь и шепот моря»",
     price: "от 3,215,000 сўм",
@@ -75,7 +75,7 @@ export const productItems: IProduct[] = [
     day: "2 дня / 1 ночь",
     ball: {
       count: "3,509",
-      rating: 5,
+      rating: 2.1,
     },
     name: "«Звездная ночь и шепот моря»",
     price: "от 3,215,000 сўм",

@@ -1,12 +1,20 @@
 .starBallWrapper {
   display: flex;
   gap: 5px;
+}
 
-  .star {
-    width: 24px;
-    height: 24px;
-    display: block;
-    background-color: var(--primary-150);
-    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-  }
+.star {
+  width: 24px;
+  height: 24px;
+  display: block;
+  background-color: var(--base-border);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.full {
+  background-color: gold;
+}
+
+.half {
+  background: linear-gradient(90deg, gold 50%, var(--base-border) 50%);
 }

@@ -30,7 +30,7 @@ function Product({ data }: IProps) {
             type="medium"
             className={styles.count}
           >{`(${ball.count})`}</Paragraph>
-          <StarBall />
+          <StarBall rating={ball.rating} />
         </div>
         <Paragraph className={styles.name}>{name}</Paragraph>
         <Title type="medium" className={styles.price}>
