@@ -1,4 +1,6 @@
 import { Banner } from "@/entities/Banner";
+import { PopularToursTitle } from "@/entities/PopularToursTitle";
+import { PopularTours } from "@/entities/PopularTours";
 import { useTranslations } from "next-intl";
 
 function HomePage() {
@@ -7,6 +9,8 @@ function HomePage() {
   return (
     <>
       <Banner />
+      <PopularToursTitle />
+      <PopularTours />
     </>
   );
 }

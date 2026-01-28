@@ -1,0 +1,41 @@
+.section {
+  margin-top: 40px;
+  padding: 0px;
+  text-align: center;
+  position: relative;
+
+  @mixin child {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 37%;
+    height: 70px;
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &::before {
+    @include child;
+    left: 0;
+    background-image: url("/bg-svg/left.svg");
+
+    @media screen and (max-width: 768px) {
+      height: 35px;
+      width: 25%;
+    }
+  }
+
+  &::after {
+    @include child;
+    right: 0;
+    background-image: url("/bg-svg/right.svg");
+
+    @media screen and (max-width: 768px) {
+      height: 35px;
+      width: 25%;
+    }
+  }
+}

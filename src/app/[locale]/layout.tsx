@@ -36,7 +36,7 @@ export default async function RootLayout({
       <body className={geist.variable}>
         <NextIntlClientProvider messages={messages}>
           <Header />
-          {children}
+          <main>{children}</main>
         </NextIntlClientProvider>
       </body>
     </html>

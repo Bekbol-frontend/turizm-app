@@ -16,6 +16,7 @@
       max-width: 750px;
       width: 100%;
       margin-inline: auto;
+      position: relative;
 
       .titleOne {
         color: var(--primary-250);
@@ -36,6 +37,18 @@
         align-items: center;
         justify-content: center;
         gap: 10px;
+
+        @media screen and (max-width: 768px) {
+          flex-direction: column;
+
+          & > button {
+            width: 100%;
+            text-align: center !important;
+            align-items: center;
+            justify-content: center;
+            padding: 15px !important;
+          }
+        }
       }
     }
   }

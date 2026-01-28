@@ -1,0 +1,12 @@
+.starBallWrapper {
+  display: flex;
+  gap: 5px;
+
+  .star {
+    width: 24px;
+    height: 24px;
+    display: block;
+    background-color: var(--primary-150);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
+}
