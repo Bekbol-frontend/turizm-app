@@ -88,16 +88,36 @@ function BannerSwiper() {
       >
         <Container>
           <div className={styles.innerItem}>
-            <Title type="small" className={styles.titleOne}>
-              Аральское море 2
-            </Title>
-            <Heading type="small" className={styles.titleTwo}>
-              Приключение на берегу исчезнувшего океана 2
-            </Heading>
-            <Title type="medium" className={styles.titleThree}>
-              Таинственная природа Каракалпакстана, «Кладбище кораблей» и
-              незабываемое путешествие по бескрайней пустыне 2
-            </Title>
+            {mobile ? (
+              <Paragraph type="large" className={styles.titleOne}>
+                Аральское море 2
+              </Paragraph>
+            ) : (
+              <Title type="small" className={styles.titleOne}>
+                Аральское море 2
+              </Title>
+            )}
+
+            {mobile ? (
+              <Title type="medium" className={styles.titleTwo}>
+                Приключение на берегу исчезнувшего океана 2
+              </Title>
+            ) : (
+              <Heading type="small" className={styles.titleTwo}>
+                Приключение на берегу исчезнувшего океана 2
+              </Heading>
+            )}
+            {mobile ? (
+              <Paragraph type="large" className={styles.titleThree}>
+                Таинственная природа Каракалпакстана, «Кладбище кораблей» и
+                незабываемое путешествие по бескрайней пустыне 2
+              </Paragraph>
+            ) : (
+              <Title type="medium" className={styles.titleThree}>
+                Таинственная природа Каракалпакстана, «Кладбище кораблей» и
+                незабываемое путешествие по бескрайней пустыне 2
+              </Title>
+            )}
             <div className={styles.btnWrapper}>
               <Button variyant="primary">Подобрать тур</Button>
               <Button variyant="secondary">Забронировать хостел</Button>
