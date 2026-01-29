@@ -9,5 +9,10 @@
   "Home": {
     "title": "Bosh sahifa ru",
     "Popular tours": "Популярные туры"
+  },
+  "NotFound": {
+    "It seems you took a wrong turn": "Похоже, вы свернули не туда...",
+    "This page was lost in the sands of Karakalpakstan or was just a mirage": "Эта страница затерялась в песках Каракалпакстана или оказалась всего лишь миражем.",
+    "Return to home": "Вернуться на главную"
   }
 }

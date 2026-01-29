@@ -1,0 +1,35 @@
+.section {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: var(--base-white);
+  padding: 20px;
+
+  .content {
+    .imgBlock {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .textBlock {
+      text-align: center;
+
+      .titleColor {
+        color: var(--primary-300);
+      }
+
+      .title {
+        margin-bottom: 20px;
+      }
+
+      .desc {
+        color: var(--gray-250);
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

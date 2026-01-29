@@ -26,8 +26,6 @@ const menuItems = [
 ];
 
 function HeaderMenu() {
-  
-
   return (
     <div className={styles.menuWrapper}>
       {menuItems.map((el) => (

@@ -16,12 +16,14 @@ function HeaderMenuLink({ name, path, className = "" }: IProps) {
   const pathname = usePathname();
   const t = useTranslations("Navigation");
 
+  const pathnameWithoutLocale = pathname.replace(/^\/(ru|en|uz|qq)/, "") || "/";
+
   return (
     <Link
       href={path}
       key={name}
       className={clsx([styles.link, className], {
-        [styles.active]: pathname === path,
+        [styles.active]: pathnameWithoutLocale === path,
       })}
     >
       {t(name)}

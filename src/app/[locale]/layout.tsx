@@ -1,10 +1,10 @@
 import { Geist } from "next/font/google";
 import { Header } from "@/widgets/Header";
 import { NextIntlClientProvider } from "next-intl";
-import "./styles/main.scss";
 import { routing } from "@/shared/config/i18n/routing";
 import { notFound } from "next/navigation";
 import { getMessages } from "next-intl/server";
+import "../styles/main.scss";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
