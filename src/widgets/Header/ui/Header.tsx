@@ -9,30 +9,46 @@ import { useResponsive } from "@/shared/lib/useResponsive";
 import { Button } from "@/shared/ui/Button";
 import Image from "next/image";
 import MenuIcon from "@/shared/assets/icons/menu.svg";
+import { Drawer } from "@/shared/ui/Drawer";
+import { useCallback, useState } from "react";
 
 function Header() {
+  const [drawer, setDrawer] = useState(false);
   const { mobile } = useResponsive();
 
+  const onShowDrawer = useCallback(() => setDrawer(true), []);
+  const onCloseDrawer = useCallback(() => setDrawer(false), []);
+
   return (
-    <header className={styles.header}>
-      <Container>
-        <div className={styles.headerInner}>
-          <Logo />
-          <div className={styles.right}>
-            {!mobile && <HeaderMenu />}
-            <div className={styles.phoneAndLang}>
-              {!mobile && <SwitchLang />}
-              <PhoneBtn phone="+998 90 123 45 67" />
-              {mobile && (
-                <Button variyant="secondary" className={styles.menuBtn}>
-                  <Image src={MenuIcon} alt="menu" />
-                </Button>
-              )}
+    <>
+      <header className={styles.header}>
+        <Container>
+          <div className={styles.headerInner}>
+            <Logo />
+            <div className={styles.right}>
+              {!mobile && <HeaderMenu />}
+              <div className={styles.phoneAndLang}>
+                {!mobile && <SwitchLang />}
+                <PhoneBtn phone="+998 90 123 45 67" />
+                {mobile && (
+                  <Button
+                    variyant="secondary"
+                    className={styles.menuBtn}
+                    onClick={onShowDrawer}
+                  >
+                    <Image src={MenuIcon} alt="menu" />
+                  </Button>
+                )}
+              </div>
             </div>
           </div>
-        </div>
-      </Container>
-    </header>
+        </Container>
+      </header>
+
+      <Drawer isOpen={drawer} onClose={onCloseDrawer} lazy>
+        <div>menu</div>
+      </Drawer>
+    </>
   );
 }
 

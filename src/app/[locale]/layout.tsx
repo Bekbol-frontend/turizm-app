@@ -35,8 +35,10 @@ export default async function RootLayout({
     <html lang={locale}>
       <body className={geist.variable}>
         <NextIntlClientProvider messages={messages}>
-          <Header />
-          <main>{children}</main>
+          <div id="wrapper-block-page">
+            <Header />
+            <main id="main">{children}</main>
+          </div>
         </NextIntlClientProvider>
       </body>
     </html>
