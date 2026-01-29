@@ -1,15 +1,18 @@
 import { useEffect, useState } from "react";
 
 export function useResponsive() {
-  const [mobile, setMobile] = useState(false);
+  const [mobile, setMobile] = useState(() => {
+    if (typeof window !== "undefined") {
+      return window.innerWidth <= 850;
+    }
+    return false;
+  });
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     function resizeWindow() {
-      if (window.innerWidth > 850) {
-        setMobile(false);
-      } else {
-        setMobile(true);
-      }
+      setMobile(window.innerWidth <= 850);
     }
 
     resizeWindow();
