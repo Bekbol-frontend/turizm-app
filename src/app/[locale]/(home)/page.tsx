@@ -1,5 +1,6 @@
 import { About } from "@/entities/About";
 import { Banner } from "@/entities/Banner";
+import { FAQ } from "@/entities/FAQ";
 import { PopularTours } from "@/entities/PopularTours";
 import { Reviews } from "@/entities/Reviews";
 import { SectionTitle } from "@/shared/ui/SectionTitle";
@@ -15,6 +16,7 @@ function HomePage() {
       <PopularTours />
       <About />
       <Reviews />
+      <FAQ />
     </>
   );
 }
