@@ -1,6 +1,7 @@
 import { About } from "@/entities/About";
 import { Banner } from "@/entities/Banner";
 import { PopularTours } from "@/entities/PopularTours";
+import { Reviews } from "@/entities/Reviews";
 import { SectionTitle } from "@/shared/ui/SectionTitle";
 import { useTranslations } from "next-intl";
 
@@ -13,6 +14,7 @@ function HomePage() {
       <SectionTitle title={t("Popular tours")} />
       <PopularTours />
       <About />
+      <Reviews />
     </>
   );
 }

@@ -1,0 +1,69 @@
+.swiperWrapper {
+  padding-block: 30px !important;
+
+  .swiperItem {
+    border-radius: var(--rounded);
+    background-color: var(--base-white);
+    padding: 25px 20px;
+    border: 1px solid var(--base-border);
+
+    .swiperItemInner {
+      .descName {
+        color: var(--primary-300);
+      }
+
+      .ratingWrapper {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin-block: 12px;
+
+        @media screen and (max-width: 768px) {
+          margin-block: 7px;
+        }
+
+        .rating {
+          display: inline-flex;
+          width: 24px;
+          height: 24px;
+          background-color: var(--primary-150);
+          clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        }
+      }
+
+      .country {
+        color: var(--gray-100);
+      }
+
+      .tag {
+        background-color: var(--primary-50);
+        border-radius: var(--rounded);
+        padding: 5px 10px;
+        display: inline-flex;
+        margin: 30px 0px;
+
+        @media screen and (max-width: 768px) {
+          margin: 20px 0px;
+        }
+      }
+    }
+  }
+
+  .btns {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+
+    .btnLeft {
+      img {
+        transform: rotate(180deg);
+      }
+    }
+
+    .btnNotActive {
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+  }
+}
