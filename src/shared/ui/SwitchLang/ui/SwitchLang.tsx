@@ -24,7 +24,15 @@ const languages: { code: Langs; name: string }[] = [
   { code: "en", name: "English" },
 ];
 
-export default function SwitchLang() {
+interface IProps {
+  className?: string;
+  isMobile?: boolean;
+}
+
+export default function SwitchLang({
+  className = "",
+  isMobile = false,
+}: IProps) {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
@@ -36,7 +44,11 @@ export default function SwitchLang() {
   };
 
   return (
-    <div className={styles.switchLangWrapper}>
+    <div
+      className={clsx([styles.switchLangWrapper, className], {
+        [styles.mobile]: isMobile,
+      })}
+    >
       <span className={styles.currentLang}>
         {lang[locale as Langs]}{" "}
         <Image src={ArrowDropDown} width={20} height={20} alt="icon" />

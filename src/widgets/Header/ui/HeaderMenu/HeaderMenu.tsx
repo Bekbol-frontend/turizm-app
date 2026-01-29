@@ -1,6 +1,8 @@
 import styles from "./HeaderMenu.module.scss";
 import { appRoutes } from "@/shared/config/routeConfig";
 import HeaderMenuLink from "../HeaderMenuLink/HeaderMenuLink";
+import { clsx } from "@/shared/lib/clsx";
+import { useCallback } from "react";
 
 const menuItems = [
   {
@@ -25,11 +27,30 @@ const menuItems = [
   },
 ];
 
-function HeaderMenu() {
+interface IProps {
+  className?: string;
+  isMobile?: boolean;
+  onCloseDrawer?: () => void;
+}
+
+function HeaderMenu({
+  className = "",
+  isMobile = false,
+  onCloseDrawer,
+}: IProps) {
   return (
-    <div className={styles.menuWrapper}>
+    <div
+      className={clsx([styles.menuWrapper, className], {
+        [styles.mobile]: isMobile,
+      })}
+    >
       {menuItems.map((el) => (
-        <HeaderMenuLink name={el.name} path={el.path} key={el.name} />
+        <HeaderMenuLink
+          name={el.name}
+          path={el.path}
+          key={el.name}
+          onCloseDrawer={onCloseDrawer}
+        />
       ))}
     </div>
   );

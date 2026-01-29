@@ -11,6 +11,7 @@ import Image from "next/image";
 import MenuIcon from "@/shared/assets/icons/menu.svg";
 import { Drawer } from "@/shared/ui/Drawer";
 import { useCallback, useState } from "react";
+import HeaderMenuDrawer from "./HeaderMenuDrawer/HeaderMenuDrawer";
 
 function Header() {
   const [drawer, setDrawer] = useState(false);
@@ -46,7 +47,7 @@ function Header() {
       </header>
 
       <Drawer isOpen={drawer} onClose={onCloseDrawer} lazy>
-        <div>menu</div>
+        <HeaderMenuDrawer onCloseDrawer={onCloseDrawer} />
       </Drawer>
     </>
   );

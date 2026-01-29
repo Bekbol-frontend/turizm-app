@@ -20,6 +20,19 @@
     }
   }
 
+  &.mobile {
+    width: 100%;
+
+    .currentLang {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    .langsWrapper {
+      width: 100%;
+    }
+  }
+
   .currentLang {
     align-items: center;
     gap: 7px;
