@@ -25,10 +25,12 @@ const items = [
 import "swiper/css";
 import "swiper/css/navigation";
 import { Button } from "@/shared/ui/Button";
-import { useCallback, useRef } from "react";
+import { useCallback, useRef, useState } from "react";
 
 function AboutSwiper() {
   const sliderRef = useRef<SwiperRef>(null);
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
 
   const handlePrev = useCallback(() => {
     if (!sliderRef.current) return;
@@ -38,6 +40,13 @@ function AboutSwiper() {
   const handleNext = useCallback(() => {
     if (!sliderRef.current) return;
     sliderRef.current.swiper.slideNext();
+  }, []);
+
+  const handleSlideChange = useCallback(() => {
+    if (!sliderRef.current) return;
+    const swiper = sliderRef.current.swiper;
+    setIsBeginning(swiper.isBeginning);
+    setIsEnd(swiper.isEnd);
   }, []);
 
   return (
@@ -53,10 +62,8 @@ function AboutSwiper() {
         delay: 2500,
         disableOnInteraction: false,
       }}
-      navigation={{
-        prevEl: styles.btnLeft,
-        nextEl: styles.btnRight,
-      }}
+      onSlideChange={handleSlideChange}
+      onInit={handleSlideChange}
       breakpoints={{
         768: {
           slidesPerView: 3,
@@ -81,6 +88,7 @@ function AboutSwiper() {
           variyant="secondary"
           className={styles.btnLeft}
           onClick={handlePrev}
+          style={{ opacity: isBeginning ? 0.7 : 1 }}
         >
           <Image src={RightIcon} alt="about" width={20} height={20} />
         </Button>
@@ -88,6 +96,7 @@ function AboutSwiper() {
           variyant="secondary"
           className={styles.btnRight}
           onClick={handleNext}
+          style={{ opacity: isEnd ? 0.7 : 1 }}
         >
           <Image src={RightIcon} alt="about" width={20} height={20} />
         </Button>
