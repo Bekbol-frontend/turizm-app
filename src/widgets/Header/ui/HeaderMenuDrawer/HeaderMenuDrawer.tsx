@@ -9,8 +9,8 @@ interface IProps {
 function HeaderMenuDrawer({ onCloseDrawer }: IProps) {
   return (
     <div className={styles.wrapper}>
-      <SwitchLang isMobile />
       <HeaderMenu isMobile onCloseDrawer={onCloseDrawer} />
+      <SwitchLang isMobile />
     </div>
   );
 }

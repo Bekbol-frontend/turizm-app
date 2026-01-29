@@ -12,10 +12,12 @@ import MenuIcon from "@/shared/assets/icons/menu.svg";
 import { Drawer } from "@/shared/ui/Drawer";
 import { useCallback, useState } from "react";
 import HeaderMenuDrawer from "./HeaderMenuDrawer/HeaderMenuDrawer";
+import { useTranslations } from "next-intl";
 
 function Header() {
   const [drawer, setDrawer] = useState(false);
   const { mobile } = useResponsive();
+  const t = useTranslations("Header");
 
   const onShowDrawer = useCallback(() => setDrawer(true), []);
   const onCloseDrawer = useCallback(() => setDrawer(false), []);
@@ -46,7 +48,7 @@ function Header() {
         </Container>
       </header>
 
-      <Drawer isOpen={drawer} onClose={onCloseDrawer} lazy>
+      <Drawer title={t("Menu")} isOpen={drawer} onClose={onCloseDrawer} lazy>
         <HeaderMenuDrawer onCloseDrawer={onCloseDrawer} />
       </Drawer>
     </>

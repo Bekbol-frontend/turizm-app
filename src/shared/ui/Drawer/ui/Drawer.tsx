@@ -15,10 +15,11 @@ interface IProps {
   isOpen: boolean;
   onClose: () => void;
   lazy?: boolean;
+  title: string;
 }
 
 function Drawer(props: IProps) {
-  const { className = "", children, isOpen, onClose, lazy } = props;
+  const { className = "", children, isOpen, onClose, lazy, title } = props;
   const [show, setShow] = useState(false);
 
   const { mobile } = useResponsive();
@@ -62,7 +63,7 @@ function Drawer(props: IProps) {
       >
         <div className={styles.content} onClick={(e) => e.stopPropagation()}>
           <div className={styles.top}>
-            <Title type={mobile ? "small" : "large"}>title</Title>
+            <Title type={mobile ? "small" : "large"}>{title}</Title>
             <Button
               className={styles.btnClose}
               variyant="secondary"
