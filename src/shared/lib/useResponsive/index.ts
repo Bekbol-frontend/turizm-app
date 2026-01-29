@@ -1,28 +1,25 @@
+"use client";
+
 import { useEffect, useState } from "react";
 
-export function useResponsive() {
-  const [mobile, setMobile] = useState(() => {
-    if (typeof window !== "undefined") {
-      return window.innerWidth <= 850;
-    }
-    return false;
-  });
+export function useResponsive(breakpoint: number = 850) {
+  const [mobile, setMobile] = useState(false);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    const mediaQuery = window.matchMedia(`(max-width: ${breakpoint}px)`);
 
-    function resizeWindow() {
-      setMobile(window.innerWidth <= 850);
-    }
+    setMobile(mediaQuery.matches);
 
-    resizeWindow();
+    const handleChange = (e: MediaQueryListEvent) => {
+      setMobile(e.matches);
+    };
 
-    window.addEventListener("resize", resizeWindow);
+    mediaQuery.addEventListener("change", handleChange);
 
     return () => {
-      window.removeEventListener("resize", resizeWindow);
+      mediaQuery.removeEventListener("change", handleChange);
     };
-  }, []);
+  }, [breakpoint]);
 
   return { mobile };
 }
