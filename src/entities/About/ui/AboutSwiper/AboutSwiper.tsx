@@ -26,6 +26,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Button } from "@/shared/ui/Button";
 import { useCallback, useRef, useState } from "react";
+import { clsx } from "@/shared/lib/clsx";
 
 function AboutSwiper() {
   const sliderRef = useRef<SwiperRef>(null);
@@ -86,17 +87,19 @@ function AboutSwiper() {
       <div className={styles.btns}>
         <Button
           variyant="secondary"
-          className={styles.btnLeft}
+          className={clsx([styles.btnLeft], {
+            [styles.btnNotActive]: isBeginning,
+          })}
           onClick={handlePrev}
-          style={{ opacity: isBeginning ? 0.7 : 1 }}
         >
           <Image src={RightIcon} alt="about" width={20} height={20} />
         </Button>
         <Button
           variyant="secondary"
-          className={styles.btnRight}
+          className={clsx([styles.btnRight], {
+            [styles.btnNotActive]: isEnd,
+          })}
           onClick={handleNext}
-          style={{ opacity: isEnd ? 0.7 : 1 }}
         >
           <Image src={RightIcon} alt="about" width={20} height={20} />
         </Button>
