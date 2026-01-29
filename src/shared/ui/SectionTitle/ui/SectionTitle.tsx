@@ -15,9 +15,13 @@ function SectionTitle({ title }: IProps) {
   return (
     <section className={styles.section}>
       {mobile ? (
-        <Title type="small">{title}</Title>
+        <Title type="small" className={styles.title}>
+          {title}
+        </Title>
       ) : (
-        <Heading type="small">{title}</Heading>
+        <Heading type="small" className={styles.title}>
+          {title}
+        </Heading>
       )}
     </section>
   );
