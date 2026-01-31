@@ -17,5 +17,10 @@
   },
   "Header": {
     "Menu": "Menu"
+  },
+  "ErrorPage": {
+    "title": "We have a small breakdown on the way",
+    "desc": "Our servers may have overheated slightly in the sun or been caught in a sandstorm. We're working on fixes. Please try refreshing the page in a minute",
+    "Refresh page": "Refresh page"
   }
 }

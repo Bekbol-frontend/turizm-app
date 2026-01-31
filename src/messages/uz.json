@@ -17,5 +17,10 @@
   },
   "Header": {
     "Menu": "Menyu"
+  },
+  "ErrorPage": {
+    "title": "Yo'lda bizda kichik buzilish bor",
+    "desc": "Bizning serverlarimiz quyoshda biroz qizib ketgan yoki qum bo'roniga tushib qolgan bo'lishi mumkin. Biz tuzatishlar ustida ishlayapmiz. Bir daqiqadan so‘ng sahifani yangilab ko‘ring",
+    "Refresh page": "Sahifani yangilash"
   }
 }

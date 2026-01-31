@@ -1,0 +1,23 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 25px;
+  }
+
+  .btn {
+    border: 1px solid var(--base-border) !important;
+    background-color: transparent;
+    color: var(--gray-250);
+
+    &.active,
+    &:hover {
+      background-color: var(--primary-100);
+      color: var(--primary-300);
+    }
+  }
+}

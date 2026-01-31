@@ -17,5 +17,10 @@
   },
   "Header": {
     "Menu": "Menyu"
+  },
+  "ErrorPage": {
+    "title": "Jolda bizde kishi buzılıw bar",
+    "desc": "Biziń serverlerimiz quyashta biraz qızıp ketken yamasa qum boranına túsip qalǵan bolıwı múmkin. Biz dúzetiwler ústinde islep atırmız. Bir minuttan soń betti jańalap kóriń",
+    "Refresh page": "Betti jańalaw"
   }
 }
