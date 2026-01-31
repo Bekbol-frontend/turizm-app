@@ -7,6 +7,11 @@ import { getMessages } from "next-intl/server";
 import "../styles/main.scss";
 import { Footer } from "@/widgets/Footer";
 
+export const metadata = {
+  title: "Toktarbay aga tours",
+  description: "Toktarbay aga tours",
+};
+
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }

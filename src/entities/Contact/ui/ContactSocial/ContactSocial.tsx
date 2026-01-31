@@ -38,7 +38,13 @@ function ContactSocial() {
             style={{ backgroundColor: el.bgIcon }}
             className={styles.iconSpan}
           >
-            <Image src={el.icon} alt={el.title} width={18} height={18} />
+            <Image
+              src={el.icon}
+              alt={el.title}
+              width={18}
+              height={18}
+              className={styles.img}
+            />
           </span>
           <div className={styles.right}>
             <Paragraph type="small">
