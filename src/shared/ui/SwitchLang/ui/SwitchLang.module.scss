@@ -1,12 +1,9 @@
 .switchLangWrapper {
   display: inline-flex;
   position: relative;
-  border: 1px solid var(--base-border);
-  padding: 10px 20px;
-  border-radius: var(--rounded);
   cursor: pointer;
 
-  &:hover {
+  &.active {
     .langsWrapper {
       opacity: 1;
       pointer-events: all;
@@ -36,6 +33,10 @@
   .currentLang {
     align-items: center;
     gap: 7px;
+    border: 1px solid var(--base-border);
+    padding: 10px 20px;
+    border-radius: var(--rounded);
+    cursor: pointer;
 
     img {
       transform: rotate(0deg);

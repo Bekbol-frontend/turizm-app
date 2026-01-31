@@ -6,6 +6,8 @@ import ArrowDropDown from "@/shared/assets/icons/arrow-drop-down-line.svg";
 import styles from "./SwitchLang.module.scss";
 import Image from "next/image";
 import { clsx } from "@/shared/lib/clsx";
+import { useRef, useState } from "react";
+import { useOnClickOutside } from "@/shared/lib/useOnClickOutside";
 
 type Langs = "uz" | "qq" | "ru" | "en";
 type Lang = Record<Langs, string>;
@@ -33,9 +35,14 @@ export default function SwitchLang({
   className = "",
   isMobile = false,
 }: IProps) {
+  const [isOpen, setIsOpen] = useState(false);
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
+
+  const ref = useRef<HTMLDivElement | null>(null);
+
+  useOnClickOutside(ref, () => setIsOpen(false));
 
   const handleChange = (newLocale: string) => {
     if (locale === newLocale) return;
@@ -46,11 +53,16 @@ export default function SwitchLang({
   return (
     <div
       className={clsx([styles.switchLangWrapper, className], {
+        [styles.active]: isOpen,
         [styles.mobile]: isMobile,
       })}
+      ref={ref}
     >
-      <span className={styles.currentLang}>
-        {lang[locale as Langs]}{" "}
+      <span
+        className={styles.currentLang}
+        onClick={() => setIsOpen((prev) => !prev)}
+      >
+        {lang[locale as Langs]}
         <Image src={ArrowDropDown} width={20} height={20} alt="icon" />
       </span>
       <div className={styles.langsWrapper}>

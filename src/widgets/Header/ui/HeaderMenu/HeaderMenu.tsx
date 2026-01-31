@@ -2,7 +2,6 @@ import styles from "./HeaderMenu.module.scss";
 import { appRoutes } from "@/shared/config/routeConfig";
 import HeaderMenuLink from "../HeaderMenuLink/HeaderMenuLink";
 import { clsx } from "@/shared/lib/clsx";
-import { useCallback } from "react";
 
 const menuItems = [
   {

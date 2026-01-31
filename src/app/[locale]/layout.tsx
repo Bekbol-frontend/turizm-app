@@ -5,6 +5,7 @@ import { routing } from "@/shared/config/i18n/routing";
 import { notFound } from "next/navigation";
 import { getMessages } from "next-intl/server";
 import "../styles/main.scss";
+import { Footer } from "@/widgets/Footer";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -38,6 +39,7 @@ export default async function RootLayout({
           <div id="wrapper-block-page">
             <Header />
             <main id="main">{children}</main>
+            <Footer />
           </div>
         </NextIntlClientProvider>
       </body>

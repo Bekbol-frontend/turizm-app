@@ -1,0 +1,34 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  margin-inline: auto;
+  margin-bottom: 40px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .iconSpan {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      border-radius: var(--rounded);
+    }
+
+    .right {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+  }
+}
