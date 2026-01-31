@@ -6,6 +6,8 @@ import { Paragraph } from "@/shared/ui/Paragraph";
 import { StarBall } from "@/shared/ui/StarBall";
 import { Button } from "@/shared/ui/Button";
 import { PhoneBtn } from "@/shared/ui/PhoneBtn";
+import Link from "next/link";
+import { appRoutes } from "@/shared/config/routeConfig";
 
 interface IProps {
   data: IProduct;
@@ -16,6 +18,7 @@ function Product({ data }: IProps) {
 
   return (
     <div className={styles.product}>
+      <Link href={`${appRoutes.product}/${data.id}`} className={styles.link} />
       <div className={styles.imgBlock}>
         <Image src={imgUrl} alt="product" width={300} height={300} />
       </div>

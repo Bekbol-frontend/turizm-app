@@ -2,18 +2,16 @@
   position: fixed;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  transition:
-    opacity 0.2s ease-in-out,
-    visibility 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 
   z-index: -1;
   opacity: 0;
-  visibility: hidden;
+  pointer-events: none;
 
   &.show {
     z-index: 100;
     opacity: 1;
-    visibility: visible;
+    pointer-events: all;
 
     .content {
       transform: translateX(0);
@@ -23,7 +21,7 @@
   &.hide {
     z-index: -1;
     opacity: 0;
-    visibility: hidden;
+    pointer-events: none;
 
     .content {
       transform: translateX(100%);

@@ -4,4 +4,5 @@ export const appRoutes = {
   about: "/about",
   reviews: "/reviews",
   contacts: "/contacts",
+  product: "/product",
 } as const;
