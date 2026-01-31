@@ -17,8 +17,8 @@ function Logo({ className = "" }: IProps) {
       <Image
         src="/logo.svg"
         alt="Toktarbay aga tours"
-        width={mobile ? 60 : 80}
-        height={mobile ? 60 : 80}
+        width={mobile ? 75 : 80}
+        height={mobile ? 75 : 80}
         className={styles.img}
         priority
       />
