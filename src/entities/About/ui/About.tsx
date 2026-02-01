@@ -6,6 +6,8 @@ import Image from "next/image";
 import { Heading } from "@/shared/ui/Heading";
 import { Paragraph } from "@/shared/ui/Paragraph";
 import AboutSwiper from "./AboutSwiper/AboutSwiper";
+import { useResponsive } from "@/shared/lib/useResponsive";
+import { Title } from "@/shared/ui/Title";
 
 function About() {
   return (
@@ -27,7 +29,19 @@ function About() {
               <Heading type="small" className={styles.title}>
                 Ваш надежный проводник в мире приключений
               </Heading>
-              <Paragraph type="medium">
+              <Title type="small" className={styles.titleMobile}>
+                Ваш надежный проводник в мире приключений
+              </Title>
+              <Paragraph type="medium" className={styles.desc}>
+                Мы организуем комфортные экспедиции по самым труднодоступным и
+                живописным местам Каракалпакстана. В нашем арсенале — надежные
+                внедорожники для покорения пустыни, опытные гиды-историки и
+                собственный уютный хостел для отдыха после долгой дороги. Мы
+                берем на себя все заботы: от трансфера и питания до выбора
+                лучших локаций для фото, чтобы вы могли просто наслаждаться
+                моментом.
+              </Paragraph>
+              <Paragraph type="small" className={styles.descMobile}>
                 Мы организуем комфортные экспедиции по самым труднодоступным и
                 живописным местам Каракалпакстана. В нашем арсенале — надежные
                 внедорожники для покорения пустыни, опытные гиды-историки и
