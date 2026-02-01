@@ -15,6 +15,8 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { IBanner } from "../../types";
+import { baseURL } from "@/shared/api";
 
 const bannerItems = [
   {
@@ -35,7 +37,11 @@ const bannerItems = [
   },
 ];
 
-function BannerSwiper() {
+interface IProps {
+  data: IBanner[];
+}
+
+function BannerSwiper({ data }: IProps) {
   const { mobile } = useResponsive();
 
   return (
@@ -53,10 +59,10 @@ function BannerSwiper() {
       }}
       className={styles.bannerSwiper}
     >
-      {bannerItems.map((el) => (
+      {data.map((el) => (
         <SwiperSlide
           style={{
-            backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8) 75%, rgba(0, 0, 0, .1)), url(${el.imgUrl})`,
+            backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8) 75%, rgba(0, 0, 0, .1)), url(${baseURL}/${el.image_path})`,
           }}
           className={styles.swiperItem}
           key={el.id}
@@ -75,14 +81,14 @@ function BannerSwiper() {
 
               {mobile ? (
                 <Title type="medium" className={styles.titleTwo}>
-                  {el.heading}
+                  {el.subtitle}
                 </Title>
               ) : (
                 <Heading type="small" className={styles.titleTwo}>
-                  {el.heading}
+                  {el.subtitle}
                 </Heading>
               )}
-              {mobile ? (
+              {/* {mobile ? (
                 <Paragraph type="large" className={styles.titleThree}>
                   {el.desc}
                 </Paragraph>
@@ -90,7 +96,7 @@ function BannerSwiper() {
                 <Title type="medium" className={styles.titleThree}>
                   {el.desc}
                 </Title>
-              )}
+              )} */}
               <div className={styles.btnWrapper}>
                 <Button variyant="primary">Подобрать тур</Button>
                 <Button variyant="secondary">Забронировать хостел</Button>

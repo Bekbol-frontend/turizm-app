@@ -8,19 +8,14 @@ import { useResponsive } from "@/shared/lib/useResponsive";
 import Image from "next/image";
 import Plus from "@/shared/assets/icons/add-line.svg";
 import Minus from "@/shared/assets/icons/subtract-line.svg";
-
-interface AccordionItem {
-  id: number;
-  title: string;
-  content: string;
-}
+import { IFAQ } from "@/entities/FAQ";
 
 interface IProps {
-  data: AccordionItem;
+  data: IFAQ;
 }
 
 function Accordion({ data }: IProps) {
-  const { id, title, content } = data;
+  const { id, question, answer } = data;
   const [openId, setOpenId] = useState<number | null>(null);
 
   const { mobile } = useResponsive();
@@ -46,7 +41,7 @@ function Accordion({ data }: IProps) {
           type={mobile ? "medium" : "large"}
           className={styles.accordionTitle}
         >
-          {title}
+          {question}
         </Paragraph>
         <motion.div
           className={styles.iconWrapper}
@@ -102,9 +97,7 @@ function Accordion({ data }: IProps) {
             className={styles.accordionContent}
           >
             <div className={styles.accordionInner}>
-              <Paragraph type={mobile ? "small" : "medium"}>
-                {content}
-              </Paragraph>
+              <Paragraph type={mobile ? "small" : "medium"}>{answer}</Paragraph>
             </div>
           </motion.div>
         )}

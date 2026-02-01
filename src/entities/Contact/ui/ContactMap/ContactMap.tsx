@@ -2,6 +2,7 @@
 
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import type { LatLngExpression } from "leaflet";
+import MapLocationIcon from "@/shared/assets/icons/map-location.svg";
 import L from "leaflet";
 
 import "leaflet/dist/leaflet.css";
@@ -10,8 +11,8 @@ const center: LatLngExpression = [41.2995, 69.2401];
 
 function ContactMap() {
   const customIcon = new L.Icon({
-    iconUrl: "/marker.png",
-    iconSize: [40, 40],
+    iconUrl: "/map/map.png",
+    iconSize: [54, 64],
     iconAnchor: [20, 40],
     popupAnchor: [0, -40],
   });
