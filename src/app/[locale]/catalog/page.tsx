@@ -1,6 +1,6 @@
 import { CatalogBanner } from "@/entities/CatalogBanner";
 import { CatalogProducts } from "@/entities/CatalogProducts";
-import { Contact } from "@/entities/Contact";
+import { ContactServer } from "@/entities/Contact";
 import { FAQ } from "@/entities/FAQ";
 
 function CatalogPage() {
@@ -9,7 +9,7 @@ function CatalogPage() {
       <CatalogBanner />
       <CatalogProducts />
       <FAQ />
-      {/* <Contact /> */}
+      <ContactServer />
     </>
   );
 }
