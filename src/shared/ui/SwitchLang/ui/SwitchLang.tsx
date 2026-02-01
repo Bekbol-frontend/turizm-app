@@ -9,19 +9,19 @@ import { clsx } from "@/shared/lib/clsx";
 import { useRef, useState } from "react";
 import { useOnClickOutside } from "@/shared/lib/useOnClickOutside";
 
-type Langs = "uz" | "qq" | "ru" | "en";
+type Langs = "uz" | "kk" | "ru" | "en";
 type Lang = Record<Langs, string>;
 
 const lang: Lang = {
   uz: "O'zbek",
-  qq: "Qaraqalpaq",
+  kk: "Qaraqalpaq",
   ru: "Русский",
   en: "English",
 };
 
 const languages: { code: Langs; name: string }[] = [
   { code: "uz", name: "O'zbek" },
-  { code: "qq", name: "Qaraqalpaq" },
+  { code: "kk", name: "Qaraqalpaq" },
   { code: "ru", name: "Русский" },
   { code: "en", name: "English" },
 ];

@@ -27,8 +27,17 @@ import "swiper/css/navigation";
 import { Button } from "@/shared/ui/Button";
 import { useCallback, useRef, useState } from "react";
 import { clsx } from "@/shared/lib/clsx";
+import { baseURL } from "@/shared/api";
 
-function AboutSwiper() {
+interface IProps {
+  data: {
+    id: number;
+    image_path: string;
+    sort_order: number;
+  }[];
+}
+
+function AboutSwiper({ data }: IProps) {
   const sliderRef = useRef<SwiperRef>(null);
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
@@ -72,11 +81,11 @@ function AboutSwiper() {
       }}
       className={styles.swiperWrapper}
     >
-      {items.map((el) => (
+      {data.map((el) => (
         <SwiperSlide key={el.id} className={styles.swiperItem}>
           <Image
-            src={el.img}
-            alt="about"
+            src={`${baseURL}/${el.image_path}`}
+            alt="toqtarbay tour"
             width={300}
             height={300}
             className={styles.img}

@@ -1,0 +1,90 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-index-modal, 1000);
+  padding: 20px;
+
+  // Ochilish animatsiyasi
+  animation: fadeIn 0.3s ease-out;
+
+  .content {
+    background-color: var(--base-white, #fff);
+    padding: 24px;
+    border-radius: var(--rounded, 12px);
+    max-width: 1000px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+
+    // Ochilish animatsiyasi
+    animation: slideUp 0.3s ease-out;
+  }
+
+  // Yopilish animatsiyasi
+  &.closing {
+    animation: fadeOut 0.3s ease-out;
+
+    .content {
+      animation: slideDown 0.3s ease-out;
+    }
+  }
+}
+
+// Backdrop animatsiyalari
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+// Content animatsiyalari
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+}
+
+@media (max-width: 768px) {
+  .modal {
+    padding: 10px;
+
+    .content {
+      padding: 20px;
+      max-height: 95vh;
+    }
+  }
+}

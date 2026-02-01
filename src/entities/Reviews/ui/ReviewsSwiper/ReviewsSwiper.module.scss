@@ -6,6 +6,8 @@
     background-color: var(--base-white);
     padding: 25px 20px;
     border: 1px solid var(--base-border);
+    position: relative;
+    overflow: hidden;
 
     .swiperItemInner {
       .descName {

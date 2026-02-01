@@ -6,41 +6,6 @@ import { Navigation } from "swiper/modules";
 import styles from "./ReviewsSwiper.module.scss";
 import RightIcon from "@/shared/assets/icons/arrow-right-long-line.svg";
 
-const items = [
-  {
-    id: 1,
-    name: "Елена",
-    rating: 5.0,
-    country: "Москва",
-    title: "Аральское море и Каньоны",
-    desc: "«Я не ожидала такой красоты. Закат на берегу Арала — это лучший вид в моей жизни. Спасибо Токтарбай-ага и команде, организация на высшем уровне!»",
-  },
-  {
-    id: 2,
-    name: "Азиз",
-    rating: 4.0,
-    country: "Ташкент",
-    title: "Каракол и озеро Сонкуль",
-    desc: "«Я не ожидала такой красоты. Закат на берегу Арала — это лучший вид в моей жизни. Спасибо Токтарбай-ага и команде, организация на высшем уровне!»",
-  },
-  {
-    id: 3,
-    name: "Елена",
-    rating: 4.3,
-    country: "Москва",
-    title: "Аральское море и Каньоны",
-    desc: "«Я не ожидала такой красоты. Закат на берегу Арала — это лучший вид в моей жизни. Спасибо Токтарбай-ага и команде, организация на высшем уровне!»",
-  },
-  {
-    id: 4,
-    name: "Азиз",
-    rating: 3.8,
-    country: "Ташкент",
-    title: "Каракол и озеро Сонкуль",
-    desc: "«Я не ожидала такой красоты. Закат на берегу Арала — это лучший вид в моей жизни. Спасибо Токтарбай-ага и команде, организация на высшем уровне!»",
-  },
-];
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -49,8 +14,14 @@ import { useCallback, useRef, useState } from "react";
 import { clsx } from "@/shared/lib/clsx";
 import { Paragraph } from "@/shared/ui/Paragraph";
 import { useResponsive } from "@/shared/lib/useResponsive";
+import { IReview } from "../../types";
+import YoutubeBtn from "./YoutubeBtn/YoutubeBtn";
 
-function ReviewsSwiper() {
+interface IProps {
+  data: IReview[];
+}
+
+function ReviewsSwiper({ data }: IProps) {
   const sliderRef = useRef<SwiperRef>(null);
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
@@ -96,14 +67,15 @@ function ReviewsSwiper() {
       }}
       className={styles.swiperWrapper}
     >
-      {items.map((el) => (
+      {data.map((el) => (
         <SwiperSlide key={el.id} className={styles.swiperItem}>
+          <YoutubeBtn user_name={el.user_name} link={el.video_url} />
           <div className={styles.swiperItemInner}>
             <Paragraph
               className={styles.descName}
               type={mobile ? "small" : "large"}
             >
-              {el.name}
+              {el.user_name}
             </Paragraph>
             <div className={styles.ratingWrapper}>
               <Paragraph type={mobile ? "large" : "small"}>
@@ -111,19 +83,19 @@ function ReviewsSwiper() {
               </Paragraph>
               <span className={styles.rating} />
             </div>
-            <Paragraph
+            {/* <Paragraph
               type={mobile ? "small" : "medium"}
               className={styles.country}
             >
               {el.country}
-            </Paragraph>
+            </Paragraph> */}
 
             <div className={styles.tag}>
               <Paragraph type={mobile ? "small" : "medium"}>
-                {el.title}
+                {el.tour.title}
               </Paragraph>
             </div>
-            <Paragraph type="medium">{el.desc}</Paragraph>
+            {/* <Paragraph type="medium">{el.desc}</Paragraph> */}
           </div>
         </SwiperSlide>
       ))}

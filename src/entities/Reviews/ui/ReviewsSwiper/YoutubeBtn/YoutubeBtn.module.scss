@@ -1,0 +1,26 @@
+.spanYoutube {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: var(--primary-50);
+  border-radius: 0 0 0 10px;
+}
+
+.modalBody {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  iframe {
+    width: 100%;
+    min-height: 500px;
+
+    @media screen and (max-width: 768px) {
+      min-height: 300px;
+    }
+  }
+}

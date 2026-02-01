@@ -25,7 +25,7 @@ async function About() {
   const locale = await getLocale();
   const res = await getAbout(locale);
 
-  const { image, title } = res.data.data;
+  const { image, title, description } = res.data.data;
 
   return (
     <>
@@ -42,34 +42,23 @@ async function About() {
                 className={styles.img}
               />
             </div>
+
             <div className={styles.textBlock}>
               <Heading type="small" className={styles.title}>
-                Ваш надежный проводник в мире приключений
+                {title}
               </Heading>
               <Title type="small" className={styles.titleMobile}>
-                Ваш надежный проводник в мире приключений
+                {title}
               </Title>
               <Paragraph type="medium" className={styles.desc}>
-                Мы организуем комфортные экспедиции по самым труднодоступным и
-                живописным местам Каракалпакстана. В нашем арсенале — надежные
-                внедорожники для покорения пустыни, опытные гиды-историки и
-                собственный уютный хостел для отдыха после долгой дороги. Мы
-                берем на себя все заботы: от трансфера и питания до выбора
-                лучших локаций для фото, чтобы вы могли просто наслаждаться
-                моментом.
+                {description}
               </Paragraph>
               <Paragraph type="small" className={styles.descMobile}>
-                Мы организуем комфортные экспедиции по самым труднодоступным и
-                живописным местам Каракалпакстана. В нашем арсенале — надежные
-                внедорожники для покорения пустыни, опытные гиды-историки и
-                собственный уютный хостел для отдыха после долгой дороги. Мы
-                берем на себя все заботы: от трансфера и питания до выбора
-                лучших локаций для фото, чтобы вы могли просто наслаждаться
-                моментом.
+                {description}
               </Paragraph>
             </div>
 
-            <AboutSwiper />
+            <AboutSwiper data={res.data.data.images} />
           </div>
         </Container>
       </section>
