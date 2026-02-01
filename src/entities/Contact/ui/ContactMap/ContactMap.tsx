@@ -1,15 +1,16 @@
 "use client";
 
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import type { LatLngExpression } from "leaflet";
-import MapLocationIcon from "@/shared/assets/icons/map-location.svg";
 import L from "leaflet";
 
 import "leaflet/dist/leaflet.css";
 
-const center: LatLngExpression = [41.2995, 69.2401];
+interface IProps {
+  longitude: number;
+  latitude: number;
+}
 
-function ContactMap() {
+function ContactMap({ longitude, latitude }: IProps) {
   const customIcon = new L.Icon({
     iconUrl: "/map/map.png",
     iconSize: [54, 64],
@@ -20,13 +21,13 @@ function ContactMap() {
   return (
     <div>
       <MapContainer
-        center={center}
+        center={[latitude, longitude]}
         zoom={15}
         style={{ height: "400px", width: "100%", borderRadius: 6 }}
       >
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-        <Marker position={[41.2995, 69.2401]} icon={customIcon}>
-          <Popup>Toshkent</Popup>
+        <Marker position={[latitude, longitude]} icon={customIcon}>
+          <Popup>Toqtarbay Tours</Popup>
         </Marker>
       </MapContainer>
     </div>

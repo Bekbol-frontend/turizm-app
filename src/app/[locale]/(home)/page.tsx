@@ -1,6 +1,6 @@
 import { About } from "@/entities/About";
 import { Banner } from "@/entities/Banner";
-import { Contact } from "@/entities/Contact";
+import { Contact, ContactServer } from "@/entities/Contact";
 import { FAQ } from "@/entities/FAQ";
 import { PopularTours } from "@/entities/PopularTours";
 import { Reviews } from "@/entities/Reviews";
@@ -18,7 +18,8 @@ function HomePage() {
       <About />
       <Reviews />
       <FAQ />
-      <Contact />
+      {/* <Contact /> */}
+      <ContactServer />
     </>
   );
 }

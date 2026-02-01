@@ -4,6 +4,8 @@ import TelegramIcon from "@/shared/assets/icons/telegram.svg";
 import { Paragraph } from "@/shared/ui/Paragraph";
 import styles from "./ContactSocial.module.scss";
 import Image from "next/image";
+import { IContact } from "../../types";
+import { clsx } from "@/shared/lib/clsx";
 
 const contactItems = [
   {
@@ -29,32 +31,60 @@ const contactItems = [
   },
 ];
 
-function ContactSocial() {
+interface IProps {
+  data: IContact;
+}
+
+function ContactSocial({ data }: IProps) {
+  const { address, phone, email, telegram_username, telegram_url } = data;
+
   return (
     <div className={styles.wrapper}>
-      {contactItems.map((el) => (
-        <div key={el.title} className={styles.item}>
-          <span
-            style={{ backgroundColor: el.bgIcon }}
-            className={styles.iconSpan}
-          >
-            <Image
-              src={el.icon}
-              alt={el.title}
-              width={18}
-              height={18}
-              className={styles.img}
-            />
-          </span>
-          <div className={styles.right}>
-            <Paragraph type="small">
-              {el.title}
-              {el.link && <a href={`tel:${el.title}`} />}
-            </Paragraph>
-            <Paragraph type="small">{el.body}</Paragraph>
-          </div>
+      <div className={styles.item}>
+        <span className={clsx([styles.iconSpan, styles.map])}>
+          <Image
+            src={LocationIcon}
+            alt={address}
+            width={18}
+            height={18}
+            className={styles.img}
+          />
+        </span>
+        <div className={styles.right}>
+          <Paragraph type="small">{address}</Paragraph>
         </div>
-      ))}
+      </div>
+      <div className={styles.item}>
+        <span className={clsx([styles.iconSpan, styles.phone])}>
+          <Image
+            src={PhoneIcon}
+            alt={phone}
+            width={18}
+            height={18}
+            className={styles.img}
+          />
+        </span>
+        <div className={styles.right}>
+          <Paragraph type="small">{phone}</Paragraph>
+          <Paragraph type="small">{email}</Paragraph>
+        </div>
+      </div>
+      <div className={styles.item}>
+        <a href={telegram_url} target="_blank" className={styles.link} />
+        <span className={clsx([styles.iconSpan, styles.telegram])}>
+          <Image
+            src={TelegramIcon}
+            alt={phone}
+            width={18}
+            height={18}
+            className={styles.img}
+          />
+        </span>
+        <div className={styles.right}>
+          <Paragraph type="small">{telegram_username}</Paragraph>
+          <Paragraph type="small">{phone}</Paragraph>
+        </div>
+      </div>
     </div>
   );
 }

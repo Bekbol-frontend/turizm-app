@@ -9,7 +9,7 @@
   pointer-events: none;
 
   &.show {
-    z-index: 100;
+    z-index: var(--z-index-modal);
     opacity: 1;
     pointer-events: all;
 

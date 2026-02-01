@@ -11,7 +11,6 @@ function HeaderMenuDrawer({ onCloseDrawer }: IProps) {
   return (
     <div className={styles.wrapper}>
       <HeaderMenu isMobile onCloseDrawer={onCloseDrawer} />
-      <ContactSocial />
       <SwitchLang isMobile />
     </div>
   );

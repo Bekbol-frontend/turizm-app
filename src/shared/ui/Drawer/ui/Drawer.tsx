@@ -9,6 +9,8 @@ import { clsx } from "@/shared/lib/clsx";
 import { ReactNode, useCallback, useEffect, useState } from "react";
 import { Portal } from "../../Portal";
 
+const TIMER = 100;
+
 interface IProps {
   className?: string;
   children: ReactNode;
@@ -25,7 +27,10 @@ function Drawer(props: IProps) {
   const { mobile } = useResponsive();
 
   const onCloseDrawer = useCallback(() => {
-    setTimeout(() => onClose());
+    setTimeout(() => {
+      onClose();
+    }, TIMER);
+
     setShow(false);
   }, [onClose]);
 
@@ -41,7 +46,7 @@ function Drawer(props: IProps) {
       window.addEventListener("keyup", onKeyUp);
       setTimeout(() => {
         setShow(true);
-      });
+      }, TIMER);
     }
 
     return () => {

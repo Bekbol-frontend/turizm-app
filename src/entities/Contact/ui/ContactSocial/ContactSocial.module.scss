@@ -19,6 +19,12 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    position: relative;
+
+    .link {
+      position: absolute;
+      inset: 0;
+    }
 
     .iconSpan {
       display: inline-flex;
@@ -26,6 +32,18 @@
       justify-content: center;
       padding: 12px;
       border-radius: var(--rounded);
+
+      &.map {
+        background-color: var(--secondary-350);
+      }
+
+      &.phone {
+        background-color: var(--primary-300);
+      }
+
+      &.telegram {
+        background-color: var(--primary-150);
+      }
 
       @media screen and (max-width: 768px) {
         padding: 8px;
