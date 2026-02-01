@@ -6,10 +6,27 @@ import Image from "next/image";
 import { Heading } from "@/shared/ui/Heading";
 import { Paragraph } from "@/shared/ui/Paragraph";
 import AboutSwiper from "./AboutSwiper/AboutSwiper";
-import { useResponsive } from "@/shared/lib/useResponsive";
 import { Title } from "@/shared/ui/Title";
+import { API, baseURL } from "@/shared/api";
+import { getLocale } from "next-intl/server";
+import { IData } from "@/shared/types/data";
+import { IAbout } from "../types";
 
-function About() {
+const getAbout = async (lang: string) => {
+  return await API.get<IData<IAbout>>("/about", {
+    headers: {
+      "Content-Type": "application/json",
+      "Accept-Language": lang,
+    },
+  });
+};
+
+async function About() {
+  const locale = await getLocale();
+  const res = await getAbout(locale);
+
+  const { image, title } = res.data.data;
+
   return (
     <>
       <SectionTitle title={"About"} />
@@ -18,8 +35,8 @@ function About() {
           <div className={styles.content}>
             <div className={styles.mainImgWrapper}>
               <Image
-                src={MainImg}
-                alt="about"
+                src={`${baseURL}/${image}`}
+                alt={title}
                 width={500}
                 height={500}
                 className={styles.img}

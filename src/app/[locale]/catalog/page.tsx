@@ -9,7 +9,7 @@ function CatalogPage() {
       <CatalogBanner />
       <CatalogProducts />
       <FAQ />
-      <Contact />
+      {/* <Contact /> */}
     </>
   );
 }

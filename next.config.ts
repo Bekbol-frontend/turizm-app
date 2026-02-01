@@ -8,6 +8,16 @@ const withNextIntl = createNextIntlPlugin(
 /** @type {import('next').NextConfig} */
 const nextConfig: NextConfig = {
   devIndicators: false,
+  images: {
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "toqtarbay.dbc.uz",
+        port: "",
+        pathname: "/api/uploads/**",
+      },
+    ],
+  },
 };
 
 export default withNextIntl(nextConfig);
