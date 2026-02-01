@@ -27,11 +27,11 @@ function YoutubeBtn({ user_name, link }: IProps) {
         <Image src={YoutubeImage} alt={user_name} width={60} height={48} />
       </span>
 
-      <Modal lazy isOpen={modal} onClose={onCloseModal}>
+      <Modal lazy isOpen={modal} onClose={onCloseModal} title="Reviews video">
         <div className={styles.modalBody}>
           <iframe
             width="100%"
-            src="https://www.youtube.com/embed/muoUcoe9-Z0?si=xq3IImHFmK0SiIvw"
+            src="https://www.youtube.com/embed/-PJ30prZxKQ?si=SLh3MVoFEWguUApF"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             style={{

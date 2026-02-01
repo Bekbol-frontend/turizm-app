@@ -10,6 +10,8 @@ interface IProps {
   onClose: () => void;
   closeOnBackdrop?: boolean;
   closeOnEsc?: boolean;
+  showCloseButton?: boolean;
+  title?: string;
 }
 
 function Modal({
@@ -19,6 +21,8 @@ function Modal({
   onClose,
   closeOnBackdrop = true,
   closeOnEsc = true,
+  showCloseButton = true,
+  title,
 }: IProps) {
   const modalRef = useRef<HTMLDivElement>(null);
 
@@ -78,7 +82,35 @@ function Modal({
         onClick={handleBackdropClick}
       >
         <div className={styles.content} onClick={(e) => e.stopPropagation()}>
-          {children}
+          {showCloseButton && (
+            <button
+              className={styles.closeButton}
+              onClick={handleClose}
+              aria-label="Yopish"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </button>
+          )}
+
+          {title && (
+            <div className={styles.header}>
+              <h2 className={styles.title}>{title}</h2>
+            </div>
+          )}
+
+          <div className={styles.body}>{children}</div>
         </div>
       </div>
     </Portal>

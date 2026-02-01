@@ -9,7 +9,6 @@
   z-index: var(--z-index-modal, 1000);
   padding: 20px;
 
-  // Ochilish animatsiyasi
   animation: fadeIn 0.3s ease-out;
 
   .content {
@@ -21,12 +20,59 @@
     max-height: 90vh;
     overflow-y: auto;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    position: relative;
 
-    // Ochilish animatsiyasi
     animation: slideUp 0.3s ease-out;
   }
 
-  // Yopilish animatsiyasi
+  .closeButton {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-secondary, #666);
+    transition: all 0.2s ease;
+    z-index: 10;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+      color: var(--text-primary, #000);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .header {
+    margin-bottom: 20px;
+    padding-right: 40px;
+
+    .title {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--text-primary, #000);
+    }
+  }
+
+  .body {
+    padding: 5px;
+  }
+
   &.closing {
     animation: fadeOut 0.3s ease-out;
 
@@ -36,7 +82,6 @@
   }
 }
 
-// Backdrop animatsiyalari
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -55,7 +100,6 @@
   }
 }
 
-// Content animatsiyalari
 @keyframes slideUp {
   from {
     opacity: 0;
@@ -85,6 +129,19 @@
     .content {
       padding: 20px;
       max-height: 95vh;
+    }
+
+    .closeButton {
+      top: 12px;
+      right: 12px;
+      width: 36px;
+      height: 36px;
+    }
+
+    .header {
+      .title {
+        font-size: 20px;
+      }
     }
   }
 }

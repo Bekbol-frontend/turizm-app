@@ -1,8 +1,9 @@
 export interface IReview {
   id: number;
   user_name: string;
+  city: string;
+  comment: string;
   rating: number;
-  review_text: string;
   video_url: string;
   tour: {
     id: number;

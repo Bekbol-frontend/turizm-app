@@ -83,19 +83,19 @@ function ReviewsSwiper({ data }: IProps) {
               </Paragraph>
               <span className={styles.rating} />
             </div>
-            {/* <Paragraph
+            <Paragraph
               type={mobile ? "small" : "medium"}
               className={styles.country}
             >
-              {el.country}
-            </Paragraph> */}
+              {el.city}
+            </Paragraph>
 
             <div className={styles.tag}>
               <Paragraph type={mobile ? "small" : "medium"}>
                 {el.tour.title}
               </Paragraph>
             </div>
-            {/* <Paragraph type="medium">{el.desc}</Paragraph> */}
+            <Paragraph type="medium">{el.comment}</Paragraph>
           </div>
         </SwiperSlide>
       ))}
