@@ -31,7 +31,7 @@ function YoutubeBtn({ user_name, link }: IProps) {
         <div className={styles.modalBody}>
           <iframe
             width="100%"
-            src="https://www.youtube.com/embed/-PJ30prZxKQ?si=SLh3MVoFEWguUApF"
+            src={link}
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             style={{
