@@ -24,12 +24,27 @@ function HeaderMenuLink({ name, path, className = "", onCloseDrawer }: IProps) {
     onCloseDrawer?.();
   }, [onCloseDrawer]);
 
+  // Active holatni aniqlash
+  const isActive = () => {
+    // Agar path "/" bo'lsa, faqat aniq "/" da active bo'lsin
+    if (path === "/") {
+      return pathnameWithoutLocale === "/";
+    }
+
+    // Boshqa path lar uchun startsWith ishlatamiz
+    // Lekin oxirida "/" yo'qligiga ishonch hosil qilamiz
+    return (
+      pathnameWithoutLocale === path ||
+      pathnameWithoutLocale.startsWith(path + "/")
+    );
+  };
+
   return (
     <Link
       href={path}
       key={name}
       className={clsx([styles.link, className], {
-        [styles.active]: pathnameWithoutLocale === path,
+        [styles.active]: isActive(),
       })}
       onClick={onClose}
     >

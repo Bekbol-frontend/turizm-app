@@ -1,4 +1,3 @@
-import { IProduct } from "@/entities/PopularTours/productItems";
 import styles from "./Product.module.scss";
 import Image from "next/image";
 import { Title } from "@/shared/ui/Title";
@@ -8,40 +7,61 @@ import { Button } from "@/shared/ui/Button";
 import { PhoneBtn } from "@/shared/ui/PhoneBtn";
 import Link from "next/link";
 import { appRoutes } from "@/shared/config/routeConfig";
+import { IProduct } from "../types";
+import { baseURL } from "@/shared/api";
+import { useTranslations } from "next-intl";
 
 interface IProps {
   data: IProduct;
 }
 
 function Product({ data }: IProps) {
-  const { imgUrl, title, day, ball, name, price, phone } = data;
+  const t = useTranslations("Product");
+
+  const {
+    main_image,
+    title,
+    rating,
+    reviews_count,
+    duration_days,
+    duration_nights,
+    price,
+    slogan,
+  } = data;
 
   return (
     <div className={styles.product}>
-      <Link href={`${appRoutes.product}/${data.id}`} className={styles.link} />
+      <Link href={`${appRoutes.catalog}/${data.id}`} className={styles.link} />
       <div className={styles.imgBlock}>
-        <Image src={imgUrl} alt="product" width={300} height={300} />
+        <Image
+          src={`${baseURL}/${main_image}`}
+          alt="product"
+          width={300}
+          height={300}
+        />
       </div>
       <div className={styles.body}>
         <Title type="small">{title}</Title>
         <Paragraph className={styles.day} type="medium">
-          {day}
+          {duration_nights !== 0
+            ? `${duration_days} ${t("day")} / ${duration_nights} ${t("night")}`
+            : `${duration_days} ${t("day")}`}
         </Paragraph>
         <div className={styles.ball}>
-          <Paragraph type="small">{ball.rating}</Paragraph>
+          <Paragraph type="small">{rating}</Paragraph>
           <Paragraph
             type="medium"
             className={styles.count}
-          >{`(${ball.count})`}</Paragraph>
-          <StarBall rating={ball.rating} />
+          >{`(${reviews_count})`}</Paragraph>
+          <StarBall rating={rating} />
         </div>
-        <Paragraph className={styles.name}>{name}</Paragraph>
+        <Paragraph className={styles.name}>{slogan}</Paragraph>
         <Title type="medium" className={styles.price}>
-          {price}
+          от {price} сум
         </Title>
         <div className={styles.btns}>
           <Button variyant="secondary">Забронировать</Button>
-          <PhoneBtn phone={phone} />
+          {/* <PhoneBtn phone={phone} /> */}
         </div>
       </div>
     </div>

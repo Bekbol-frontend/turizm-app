@@ -9,14 +9,15 @@ const withNextIntl = createNextIntlPlugin(
 const nextConfig: NextConfig = {
   devIndicators: false,
   images: {
-    remotePatterns: [
-      {
-        protocol: "http",
-        hostname: "toqtarbay.dbc.uz",
-        port: "",
-        pathname: "/api/uploads/**",
-      },
-    ],
+    unoptimized: true,
+    // remotePatterns: [
+    //   {
+    //     protocol: "http",
+    //     hostname: "toqtarbay.dbc.uz",
+    //     port: "",
+    //     pathname: "/api/storage/uploads/**",
+    //   },
+    // ],
   },
 };
 

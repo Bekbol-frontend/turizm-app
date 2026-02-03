@@ -1,0 +1,33 @@
+export interface IProduct {
+  id: number;
+  title: string;
+  slogan: string;
+  description: string;
+  routes: string;
+  important_info: string;
+  price: number;
+  duration_days: number;
+  duration_nights: number;
+  min_age: number;
+  max_people: number;
+  rating: number;
+  reviews_count: number;
+  category: {
+    id: number;
+    name: string;
+  };
+  main_image: string;
+  images: {
+    id: number;
+    url: string;
+    is_main: boolean;
+  }[];
+
+  itineraries: {
+    day_number: number;
+    event_time: string;
+    activity_title: string;
+    activity_description: string;
+  }[];
+  features: [];
+}

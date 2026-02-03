@@ -1,14 +1,28 @@
-import { Product } from "@/entities/Product";
+import { IProduct, Product } from "@/entities/Product";
 import { Container } from "@/shared/ui/Container";
 import styles from "./PopularTours.module.scss";
-import { productItems } from "../productItems";
+import { API } from "@/shared/api";
+import { getLocale } from "next-intl/server";
+import { IData } from "@/shared/types/data";
 
-function PopularTours() {
+const getPopularTours = async (lang: string) => {
+  return await API.get<IData<IProduct[]>>("/tours/top-rated", {
+    headers: {
+      "Content-Type": "application/json",
+      "Accept-Language": lang,
+    },
+  });
+};
+
+async function PopularTours() {
+  const locale = await getLocale();
+  const res = await getPopularTours(locale);
+
   return (
     <section className={styles.section}>
       <Container>
         <div className={styles.products}>
-          {productItems.map((el) => (
+          {res.data.data.map((el) => (
             <Product data={el} key={el.id} />
           ))}
         </div>

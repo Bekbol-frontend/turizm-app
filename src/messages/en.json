@@ -22,5 +22,17 @@
     "title": "We have a small breakdown on the way",
     "desc": "Our servers may have overheated slightly in the sun or been caught in a sandstorm. We're working on fixes. Please try refreshing the page in a minute",
     "Refresh page": "Refresh page"
+  },
+  "Product": {
+    "day": "day",
+    "night": "night",
+    "Book": "Book",
+    "The price depends on the number of people in the group": "*The price depends on the number of people in the group",
+    "Max number of travelers": "Max number of travelers",
+    "Age": "Age",
+    "Road map": "Road map",
+    "Brief description": "Brief description",
+    "Tour program": "Tour program",
+    "The price includes": "The price includes"
   }
 }

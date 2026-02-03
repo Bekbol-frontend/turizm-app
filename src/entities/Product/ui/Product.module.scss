@@ -60,6 +60,12 @@
     .name {
       margin-block: 10px;
       color: var(--base-black);
+
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1; /* Number of lines to show */
+      line-clamp: 1; /* Standard property */
     }
 
     .price {
