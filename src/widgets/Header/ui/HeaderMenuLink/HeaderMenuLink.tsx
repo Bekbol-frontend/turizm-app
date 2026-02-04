@@ -18,21 +18,17 @@ function HeaderMenuLink({ name, path, className = "", onCloseDrawer }: IProps) {
   const pathname = usePathname();
   const t = useTranslations("Navigation");
 
-  const pathnameWithoutLocale = pathname.replace(/^\/(ru|en|uz|qq)/, "") || "/";
+  const pathnameWithoutLocale = pathname.replace(/^\/(ru|en|uz|kk)/, "") || "/";
 
   const onClose = useCallback(() => {
     onCloseDrawer?.();
   }, [onCloseDrawer]);
 
-  // Active holatni aniqlash
   const isActive = () => {
-    // Agar path "/" bo'lsa, faqat aniq "/" da active bo'lsin
     if (path === "/") {
       return pathnameWithoutLocale === "/";
     }
 
-    // Boshqa path lar uchun startsWith ishlatamiz
-    // Lekin oxirida "/" yo'qligiga ishonch hosil qilamiz
     return (
       pathnameWithoutLocale === path ||
       pathnameWithoutLocale.startsWith(path + "/")
