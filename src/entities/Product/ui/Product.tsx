@@ -41,7 +41,12 @@ function Product({ data }: IProps) {
         />
       </div>
       <div className={styles.body}>
-        <Title type="small">{title}</Title>
+        <Title type="small" className={styles.title}>
+          {title}
+        </Title>
+        <Paragraph type="medium" className={styles.titleMobile}>
+          {title}
+        </Paragraph>
         <Paragraph className={styles.day} type="medium">
           {duration_nights !== 0
             ? `${duration_days} ${t("day")} / ${duration_nights} ${t("night")}`
@@ -57,8 +62,11 @@ function Product({ data }: IProps) {
         </div>
         <Paragraph className={styles.name}>{slogan}</Paragraph>
         <Title type="medium" className={styles.price}>
-          от {price} сум
+          {t("from")} {price} {t("sum")}
         </Title>
+        <Paragraph className={styles.priceDesc}>
+          {t("from")} {price} {t("sum")}
+        </Paragraph>
         <div className={styles.btns}>
           <Button variyant="secondary">Забронировать</Button>
           {/* <PhoneBtn phone={phone} /> */}

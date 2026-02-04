@@ -33,12 +33,29 @@
   .body {
     padding: 15px;
 
+    .title {
+      margin-bottom: 7px;
+
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+    }
+
+    .titleMobile {
+      display: none;
+
+      @media screen and (max-width: 768px) {
+        display: block;
+        margin-bottom: 7px;
+      }
+    }
+
     .day {
       background-color: var(--base-border);
       border-radius: var(--rounded);
       padding: 5px 20px;
       display: inline-flex;
-      margin-block: 10px;
+      margin-block: 13px;
     }
 
     .ball {
@@ -64,13 +81,27 @@
       overflow: hidden;
       display: -webkit-box;
       -webkit-box-orient: vertical;
-      -webkit-line-clamp: 1; /* Number of lines to show */
-      line-clamp: 1; /* Standard property */
+      -webkit-line-clamp: 1;
+      line-clamp: 1;
     }
 
     .price {
       color: var(--primary-300);
       margin-bottom: 20px;
+
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+    }
+
+    .priceDesc {
+      color: var(--primary-300);
+      display: none;
+
+      @media screen and (max-width: 768px) {
+        margin-bottom: 20px;
+        display: block;
+      }
     }
 
     .btns {

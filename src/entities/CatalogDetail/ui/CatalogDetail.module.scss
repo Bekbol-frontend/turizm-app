@@ -1,6 +1,10 @@
 .section {
   padding-block: 60px;
 
+  @media screen and (max-width: 768px) {
+    padding-block: 40px;
+  }
+
   .content {
     .mainTitle {
       margin-bottom: 30px;
