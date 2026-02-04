@@ -1,0 +1,25 @@
+.block {
+  .mainTitle {
+    margin-bottom: 20px;
+  }
+
+  .textBlockWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .textInfoBlock {
+      .title {
+        font-weight: 500;
+        color: var(--base-black);
+        display: inline-block;
+        font-size: 17px;
+      }
+      .desc {
+        font-weight: 400;
+        color: var(--gray-150);
+        display: inline-block;
+      }
+    }
+  }
+}

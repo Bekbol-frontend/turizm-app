@@ -1,0 +1,78 @@
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 30px;
+
+  .innerBlock {
+    .title {
+      margin-bottom: 20px;
+
+      @media screen and (max-width: 768px) {
+        margin-bottom: 15px;
+        font-size: 18px !important;
+      }
+    }
+
+    .items {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .item {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        @media screen and (max-width: 768px) {
+          border-bottom: 1px solid var(--base-border);
+          padding-bottom: 15px;
+
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+
+        .iconSpan,
+        .iconSpanNot {
+          padding: 10px 20px;
+          border: 1px solid var(--primary-150);
+          border-radius: var(--rounded);
+          font-size: 20px;
+          width: 100px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          @media screen and (max-width: 768px) {
+            width: 50px;
+            font-size: 18px;
+            padding: 8px;
+          }
+        }
+
+        .iconSpanNot {
+          border: 1px solid #ff839e !important;
+        }
+
+        .itemDesc {
+          color: var(--base-black);
+          margin-bottom: 5px;
+
+          @media screen and (max-width: 768px) {
+            font-size: 13px;
+            margin-bottom: 2px;
+          }
+        }
+
+        .itemName {
+          color: var(--gray-150);
+
+          @media screen and (max-width: 768px) {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}

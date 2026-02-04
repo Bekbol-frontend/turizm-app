@@ -6,7 +6,6 @@ import { Title } from "@/shared/ui/Title";
 import { Paragraph } from "@/shared/ui/Paragraph";
 import { useMemo, useState } from "react";
 import { clsx } from "@/shared/lib/clsx";
-import { div } from "framer-motion/client";
 
 interface IProps {
   data: IProduct;

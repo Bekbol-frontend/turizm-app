@@ -26,38 +26,39 @@ function CatalogProducts() {
   }, []);
 
   useEffect(() => {
-    try {
-      setLoading(true);
-      const getPopularTours = async () => {
-        const res = await API.get<IData<IProduct[]>>("/tours", {
-          headers: {
-            "Content-Type": "application/json",
-            "Accept-Language": locale,
-          },
-        });
-        console.log(res);
-        setProducts(res.data.data);
-      };
+    const fetchData = async () => {
+      try {
+        setLoading(true);
 
-      const getCategories = async () => {
-        const res = await API.get<IData<ICategory[]>>("/categories", {
-          headers: {
-            "Content-Type": "application/json",
-            "Accept-Language": locale,
-          },
-        });
-        setCategories(res.data.data);
-      };
+        const [toursRes, categoriesRes] = await Promise.all([
+          API.get<IData<IProduct[]>>("/tours", {
+            headers: {
+              "Content-Type": "application/json",
+              "Accept-Language": locale,
+            },
+          }),
+          API.get<IData<ICategory[]>>("/categories", {
+            headers: {
+              "Content-Type": "application/json",
+              "Accept-Language": locale,
+            },
+          }),
+        ]);
 
-      getPopularTours();
-      getCategories();
-    } catch (error) {
-    } finally {
-      setLoading(false);
-    }
+        setProducts(toursRes.data.data);
+        setCategories(categoriesRes.data.data);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
   }, [locale]);
 
   const tours = useMemo(() => {
+    if (!products.length) return [];
     return products.filter((el) => el.category.id === typeCategory);
   }, [products, typeCategory]);
 

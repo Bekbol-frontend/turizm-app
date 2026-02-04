@@ -29,5 +29,11 @@ export interface IProduct {
     activity_title: string;
     activity_description: string;
   }[];
-  features: [];
+  features: {
+    description: string;
+    icon: string;
+    id: number;
+    is_included: boolean;
+    name: string;
+  }[];
 }

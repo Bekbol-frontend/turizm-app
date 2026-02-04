@@ -15,7 +15,8 @@ import CatalogDetailInfo from "./CatalogDetailInfo/CatalogDetailInfo";
 import { useResponsive } from "@/shared/lib/useResponsive";
 import TourProgram from "./TourProgram/TourProgram";
 import { useLocale } from "next-intl";
-import ThePriceInCatalog from "./ThePriceInCatalog/ThePriceInCatalog";
+import ThePriseCatalog from "./ThePriseCatalog/ThePriseCatalog";
+import ImportantInformation from "./ImportantInformation/ImportantInformation";
 
 function CatalogDetail() {
   const params = useParams();
@@ -76,7 +77,8 @@ function CatalogDetail() {
             <CatalogSwiperDetail />
             <CatalogDetailInfo data={tour} />
             <TourProgram data={tour} />
-            <ThePriceInCatalog data={tour} />
+            <ThePriseCatalog data={tour} />
+            <ImportantInformation />
           </div>
         </div>
       </Container>
