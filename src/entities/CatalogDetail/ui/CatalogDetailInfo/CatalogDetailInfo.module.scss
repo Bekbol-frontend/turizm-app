@@ -1,0 +1,166 @@
+.block {
+  .spanDurationDay {
+    background-color: var(--base-border);
+    padding: 5px 20px;
+    border-radius: var(--rounded);
+    font-size: 16px;
+    margin-bottom: 20px;
+
+    @media screen and (max-width: 768px) {
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+  }
+
+  .ratingWrapper {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 25px;
+
+    @media screen and (max-width: 768px) {
+      margin-bottom: 20px;
+    }
+
+    .reviewsDesc {
+      color: var(--gray-150);
+    }
+  }
+
+  .sloganTitle {
+    margin-bottom: 20px;
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .sloganDesc {
+    margin-bottom: 20px;
+    display: none;
+
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
+  }
+
+  .priceTitle {
+    margin-bottom: 10px;
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .priceDesc {
+    margin-bottom: 10px;
+    display: none;
+
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
+  }
+
+  .infoPriceTitle {
+    color: var(--gray-150);
+    margin-bottom: 25px;
+
+    @media screen and (max-width: 768px) {
+      margin-bottom: 20px;
+      display: none;
+    }
+  }
+
+  .infoPriceDesc {
+    color: var(--gray-150);
+    margin-bottom: 25px;
+    display: none;
+
+    @media screen and (max-width: 768px) {
+      margin-bottom: 20px;
+      display: block;
+    }
+  }
+
+  .infoCount {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+
+    @media screen and (max-width: 768px) {
+      margin-bottom: 20px;
+      flex-direction: column;
+    }
+
+    .infoCountInner {
+      .top {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin-bottom: 10px;
+      }
+
+      .desc {
+        color: var(--gray-150);
+      }
+    }
+  }
+
+  .btnBron {
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  .routesWrapper {
+    margin-block: 50px;
+    display: flex;
+    gap: 20px;
+
+    @media screen and (max-width: 768px) {
+      margin-block: 35px;
+    }
+
+    .routesIconSpan {
+      background-color: var(--secondary-350);
+      padding: 10px;
+      border-radius: var(--rounded);
+      align-self: stretch;
+      width: 50px;
+      height: 50px;
+    }
+
+    .routesTitle {
+      color: var(--base-black);
+      margin-bottom: 5px;
+
+      @media screen and (max-width: 768px) {
+        font-size: 16px;
+      }
+    }
+
+    .routesInfo {
+      color: var(--gray-150);
+
+      @media screen and (max-width: 768px) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .shortTitle {
+    @media screen and (max-width: 768px) {
+      font-size: 18px;
+    }
+  }
+
+  .descInfo {
+    color: var(--gray-250);
+    margin-block: 20px 40px;
+
+    @media screen and (max-width: 768px) {
+      margin-block: 15px 25px;
+      font-size: 14px;
+    }
+  }
+}

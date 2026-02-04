@@ -1,0 +1,24 @@
+.section {
+  padding-block: 60px;
+
+  .content {
+    .mainTitle {
+      margin-bottom: 30px;
+
+      @media screen and (max-width: 768px) {
+        margin-bottom: 20px;
+      }
+    }
+
+    .block {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 30px;
+
+      @media screen and (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}
