@@ -35,6 +35,7 @@ function CatalogProducts() {
             "Accept-Language": locale,
           },
         });
+        console.log(res);
         setProducts(res.data.data);
       };
 
@@ -82,12 +83,12 @@ function CatalogProducts() {
           <Empty />
         )}
 
-        <Button variyant="secondary" className={styles.loopBtn}>
+        {/* <Button variyant="secondary" className={styles.loopBtn}>
           <span>
             <Image src={LoopIcon} alt="turizm loop" width={16} height={16} />
           </span>
           Загрузить ещё
-        </Button>
+        </Button> */}
       </Container>
     </section>
   );
