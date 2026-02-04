@@ -6,6 +6,7 @@ import { Title } from "@/shared/ui/Title";
 import { Paragraph } from "@/shared/ui/Paragraph";
 import { useMemo, useState } from "react";
 import { clsx } from "@/shared/lib/clsx";
+import { useTranslations } from "next-intl";
 
 interface IProps {
   data: IProduct;
@@ -13,6 +14,7 @@ interface IProps {
 
 function TourProgram({ data }: IProps) {
   const { duration_days, itineraries } = data;
+  const t = useTranslations("Product");
 
   const [activeTab, setActiveTab] = useState(1);
   const daysArray = Array.from({ length: duration_days }, (_, i) => i + 1);
@@ -24,7 +26,7 @@ function TourProgram({ data }: IProps) {
   return (
     <div className={styles.block}>
       <Title type="medium" className={styles.mainTitle}>
-        Программа тура
+        {t("Tour program")}
       </Title>
 
       <div className={styles.tabBlock}>
@@ -37,7 +39,9 @@ function TourProgram({ data }: IProps) {
               })}
               onClick={() => setActiveTab(day)}
             >
-              <Paragraph type="small">День {day}</Paragraph>
+              <Paragraph type="small">
+                {t("day")} {day}
+              </Paragraph>
             </span>
           ))}
         </div>

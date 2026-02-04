@@ -3,6 +3,7 @@ import styles from "./ThePriseCatalog.module.scss";
 import { IProduct } from "@/entities/Product";
 import { div } from "framer-motion/client";
 import { Paragraph } from "@/shared/ui/Paragraph";
+import { useTranslations } from "next-intl";
 
 interface IProps {
   data: IProduct;
@@ -10,14 +11,13 @@ interface IProps {
 
 function ThePriseCatalog({ data }: IProps) {
   const { features } = data;
-
-  console.log(features);
+  const t = useTranslations("Product");
 
   return (
     <div className={styles.block}>
       <div className={styles.innerBlock}>
         <Title type="medium" className={styles.title}>
-          В стоимость входит
+          {t("The price includes")}
         </Title>
         <div className={styles.items}>
           {features
@@ -40,7 +40,7 @@ function ThePriseCatalog({ data }: IProps) {
 
       <div className={styles.innerBlock}>
         <Title type="medium" className={styles.title}>
-          Не входит
+          {t("Not included")}
         </Title>
         <div className={styles.items}>
           {features

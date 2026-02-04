@@ -2,34 +2,37 @@
 
 import { Title } from "@/shared/ui/Title";
 import styles from "./ImportantInformation.module.scss";
-import { Paragraph } from "@/shared/ui/Paragraph";
+import { useTranslations } from "next-intl";
 
 function ImportantInformation() {
+  const t = useTranslations("Product");
+
   return (
     <div className={styles.block}>
       <Title type="medium" className={styles.mainTitle}>
-        Важная информация
+        {t("Important information")}
       </Title>
       <div className={styles.textBlockWrapper}>
         <div className={styles.textInfoBlock}>
           <span className={styles.desc}>
-            <span className={styles.title}>Одежда:</span> Обязательно возьмите
-            удобную закрытую обувь (кроссовки), головной убор и солнцезащитные
-            очки. Ночью в пустыне бывает про
+            <span className={styles.title}>{t("Cloth")}</span>{" "}
+            {t(
+              "Be sure to wear comfortable closed-toe shoes (sneakers) a hat and sunglasses It can get chilly in the desert at night so bring a warm sweater or windbreaker",
+            )}
           </span>
         </div>
         <div className={styles.textInfoBlock}>
           <span className={styles.desc}>
-            <span className={styles.title}>Связь:</span> На плато Устюрт и у
-            моря мобильная связь и интернет отсутствуют. Это отличный шанс для
-            Digital Detox!
+            <span className={styles.title}>{t("Connection")}</span>{" "}
+            {t("Theres")}
           </span>
         </div>
         <div className={styles.textInfoBlock}>
           <span className={styles.desc}>
-            <span className={styles.title}>Дорога:</span> Часть пути (около 100
-            км) проходит по бездорожью. Джипы надежные, но будьте готовы к
-            настоящему приключению.
+            <span className={styles.title}>{t("Road")}</span>{" "}
+            {t(
+              "Part of the route (about 100 km) is off-road The jeeps are reliable but be prepared for a real adventure",
+            )}
           </span>
         </div>
       </div>

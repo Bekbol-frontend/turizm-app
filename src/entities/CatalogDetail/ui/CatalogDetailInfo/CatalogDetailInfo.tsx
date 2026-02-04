@@ -10,6 +10,7 @@ import Team from "@/shared/assets/icons/team-fill.svg";
 import UserFollow from "@/shared/assets/icons/user-follow-fill.svg";
 import MapIcon from "@/shared/assets/icons/map-2-fill.svg";
 import { Button } from "@/shared/ui/Button";
+import { useLocale, useTranslations } from "next-intl";
 
 interface IProps {
   data: IProduct;
@@ -29,12 +30,14 @@ function CatalogDetailInfo({ data }: IProps) {
     description,
   } = data;
 
+  const t = useTranslations("Product");
+
   return (
     <div className={styles.block}>
       <span className={styles.spanDurationDay}>
         {duration_nights !== 0
-          ? `${duration_days} day / ${duration_nights} night`
-          : `${duration_days} day`}
+          ? `${duration_days} ${t("day")} / ${duration_nights} ${t("night")}`
+          : `${duration_days} ${t("day")}`}
       </span>
       <div className={styles.ratingWrapper}>
         <Paragraph type="small">{rating}</Paragraph>
@@ -54,19 +57,19 @@ function CatalogDetailInfo({ data }: IProps) {
       </Paragraph>
 
       <Title type="large" className={styles.priceTitle}>
-        от {price} сум
+        {t("from")} {price} {t("sum")}
       </Title>
 
       <Paragraph type="medium" className={styles.priceDesc}>
-        от {price} сум
+        {t("from")} {price} {t("sum")}
       </Paragraph>
 
       <Paragraph type="medium" className={styles.infoPriceTitle}>
-        *Цена зависит от количество человек в группе
+        {t("The price depends on the number of people in the group")}
       </Paragraph>
 
       <Paragraph type="small" className={styles.infoPriceDesc}>
-        *Цена зависит от количество человек в группе
+        {t("The price depends on the number of people in the group")}
       </Paragraph>
 
       <div className={styles.infoCount}>
@@ -76,7 +79,7 @@ function CatalogDetailInfo({ data }: IProps) {
             <Title type="medium">{max_people}</Title>
           </div>
           <Paragraph type="small" className={styles.desc}>
-            Макс количество путешественников
+            {t("Max number of travelers")}
           </Paragraph>
         </div>
         <div className={styles.infoCountInner}>
@@ -85,7 +88,7 @@ function CatalogDetailInfo({ data }: IProps) {
             <Title type="medium">{min_age}</Title>
           </div>
           <Paragraph type="small" className={styles.desc}>
-            Возраст
+            {t("Age")}
           </Paragraph>
         </div>
       </div>
@@ -102,12 +105,12 @@ function CatalogDetailInfo({ data }: IProps) {
           <Paragraph type="medium" className={styles.routesTitle}>
             {routes}
           </Paragraph>
-          <Paragraph className={styles.routesInfo}>Дорожная карта</Paragraph>
+          <Paragraph className={styles.routesInfo}>{t("Road map")}</Paragraph>
         </div>
       </div>
 
       <Title type="medium" className={styles.shortTitle}>
-        Краткое описание
+        {t("Brief description")}
       </Title>
       <Paragraph type="small" className={styles.descInfo}>
         {description}
