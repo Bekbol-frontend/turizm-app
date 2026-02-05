@@ -35,6 +35,11 @@
 
     .title {
       margin-bottom: 7px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      line-clamp: 1;
 
       @media screen and (max-width: 768px) {
         display: none;
@@ -47,6 +52,11 @@
       @media screen and (max-width: 768px) {
         display: block;
         margin-bottom: 7px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        line-clamp: 1;
       }
     }
 
