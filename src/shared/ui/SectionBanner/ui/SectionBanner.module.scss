@@ -1,0 +1,25 @@
+.section {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  clip-path: polygon(0 0, 100% 0, 100% 87%, 0% 100%);
+
+  .inner {
+    text-align: center;
+
+    .title {
+      color: var(--base-white);
+
+      @media screen and (max-width: 768px) {
+        font-size: 30px;
+      }
+    }
+  }
+}
