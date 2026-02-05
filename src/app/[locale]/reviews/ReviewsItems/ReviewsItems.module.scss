@@ -1,0 +1,30 @@
+.section {
+  padding-block: 50px;
+
+  @media screen and (max-width: 768px) {
+    padding-block: 40px;
+  }
+
+  .items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+
+    @media screen and (max-width: 768px) {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .showAllBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .btn {
+      gap: 10px;
+    }
+  }
+}
