@@ -4,6 +4,7 @@ import Image from "next/image";
 import styles from "./YoutubeBtn.module.scss";
 import { Modal } from "@/shared/ui/Modal";
 import { useCallback, useState } from "react";
+import { useTranslations } from "next-intl";
 
 interface IProps {
   user_name: string;
@@ -12,6 +13,7 @@ interface IProps {
 
 function YoutubeBtn({ user_name, link }: IProps) {
   const [modal, setModal] = useState(false);
+  const t = useTranslations("Reviews");
 
   const onCloseModal = useCallback(() => {
     setModal(false);
@@ -27,7 +29,12 @@ function YoutubeBtn({ user_name, link }: IProps) {
         <Image src={YoutubeImage} alt={user_name} width={60} height={48} />
       </span>
 
-      <Modal lazy isOpen={modal} onClose={onCloseModal} title="Reviews video">
+      <Modal
+        lazy
+        isOpen={modal}
+        onClose={onCloseModal}
+        title={t("Reviews video")}
+      >
         <div className={styles.modalBody}>
           <iframe
             width="100%"
