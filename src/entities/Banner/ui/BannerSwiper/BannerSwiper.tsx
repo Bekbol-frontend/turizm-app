@@ -43,7 +43,7 @@ function BannerSwiper({ data }: IProps) {
       {data.map((el) => (
         <SwiperSlide
           style={{
-            backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8) 75%, rgba(0, 0, 0, .1)), url(${imgUrl}/${el.image_path})`,
+            backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, .4)), url(${imgUrl}/${el.image_path})`,
           }}
           className={styles.swiperItem}
           key={el.id}
