@@ -10,7 +10,7 @@ import Team from "@/shared/assets/icons/team-fill.svg";
 import UserFollow from "@/shared/assets/icons/user-follow-fill.svg";
 import MapIcon from "@/shared/assets/icons/map-2-fill.svg";
 import { Button } from "@/shared/ui/Button";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 
 interface IProps {
   data: IProduct;

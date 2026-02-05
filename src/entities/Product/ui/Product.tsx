@@ -4,11 +4,10 @@ import { Title } from "@/shared/ui/Title";
 import { Paragraph } from "@/shared/ui/Paragraph";
 import { StarBall } from "@/shared/ui/StarBall";
 import { Button } from "@/shared/ui/Button";
-import { PhoneBtn } from "@/shared/ui/PhoneBtn";
 import Link from "next/link";
 import { appRoutes } from "@/shared/config/routeConfig";
 import { IProduct } from "../types";
-import { baseURL } from "@/shared/api";
+import { imgUrl } from "@/shared/api";
 import { useTranslations } from "next-intl";
 
 interface IProps {
@@ -34,7 +33,7 @@ function Product({ data }: IProps) {
       <Link href={`${appRoutes.catalog}/${data.id}`} className={styles.link} />
       <div className={styles.imgBlock}>
         <Image
-          src={`${baseURL}/${main_image}`}
+          src={`${imgUrl}/${main_image}`}
           alt="product"
           width={300}
           height={300}

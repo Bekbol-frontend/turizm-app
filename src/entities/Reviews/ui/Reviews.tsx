@@ -3,7 +3,7 @@ import { SectionTitle } from "@/shared/ui/SectionTitle";
 import ReviewsSwiper from "./ReviewsSwiper/ReviewsSwiper";
 import styles from "./Reviews.module.scss";
 import { API } from "@/shared/api";
-import { getLocale } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { IData } from "@/shared/types/data";
 import { IReview } from "../types";
 
@@ -19,10 +19,11 @@ const getReviews = async (lang: string) => {
 async function Reviews() {
   const locale = await getLocale();
   const res = await getReviews(locale);
+  const t = await getTranslations("Reviews");
 
   return (
     <>
-      <SectionTitle title="Reviews" />
+      <SectionTitle title={t("Reviews")} />
       <section className={styles.section}>
         <Container>
           <ReviewsSwiper data={res.data.data} />

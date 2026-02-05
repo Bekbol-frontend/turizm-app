@@ -16,26 +16,7 @@ import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { IBanner } from "../../types";
-import { baseURL } from "@/shared/api";
-
-const bannerItems = [
-  {
-    id: 1,
-    imgUrl:
-      "https://1zoom.club/uploads/posts/2023-03/1677959282_1zoom-club-p-ozero-aralskoe-more-3.jpg",
-    title: "Аральское море 1",
-    heading: "Приключение на берегу исчезнувшего океана 1",
-    desc: "Таинственная природа Каракалпакстана, «Кладбище кораблей» и незабываемое путешествие по бескрайней пустыне 1",
-  },
-  {
-    id: 2,
-    imgUrl:
-      "https://static.independent.co.uk/s3fs-public/thumbnails/image/2014/02/19/12/salt-lake-2.jpg",
-    title: "Аральское море 2",
-    heading: "Приключение на берегу исчезнувшего океана 2",
-    desc: "Таинственная природа Каракалпакстана, «Кладбище кораблей» и незабываемое путешествие по бескрайней пустыне 2",
-  },
-];
+import { imgUrl } from "@/shared/api";
 
 interface IProps {
   data: IBanner[];
@@ -62,7 +43,7 @@ function BannerSwiper({ data }: IProps) {
       {data.map((el) => (
         <SwiperSlide
           style={{
-            backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8) 75%, rgba(0, 0, 0, .1)), url(${baseURL}/${el.image_path})`,
+            backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8) 75%, rgba(0, 0, 0, .1)), url(${imgUrl}/${el.image_path})`,
           }}
           className={styles.swiperItem}
           key={el.id}

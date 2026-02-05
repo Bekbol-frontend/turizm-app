@@ -12,10 +12,15 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
+import { IProduct } from "@/entities/Product";
+import { imgUrl } from "@/shared/api";
 
-const images = [Img, Img, Img, Img];
+interface IProps {
+  data: IProduct;
+}
 
-function CatalogSwiperDetail() {
+function CatalogSwiperDetail({ data }: IProps) {
+  const { images } = data;
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [isBeginning, setIsBeginning] = useState(true);
@@ -47,7 +52,7 @@ function CatalogSwiperDetail() {
           {images.map((el, index) => (
             <SwiperSlide key={index} className={styles.item}>
               <Image
-                src={el}
+                src={`${imgUrl}/${el.url}`}
                 alt="Image"
                 width={400}
                 height={400}
@@ -122,7 +127,7 @@ function CatalogSwiperDetail() {
             className={`${styles.item} ${activeIndex === index ? styles.active : ""}`}
           >
             <Image
-              src={el}
+              src={`${imgUrl}/${el.url}`}
               alt="Image"
               width={100}
               height={100}

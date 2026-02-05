@@ -43,5 +43,14 @@
     "Part of the route (about 100 km) is off-road The jeeps are reliable but be prepared for a real adventure": "Part of the route (about 100 km) is off-road. The jeeps are reliable, but be prepared for a real adventure.",
     "from": "from",
     "sum": "sum"
+  },
+  "About": {
+    "About": "About"
+  },
+  "Reviews": {
+    "Reviews": "Reviews"
+  },
+  "Contact": {
+    "Contact": "Contact"
   }
 }

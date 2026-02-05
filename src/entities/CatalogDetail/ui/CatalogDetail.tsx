@@ -74,7 +74,7 @@ function CatalogDetail() {
           </Title>
 
           <div className={styles.block}>
-            <CatalogSwiperDetail />
+            <CatalogSwiperDetail data={tour} />
             <CatalogDetailInfo data={tour} />
             <TourProgram data={tour} />
             <ThePriseCatalog data={tour} />
