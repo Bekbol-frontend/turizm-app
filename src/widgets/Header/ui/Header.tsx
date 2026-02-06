@@ -32,7 +32,7 @@ function Header() {
               {!mobile && <HeaderMenu />}
               <div className={styles.phoneAndLang}>
                 {!mobile && <SwitchLang />}
-                <PhoneBtn phone="+998 90 123 45 67" />
+                <PhoneBtn phone="+998 93 367 25 55" />
                 {mobile && (
                   <Button
                     variyant="secondary"
