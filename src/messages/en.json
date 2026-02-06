@@ -69,5 +69,9 @@
     "Заполните поле": "Fill in the field",
     "Вопрос": "Question",
     "Бронирование": "Booking"
+  },
+
+  "CategoryCatalog": {
+    "Все": "All"
   }
 }

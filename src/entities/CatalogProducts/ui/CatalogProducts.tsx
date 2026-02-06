@@ -3,25 +3,21 @@ import { Container } from "@/shared/ui/Container";
 import styles from "./CatalogProducts.module.scss";
 import CategoryCatalog, { ICategory } from "./CategoryCatalog/CategoryCatalog";
 import { IProduct, Product } from "@/entities/Product";
-import { Button } from "@/shared/ui/Button";
-import Image from "next/image";
-import LoopIcon from "@/shared/assets/icons/loop-right-line.svg";
 import { API } from "@/shared/api";
 import { IData } from "@/shared/types/data";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useLocale } from "next-intl";
-import PageLoader from "next/dist/client/page-loader";
 import { PageLoading } from "@/shared/ui/PageLoading";
 import { Empty } from "@/shared/ui/Empty";
 
 function CatalogProducts() {
   const [products, setProducts] = useState<IProduct[]>([]);
   const [categories, setCategories] = useState<ICategory[]>([]);
-  const [typeCategory, setTypeCategory] = useState<number>(1);
+  const [typeCategory, setTypeCategory] = useState<number | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const locale = useLocale();
 
-  const onChangeCategory = useCallback((id: number) => {
+  const onChangeCategory = useCallback((id: number | null) => {
     setTypeCategory(id);
   }, []);
 
@@ -59,6 +55,9 @@ function CatalogProducts() {
 
   const tours = useMemo(() => {
     if (!products.length) return [];
+
+    if (typeCategory === null) return products;
+
     return products.filter((el) => el.category.id === typeCategory);
   }, [products, typeCategory]);
 
@@ -83,13 +82,6 @@ function CatalogProducts() {
         ) : (
           <Empty />
         )}
-
-        {/* <Button variyant="secondary" className={styles.loopBtn}>
-          <span>
-            <Image src={LoopIcon} alt="turizm loop" width={16} height={16} />
-          </span>
-          Загрузить ещё
-        </Button> */}
       </Container>
     </section>
   );

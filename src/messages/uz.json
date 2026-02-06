@@ -70,5 +70,9 @@
     "Заполните поле": "Maydonni to‘ldiring",
     "Вопрос": "Savol",
     "Бронирование": "Bandlov"
+  },
+
+  "CategoryCatalog": {
+    "Все": "Barchasi"
   }
 }
