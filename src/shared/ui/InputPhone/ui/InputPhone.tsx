@@ -26,6 +26,10 @@ function InputPhone(props: IProps) {
     const rawValue = e.target.value;
     const formattedValue = rawValue.replace(/\D/g, "").slice(0, 9);
 
+    const phoneRegex = /^[0-9]{10}$/;
+
+    if (!phoneRegex.test(formattedValue)) return;
+
     onChange(formattedValue);
   };
 
