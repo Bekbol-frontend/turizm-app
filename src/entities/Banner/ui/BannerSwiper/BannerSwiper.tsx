@@ -16,6 +16,8 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Link from "next/link";
+import { appRoutes } from "@/shared/config/routeConfig";
 
 interface IProps {
   data: IBanner[];
@@ -78,8 +80,13 @@ function BannerSwiper({ data }: IProps) {
                 </Title>
               )}
               <div className={styles.btnWrapper}>
-                <Button variyant="primary">Подобрать тур</Button>
-                <Button variyant="secondary">Забронировать хостел</Button>
+                <Button variyant="primary" className={styles.btn}>
+                  Подобрать тур
+                  <Link href={appRoutes.catalog} className={styles.btnLink} />
+                </Button>
+                <Button variyant="secondary" className={styles.btn}>
+                  Забронировать хостел
+                </Button>
               </div>
             </div>
           </Container>
