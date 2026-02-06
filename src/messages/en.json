@@ -53,5 +53,21 @@
   },
   "Contact": {
     "Contact": "Contact"
+  },
+  "Form": {
+    "Успешно забронировали": "Booked successfully",
+    "Произошла ошибка": "Error occurred",
+    "Загрузка": "Loading...",
+    "Забронировать": "Book",
+    "Полное имя": "Full name",
+    "Email": "Email",
+    "Дата начала": "Start date",
+    "Дата окончания": "End date",
+    "Сообщение": "Message",
+    "Отправить": "Send",
+    "Ваш вопрос": "Your question",
+    "Заполните поле": "Fill in the field",
+    "Вопрос": "Question",
+    "Бронирование": "Booking"
   }
 }

@@ -53,5 +53,22 @@
   },
   "Contact": {
     "Contact": "Aloqa"
+  },
+
+  "Form": {
+    "Успешно забронировали": "Muvaffaqiyatli bandlandi",
+    "Произошла ошибка": "Xatolik yuz berdi",
+    "Загрузка": "Yuklanmoqda...",
+    "Забронировать": "Bandlash",
+    "Полное имя": "To'liq ism",
+    "Email": "Email",
+    "Дата начала": "Boshlanish sanasi",
+    "Дата окончания": "Tugash sanasi",
+    "Сообщение": "Xabar",
+    "Отправить": "Yuborish",
+    "Ваш вопрос": "Savolingiz",
+    "Заполните поле": "Maydonni to‘ldiring",
+    "Вопрос": "Savol",
+    "Бронирование": "Bandlov"
   }
 }

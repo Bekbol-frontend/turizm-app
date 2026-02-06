@@ -53,5 +53,22 @@
   },
   "Contact": {
     "Contact": "Baylanıs"
+  },
+
+  "Form": {
+    "Успешно забронировали": "Tabıslı bántlendi",
+    "Произошла ошибка": "Qáte júz berdi",
+    "Загрузка": "Júklenip atır...",
+    "Забронировать": "Bántlew",
+    "Полное имя": "Tolıq atı",
+    "Email": "Email",
+    "Дата начала": "Baslanǵan sánesi",
+    "Дата окончания": "Tamamlanıw sánesi",
+    "Сообщение": "xabar",
+    "Отправить": "Jiberiw",
+    "Ваш вопрос": "Sorawınız",
+    "Заполните поле": "Maydandı toltırıń",
+    "Вопрос": "Soraw",
+    "Бронирование": "Bronlaw"
   }
 }

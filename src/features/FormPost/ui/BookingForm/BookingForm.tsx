@@ -10,6 +10,7 @@ import { clsx } from "@/shared/lib/clsx";
 import { API } from "@/shared/api";
 import { IData } from "@/shared/types/data";
 import { Title } from "@/shared/ui/Title";
+import { useTranslations } from "next-intl";
 
 interface IProps {
   productId: number;
@@ -41,6 +42,8 @@ function BookingForm({ productId }: IProps) {
   const [loading, setLoading] = useState(false);
   const [errorPost, setErrorPost] = useState(false);
   const [successPost, setSuccessPost] = useState(false);
+
+  const t = useTranslations("Form");
 
   const onChangeFullName = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -184,24 +187,24 @@ function BookingForm({ productId }: IProps) {
     <form className={styles.form} onSubmit={onSubmitForm}>
       {successPost && (
         <Title type="medium" className={clsx([styles.title, styles.success])}>
-          Успешно забронировали
+          {t("Успешно забронировали")}
         </Title>
       )}
 
       {errorPost && (
         <Title type="medium" className={clsx([styles.title, styles.error])}>
-          Произошла ошибка
+          {t("Произошла ошибка")}
         </Title>
       )}
       <div className={styles.inner}>
         <Input
-          placeholder="Full name"
+          placeholder={t("Полное имя")}
           value={fullName}
           onChange={onChangeFullName}
           error={fullNameError}
         />
         <Input
-          placeholder="Email"
+          placeholder={t("Email")}
           type="email"
           value={email}
           onChange={onChangeEmail}
@@ -209,12 +212,14 @@ function BookingForm({ productId }: IProps) {
         />
 
         <Input
+          placeholder={t("Дата начала")}
           type="date"
           value={startDate}
           onChange={onChangeStartDate}
           error={startDateError}
         />
         <Input
+          placeholder={t("Дата окончания")}
           type="date"
           value={endDate}
           onChange={onChangeEndDate}
@@ -275,7 +280,7 @@ function BookingForm({ productId }: IProps) {
         </div>
 
         <Textarea
-          placeholder="Message"
+          placeholder={t("Сообщение")}
           className={styles.textarea}
           value={comment}
           onChange={onChangeComment}
@@ -283,7 +288,7 @@ function BookingForm({ productId }: IProps) {
         />
       </div>
       <Button variyant="secondary" disabled={loading}>
-        {loading ? "Загрузка..." : "Забронировать"}
+        {loading ? t("Загрузка") : t("Забронировать")}
       </Button>
     </form>
   );

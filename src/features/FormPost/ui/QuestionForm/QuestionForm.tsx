@@ -10,6 +10,7 @@ import { API } from "@/shared/api";
 import { IData } from "@/shared/types/data";
 import { Title } from "@/shared/ui/Title";
 import { clsx } from "@/shared/lib/clsx";
+import { useTranslations } from "next-intl";
 
 interface IProps {
   productId: number;
@@ -31,6 +32,8 @@ function QuestionForm({ productId }: IProps) {
   const [loading, setLoading] = useState(false);
   const [errorPost, setErrorPost] = useState(false);
   const [successPost, setSuccessPost] = useState(false);
+
+  const t = useTranslations("Form");
 
   const onChangeFullName = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -124,25 +127,25 @@ function QuestionForm({ productId }: IProps) {
     <form className={styles.form} onSubmit={onSubmitForm}>
       {successPost && (
         <Title type="medium" className={clsx([styles.title, styles.success])}>
-          Успешно забронировали
+          {t("Успешно забронировали")}
         </Title>
       )}
 
       {errorPost && (
         <Title type="medium" className={clsx([styles.title, styles.error])}>
-          Произошла ошибка
+          {t("Произошла ошибка")}
         </Title>
       )}
 
       <div className={styles.inner}>
         <Input
-          placeholder="Full name"
+          placeholder={t("Полное имя")}
           value={fullName}
           onChange={onChangeFullName}
           error={fullNameError}
         />
         <Input
-          placeholder="Email"
+          placeholder={t("Email")}
           type="email"
           value={email}
           onChange={onChangeEmail}
@@ -150,7 +153,7 @@ function QuestionForm({ productId }: IProps) {
         />
         <InputPhone value={phone} onChange={onChangePhone} error={phoneError} />
         <Textarea
-          placeholder="Your question"
+          placeholder={t("Ваш вопрос")}
           className={styles.textarea}
           value={comment}
           onChange={onChangeComment}
@@ -158,7 +161,7 @@ function QuestionForm({ productId }: IProps) {
         />
       </div>
       <Button variyant="secondary" disabled={loading}>
-        {loading ? "Загрузка..." : "Отправить"}
+        {loading ? t("Загрузка") : t("Отправить")}
       </Button>
     </form>
   );

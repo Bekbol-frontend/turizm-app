@@ -3,6 +3,7 @@
 import { TextareaHTMLAttributes } from "react";
 import styles from "./Textarea.module.scss";
 import { clsx } from "@/shared/lib/clsx";
+import { useTranslations } from "next-intl";
 
 interface IProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   className?: string;
@@ -12,6 +13,8 @@ interface IProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
 function Textarea(props: IProps) {
   const { className = "", error = false, ...otherProps } = props;
 
+  const t = useTranslations("Form");
+
   return (
     <div className={clsx([styles.wrapper, className])}>
       <textarea
@@ -20,7 +23,7 @@ function Textarea(props: IProps) {
         })}
         {...otherProps}
       />
-      {error && <span className={styles.errorSpan}>Заполните поле</span>}
+      {error && <span className={styles.errorSpan}>{t("Заполните поле")}</span>}
     </div>
   );
 }

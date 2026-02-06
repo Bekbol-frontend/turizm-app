@@ -5,6 +5,7 @@ import { useCallback, useState } from "react";
 import QuestionForm from "./QuestionForm/QuestionForm";
 import BookingForm from "./BookingForm/BookingForm";
 import { clsx } from "@/shared/lib/clsx";
+import { useTranslations } from "next-intl";
 
 const tabItems = [
   { id: 1, title: "Вопрос" },
@@ -17,6 +18,7 @@ interface IProps {
 
 function FormPost({ productId }: IProps) {
   const [typeForm, setTypeForm] = useState<1 | 2>(1);
+  const t = useTranslations("Form");
 
   const onChangeTypeForm = useCallback((val: 1 | 2) => {
     setTypeForm(val);
@@ -33,7 +35,7 @@ function FormPost({ productId }: IProps) {
             })}
             onClick={() => onChangeTypeForm(el.id as 1 | 2)}
           >
-            {el.title}
+            {t(el.title)}
           </span>
         ))}
       </div>

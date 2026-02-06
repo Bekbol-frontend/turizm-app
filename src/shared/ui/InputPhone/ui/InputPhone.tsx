@@ -3,6 +3,7 @@
 import { InputHTMLAttributes } from "react";
 import styles from "./InputPhone.module.scss";
 import { clsx } from "@/shared/lib/clsx";
+import { useTranslations } from "next-intl";
 
 interface IProps extends Omit<
   InputHTMLAttributes<HTMLInputElement>,
@@ -21,6 +22,8 @@ function InputPhone(props: IProps) {
     onChange,
     ...otherProps
   } = props;
+
+  const t = useTranslations("Form");
 
   const onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const rawValue = e.target.value;
@@ -46,7 +49,7 @@ function InputPhone(props: IProps) {
           onChange={onChangeInput}
         />
       </div>
-      {error && <span className={styles.errorSpan}>Заполните поле</span>}
+      {error && <span className={styles.errorSpan}>{t("Заполните поле")}</span>}
     </div>
   );
 }
