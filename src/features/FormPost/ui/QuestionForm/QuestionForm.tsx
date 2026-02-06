@@ -4,19 +4,30 @@ import { Input } from "@/shared/ui/Input";
 import { Textarea } from "@/shared/ui/Textarea";
 import styles from "./QuestionForm.module.scss";
 import { Button } from "@/shared/ui/Button";
-import { ChangeEvent, FormEvent, useCallback, useState } from "react";
+import {
+  ChangeEvent,
+  FormEvent,
+  useCallback,
+  useEffect,
+  useState,
+} from "react";
 import { InputPhone } from "@/shared/ui/InputPhone";
 import { API } from "@/shared/api";
 import { IData } from "@/shared/types/data";
 import { Title } from "@/shared/ui/Title";
 import { clsx } from "@/shared/lib/clsx";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { IOption, Select } from "@/shared/ui/Select";
+import { IProduct } from "@/entities/Product";
 
 interface IProps {
-  productId: number;
+  productId?: number;
+  selectTour?: boolean;
 }
 
-function QuestionForm({ productId }: IProps) {
+function QuestionForm({ productId, selectTour }: IProps) {
+  const locale = useLocale();
+
   const [fullName, setFullName] = useState("");
   const [fullNameError, setFullNameError] = useState(false);
 
@@ -28,6 +39,12 @@ function QuestionForm({ productId }: IProps) {
 
   const [comment, setComment] = useState("");
   const [commentError, setCommentError] = useState(false);
+
+  const [options, setOptions] = useState<IOption[]>([]);
+  const [fetchTours, setFetchTours] = useState(false);
+  const [optionsLoading, setOptionsLoading] = useState(false);
+  const [optionId, setOptionId] = useState("");
+  const [optionError, setOptionError] = useState(false);
 
   const [loading, setLoading] = useState(false);
   const [errorPost, setErrorPost] = useState(false);
@@ -81,6 +98,48 @@ function QuestionForm({ productId }: IProps) {
     }
   }, []);
 
+  const onClickSelect = useCallback(() => {
+    setFetchTours(true);
+  }, []);
+
+  const onChangeSelect = useCallback((e: ChangeEvent<HTMLSelectElement>) => {
+    setOptionId(e.target.value);
+
+    if (!e.target.value) {
+      setOptionError(true);
+    } else {
+      setOptionError(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    const getOptionsTours = async () => {
+      try {
+        setOptionsLoading(true);
+        const res = await API.get<IData<IProduct[]>>("/tours", {
+          headers: {
+            "Content-Type": "application/json",
+            "Accept-Language": locale,
+          },
+        });
+
+        if (res.data.success) {
+          setOptions(
+            res.data.data.map((el) => ({ id: el.id, name: el.title })),
+          );
+        }
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setOptionsLoading(false);
+      }
+    };
+
+    if (fetchTours) {
+      getOptionsTours();
+    }
+  }, [locale, fetchTours]);
+
   const onSubmitForm = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -89,15 +148,14 @@ function QuestionForm({ productId }: IProps) {
     if (!phone) setPhoneError(true);
     if (!comment) setCommentError(true);
 
-    if (!fullName || !email || !phone || !comment) return;
+    if (selectTour) {
+      if (!optionId) {
+        setOptionError(true);
+        return;
+      }
+    }
 
-    console.log({
-      fullName,
-      email,
-      phone,
-      comment,
-      productId,
-    });
+    if (!fullName || !email || !phone || !comment) return;
 
     try {
       setLoading(true);
@@ -106,7 +164,7 @@ function QuestionForm({ productId }: IProps) {
         email,
         phone,
         comment,
-        tour_id: productId,
+        tour_id: selectTour ? +optionId : productId,
       };
 
       const res = await API.post<IData<any>>("/questions", data);
@@ -138,22 +196,39 @@ function QuestionForm({ productId }: IProps) {
       )}
 
       <div className={styles.inner}>
+        {selectTour && (
+          <Select
+            label={t("Выберите тур")}
+            options={options}
+            onClick={onClickSelect}
+            loading={optionsLoading}
+            value={optionId}
+            onChange={onChangeSelect}
+            error={optionError}
+          />
+        )}
+
         <Input
-          placeholder={t("Полное имя")}
+          label={t("Полное имя")}
           value={fullName}
           onChange={onChangeFullName}
           error={fullNameError}
         />
         <Input
-          placeholder={t("Email")}
+          label={t("Email")}
           type="email"
           value={email}
           onChange={onChangeEmail}
           error={emailError}
         />
-        <InputPhone value={phone} onChange={onChangePhone} error={phoneError} />
+        <InputPhone
+          label={t("Телефон")}
+          value={phone}
+          onChange={onChangePhone}
+          error={phoneError}
+        />
         <Textarea
-          placeholder={t("Ваш вопрос")}
+          label={t("Ваш вопрос")}
           className={styles.textarea}
           value={comment}
           onChange={onChangeComment}

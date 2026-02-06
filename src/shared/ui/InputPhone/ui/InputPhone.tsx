@@ -10,6 +10,7 @@ interface IProps extends Omit<
   "onChange"
 > {
   className?: string;
+  label: string;
   error?: boolean;
   onChange: (value: string) => void;
 }
@@ -17,6 +18,7 @@ interface IProps extends Omit<
 function InputPhone(props: IProps) {
   const {
     className = "",
+    label,
     error = false,
     type = "text",
     onChange,
@@ -29,15 +31,14 @@ function InputPhone(props: IProps) {
     const rawValue = e.target.value;
     const formattedValue = rawValue.replace(/\D/g, "").slice(0, 9);
 
-    const phoneRegex = /^[0-9]{10}$/;
-
-    if (!phoneRegex.test(formattedValue)) return;
-
     onChange(formattedValue);
   };
 
   return (
     <div className={clsx([styles.wrapper, className])}>
+      <label htmlFor={label} className={styles.label}>
+        {label}
+      </label>
       <div className={styles.inputBlock}>
         <span className={styles.spanStartNumber}>+998</span>
         <input
@@ -47,6 +48,7 @@ function InputPhone(props: IProps) {
           type={type}
           {...otherProps}
           onChange={onChangeInput}
+          id={label}
         />
       </div>
       {error && <span className={styles.errorSpan}>{t("Заполните поле")}</span>}

@@ -41,8 +41,9 @@
     "Theres": "Ustyurt platosida ham, dengiz bo‘yida ham mobil telefon xizmati yoki internet yo‘q. Bu Digital Detox uchun ajoyib imkoniyat!",
     "Road": "Yo'l:",
     "Part of the route (about 100 km) is off-road The jeeps are reliable but be prepared for a real adventure": "Marshrutning bir qismi (taxminan 100 km) off-roaddir. Jiplar ishonchli, ammo haqiqiy sarguzashtga tayyor bo'ling.",
-    "from": "dan",
-    "sum": "so'm"
+    "from": "boshlap",
+    "sum": "so'm",
+    "Забронировать": "Bandlash"
   },
   "About": {
     "About": "Biz haqimizda"
@@ -69,10 +70,20 @@
     "Ваш вопрос": "Savolingiz",
     "Заполните поле": "Maydonni to‘ldiring",
     "Вопрос": "Savol",
-    "Бронирование": "Bandlov"
+    "Бронирование": "Bandlov",
+
+    "Выберите тур": "Turni tanlang",
+    "Телефон": "Telefon",
+    "Дополнительный телефон": "Qo‘shimcha telefon",
+    "Количество человек": "Odamlar soni"
   },
 
   "CategoryCatalog": {
     "Все": "Barchasi"
+  },
+
+  "MainBanner": {
+    "Подобрать тур": "Tur tanlash",
+    "Забронировать хостел": "Hostelni bandlash"
   }
 }

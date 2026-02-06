@@ -18,6 +18,10 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Link from "next/link";
 import { appRoutes } from "@/shared/config/routeConfig";
+import { useCallback, useState } from "react";
+import { Modal } from "@/shared/ui/Modal";
+import { FormPost } from "@/features/FormPost";
+import { useTranslations } from "next-intl";
 
 interface IProps {
   data: IBanner[];
@@ -25,74 +29,91 @@ interface IProps {
 
 function BannerSwiper({ data }: IProps) {
   const { mobile } = useResponsive();
+  const t = useTranslations("MainBanner");
+
+  const [modal, setModal] = useState(false);
+
+  const onShowModal = useCallback(() => {
+    setModal(true);
+  }, []);
+
+  const onCloseModal = useCallback(() => {
+    setModal(false);
+  }, []);
 
   return (
-    <Swiper
-      spaceBetween={30}
-      effect={"fade"}
-      navigation={true}
-      pagination={{
-        clickable: true,
-      }}
-      modules={[EffectFade, Autoplay]}
-      autoplay={{
-        delay: 3500,
-        disableOnInteraction: false,
-      }}
-      className={styles.bannerSwiper}
-    >
-      {data.map((el) => (
-        <SwiperSlide
-          style={{
-            backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, .4)), url(${imgUrl}/${el.image_path})`,
-          }}
-          className={styles.swiperItem}
-          key={el.id}
-        >
-          <Container>
-            <div className={styles.innerItem}>
-              {mobile ? (
-                <Paragraph type="large" className={styles.titleOne}>
-                  {el.title}
-                </Paragraph>
-              ) : (
-                <Title type="small" className={styles.titleOne}>
-                  {el.title}
-                </Title>
-              )}
+    <>
+      <Swiper
+        spaceBetween={30}
+        effect={"fade"}
+        navigation={true}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[EffectFade, Autoplay]}
+        autoplay={{
+          delay: 3500,
+          disableOnInteraction: false,
+        }}
+        className={styles.bannerSwiper}
+      >
+        {data.map((el) => (
+          <SwiperSlide
+            style={{
+              backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, .4)), url(${imgUrl}/${el.image_path})`,
+            }}
+            className={styles.swiperItem}
+            key={el.id}
+          >
+            <Container>
+              <div className={styles.innerItem}>
+                {mobile ? (
+                  <Paragraph type="large" className={styles.titleOne}>
+                    {el.title}
+                  </Paragraph>
+                ) : (
+                  <Title type="small" className={styles.titleOne}>
+                    {el.title}
+                  </Title>
+                )}
 
-              {mobile ? (
-                <Title type="medium" className={styles.titleTwo}>
-                  {el.subtitle}
-                </Title>
-              ) : (
-                <Heading type="small" className={styles.titleTwo}>
-                  {el.subtitle}
-                </Heading>
-              )}
-              {mobile ? (
-                <Paragraph type="large" className={styles.titleThree}>
-                  {el.description}
-                </Paragraph>
-              ) : (
-                <Title type="medium" className={styles.titleThree}>
-                  {el.description}
-                </Title>
-              )}
-              <div className={styles.btnWrapper}>
-                <Button variyant="primary" className={styles.btn}>
-                  Подобрать тур
-                  <Link href={appRoutes.catalog} className={styles.btnLink} />
-                </Button>
-                <Button variyant="secondary" className={styles.btn}>
-                  Забронировать хостел
-                </Button>
+                {mobile ? (
+                  <Title type="medium" className={styles.titleTwo}>
+                    {el.subtitle}
+                  </Title>
+                ) : (
+                  <Heading type="small" className={styles.titleTwo}>
+                    {el.subtitle}
+                  </Heading>
+                )}
+                {mobile ? (
+                  <Paragraph type="large" className={styles.titleThree}>
+                    {el.description}
+                  </Paragraph>
+                ) : (
+                  <Title type="medium" className={styles.titleThree}>
+                    {el.description}
+                  </Title>
+                )}
+                <div className={styles.btnWrapper}>
+                  <Button variyant="primary" className={styles.btn}>
+                    {t("Подобрать тур")}
+                    <Link href={appRoutes.catalog} className={styles.btnLink} />
+                  </Button>
+                  <Button variyant="secondary" onClick={onShowModal}>
+                    {t("Забронировать хостел")}
+                  </Button>
+                </div>
               </div>
-            </div>
-          </Container>
-        </SwiperSlide>
-      ))}
-    </Swiper>
+            </Container>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      <Modal isOpen={modal} onClose={onCloseModal}>
+        <FormPost selectTour />
+      </Modal>
+    </>
   );
 }
 

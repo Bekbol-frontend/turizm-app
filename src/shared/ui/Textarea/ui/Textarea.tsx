@@ -7,17 +7,22 @@ import { useTranslations } from "next-intl";
 
 interface IProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   className?: string;
+  label: string;
   error?: boolean;
 }
 
 function Textarea(props: IProps) {
-  const { className = "", error = false, ...otherProps } = props;
+  const { className = "", label, error = false, ...otherProps } = props;
 
   const t = useTranslations("Form");
 
   return (
     <div className={clsx([styles.wrapper, className])}>
+      <label htmlFor={label} className={styles.label}>
+        {label}
+      </label>
       <textarea
+        id={label}
         className={clsx([styles.textarea], {
           [styles.errorTextarea]: error,
         })}

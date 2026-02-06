@@ -13,10 +13,11 @@ const tabItems = [
 ];
 
 interface IProps {
-  productId: number;
+  productId?: number;
+  selectTour?: boolean;
 }
 
-function FormPost({ productId }: IProps) {
+function FormPost({ productId, selectTour }: IProps) {
   const [typeForm, setTypeForm] = useState<1 | 2>(1);
   const t = useTranslations("Form");
 
@@ -41,9 +42,9 @@ function FormPost({ productId }: IProps) {
       </div>
       <div>
         {typeForm === 1 ? (
-          <QuestionForm productId={productId} />
+          <QuestionForm productId={productId} selectTour={selectTour} />
         ) : (
-          <BookingForm productId={productId} />
+          <BookingForm productId={productId} selectTour={selectTour} />
         )}
       </div>
     </div>

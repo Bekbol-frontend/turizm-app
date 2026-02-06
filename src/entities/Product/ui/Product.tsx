@@ -90,7 +90,7 @@ function Product({ data }: IProps) {
               variyant="secondary"
               onClick={onShowModal}
             >
-              Забронировать
+              {t("Забронировать")}
             </Button>
           </div>
         </div>

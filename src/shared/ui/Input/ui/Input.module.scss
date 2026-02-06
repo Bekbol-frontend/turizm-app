@@ -1,4 +1,14 @@
 .wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  .label {
+    font-size: 15px;
+    color: var(--primary-300);
+    cursor: pointer;
+  }
+
   .input {
     display: block;
     width: 100%;
@@ -22,6 +32,6 @@
 
   .errorSpan {
     color: var(--danger);
-    margin-top: 5px;
+    margin-top: 3px;
   }
 }

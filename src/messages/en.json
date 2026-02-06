@@ -42,7 +42,8 @@
     "Road": "Road:",
     "Part of the route (about 100 km) is off-road The jeeps are reliable but be prepared for a real adventure": "Part of the route (about 100 km) is off-road. The jeeps are reliable, but be prepared for a real adventure.",
     "from": "from",
-    "sum": "sum"
+    "sum": "sum",
+    "Забронировать": "Book"
   },
   "About": {
     "About": "About"
@@ -68,10 +69,20 @@
     "Ваш вопрос": "Your question",
     "Заполните поле": "Fill in the field",
     "Вопрос": "Question",
-    "Бронирование": "Booking"
+    "Бронирование": "Booking",
+
+    "Выберите тур": "Select tour",
+    "Телефон": "Phone",
+    "Дополнительный телефон": "Additional phone",
+    "Количество человек": "Number of people"
   },
 
   "CategoryCatalog": {
     "Все": "All"
+  },
+
+  "MainBanner": {
+    "Подобрать тур": "Pick a tour",
+    "Забронировать хостел": "Book hostel"
   }
 }
