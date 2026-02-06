@@ -14,6 +14,7 @@ import { useTranslations } from "next-intl";
 import { Modal } from "@/shared/ui/Modal";
 import { FormPost } from "@/features/FormPost";
 import { useCallback, useState } from "react";
+import { formatPrice } from "@/shared/lib/formatPrice";
 
 interface IProps {
   data: IProduct;
@@ -71,7 +72,7 @@ function CatalogDetailInfo({ data }: IProps) {
         </Paragraph>
 
         <Title type="large" className={styles.priceTitle}>
-          {t("from")} {price} {t("sum")}
+          {t("from")} {formatPrice(price)} {t("sum")}
         </Title>
 
         <Paragraph type="medium" className={styles.priceDesc}>
@@ -112,7 +113,7 @@ function CatalogDetailInfo({ data }: IProps) {
           className={styles.btnBron}
           onClick={onShowModal}
         >
-          Забронировать
+          {t("Забронировать")}
         </Button>
 
         <div className={styles.routesWrapper}>

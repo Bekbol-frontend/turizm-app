@@ -14,6 +14,7 @@ import { useTranslations } from "next-intl";
 import { Modal } from "@/shared/ui/Modal";
 import { useCallback, useState } from "react";
 import { FormPost } from "@/features/FormPost";
+import { formatPrice } from "@/shared/lib/formatPrice";
 
 interface IProps {
   data: IProduct;
@@ -82,7 +83,7 @@ function Product({ data }: IProps) {
             {t("from")} {price} {t("sum")}
           </Title>
           <Paragraph className={styles.priceDesc}>
-            {t("from")} {price} {t("sum")}
+            {t("from")} {formatPrice(price)} {t("sum")}
           </Paragraph>
           <div className={styles.btns}>
             <Button
