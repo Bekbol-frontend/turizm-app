@@ -7,36 +7,14 @@ import Image from "next/image";
 import { IContact } from "../../types";
 import { clsx } from "@/shared/lib/clsx";
 
-const contactItems = [
-  {
-    icon: LocationIcon,
-    title: "Нукус",
-    body: "Нукус, Республика Каракалпакстан",
-    bgIcon: "#F0D81B",
-    link: false,
-  },
-  {
-    icon: PhoneIcon,
-    title: "+998 90 123 45 67",
-    body: "tokarbay@info.uz",
-    bgIcon: "#042A2B",
-    link: true,
-  },
-  {
-    icon: TelegramIcon,
-    title: "@welcome_to_karakalpakistan",
-    body: "+998 90 123 45 67",
-    bgIcon: "#2BE5EB",
-    link: true,
-  },
-];
-
 interface IProps {
   data: IContact;
 }
 
 function ContactSocial({ data }: IProps) {
   const { address, phone, email, telegram_username, telegram_url } = data;
+
+  console.log(data);
 
   return (
     <div className={styles.wrapper}>

@@ -3,6 +3,7 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
+import styles from "./ContactMap.module.scss";
 
 interface IProps {
   longitude: number;
@@ -18,7 +19,7 @@ function ContactMap({ longitude, latitude }: IProps) {
   });
 
   return (
-    <div>
+    <div className={styles.block}>
       <MapContainer
         center={[latitude, longitude]}
         zoom={15}
