@@ -1,8 +1,11 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import styles from "./Empty.module.scss";
 
 function Empty() {
+  const t = useTranslations("Empty");
+
   return (
     <div className={styles.empty}>
       <div className={styles.icon}>
@@ -37,10 +40,10 @@ function Empty() {
         </svg>
       </div>
 
-      <h3 className={styles.title}>Hech narsa topilmadi</h3>
+      <h3 className={styles.title}>{t("Hech narsa topilmadi")}</h3>
 
       <p className={styles.description}>
-        Filter sozlamalarini ozgartirib koring
+        {t("Filter sozlamalarini ozgartirib koring")}
       </p>
     </div>
   );

@@ -85,5 +85,10 @@
   "MainBanner": {
     "Подобрать тур": "Tur tanlash",
     "Забронировать хостел": "Hostelni bandlash"
+  },
+
+  "Empty": {
+    "Hech narsa topilmadi": "Hech narsa topilmadi",
+    "Filter sozlamalarini ozgartirib koring": "Filter sozlamalarini ozgartirib koring"
   }
 }

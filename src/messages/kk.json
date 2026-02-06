@@ -85,5 +85,10 @@
   "MainBanner": {
     "Подобрать тур": "Tur tańlaw",
     "Забронировать хостел": "Xosteldi bántlew"
+  },
+
+  "Empty": {
+    "Hech narsa topilmadi": "Hesh nárse tabılmadı",
+    "Filter sozlamalarini ozgartirib koring": "Filtr sazlamaların ózgertip kóriń."
   }
 }
