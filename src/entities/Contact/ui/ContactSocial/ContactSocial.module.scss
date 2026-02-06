@@ -3,8 +3,6 @@
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  max-width: 1200px;
-  width: 100%;
   margin-inline: auto;
   margin-bottom: 40px;
 
@@ -37,12 +35,20 @@
         background-color: var(--secondary-350);
       }
 
+      &.instagram {
+        background-color: var(--primary-400);
+      }
+
       &.phone {
         background-color: var(--primary-300);
       }
 
       &.telegram {
         background-color: var(--primary-150);
+      }
+
+      &.facebook {
+        background-color: var(--primary-350);
       }
 
       @media screen and (max-width: 768px) {
