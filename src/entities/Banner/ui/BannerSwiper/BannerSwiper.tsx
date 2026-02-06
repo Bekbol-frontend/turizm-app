@@ -8,15 +8,14 @@ import { Container } from "@/shared/ui/Container";
 import { Heading } from "@/shared/ui/Heading";
 import { useResponsive } from "@/shared/lib/useResponsive";
 import { Paragraph } from "@/shared/ui/Paragraph";
-
+import { IBanner } from "../../types";
+import { imgUrl } from "@/shared/api";
 import styles from "./BannerSwiper.module.scss";
 
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { IBanner } from "../../types";
-import { imgUrl } from "@/shared/api";
 
 interface IProps {
   data: IBanner[];
@@ -69,15 +68,15 @@ function BannerSwiper({ data }: IProps) {
                   {el.subtitle}
                 </Heading>
               )}
-              {/* {mobile ? (
+              {mobile ? (
                 <Paragraph type="large" className={styles.titleThree}>
-                  {el.desc}
+                  {el.description}
                 </Paragraph>
               ) : (
                 <Title type="medium" className={styles.titleThree}>
-                  {el.desc}
+                  {el.description}
                 </Title>
-              )} */}
+              )}
               <div className={styles.btnWrapper}>
                 <Button variyant="primary">Подобрать тур</Button>
                 <Button variyant="secondary">Забронировать хостел</Button>

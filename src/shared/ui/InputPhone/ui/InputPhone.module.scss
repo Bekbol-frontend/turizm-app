@@ -1,0 +1,41 @@
+.wrapper {
+  .inputBlock {
+    position: relative;
+
+    .spanStartNumber {
+      position: absolute;
+      top: 49%;
+      transform: translateY(-49%);
+      left: 10px;
+      font-weight: 500;
+      font-size: 14px;
+      color: var(--gray-250);
+    }
+
+    .input {
+      display: block;
+      width: 100%;
+      background-color: var(--base-white);
+      padding: 10px 10px 10px 50px;
+      border: 1px solid var(--base-border);
+      border-radius: var(--rounded);
+      color: var(--gray-250);
+      font-family: var(--font-geist);
+      font-size: 14px;
+      font-weight: 500;
+
+      &::placeholder {
+        color: var(--gray-300);
+      }
+
+      &.errorInput {
+        border-color: var(--danger);
+      }
+    }
+  }
+
+  .errorSpan {
+    color: var(--danger);
+    margin-top: 5px;
+  }
+}

@@ -1,0 +1,32 @@
+.block {
+  background-color: var(--base-white);
+  padding: 5px;
+  border-radius: var(--rounded);
+
+  .top {
+    display: flex;
+    gap: 10px;
+    border-bottom: 1px solid var(--base-border);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+
+    .tabSpan {
+      font-size: 16px;
+      color: var(--primary-300);
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+      padding: 7px 10px;
+      border-radius: var(--rounded);
+
+      @media screen and (max-width: 768px) {
+        font-size: 14px;
+      }
+
+      &:hover,
+      &.active {
+        background-color: var(--primary-100);
+      }
+    }
+  }
+}

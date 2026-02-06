@@ -4,4 +4,5 @@ export interface IBanner {
   sort_order: number;
   title: string;
   subtitle: string;
+  description: string;
 }
