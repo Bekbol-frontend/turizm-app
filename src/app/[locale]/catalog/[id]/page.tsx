@@ -1,4 +1,5 @@
 import { CatalogDetail } from "@/entities/CatalogDetail";
+import { ContactServer } from "@/entities/Contact";
 import { IProduct } from "@/entities/Product";
 import { API } from "@/shared/api";
 import { IData } from "@/shared/types/data";
@@ -78,6 +79,7 @@ async function CatalogDetailPage({ params }: PageProps) {
   return (
     <>
       <CatalogDetail tour={res.data.data} />
+      <ContactServer />
     </>
   );
 }
