@@ -1,3 +1,4 @@
+import NextTopLoader from "nextjs-toploader";
 import { Geist } from "next/font/google";
 import { Header } from "@/widgets/Header";
 import { NextIntlClientProvider } from "next-intl";
@@ -41,6 +42,18 @@ export default async function RootLayout({
         />
       </head>
       <body className={geist.variable}>
+        <NextTopLoader
+          color="#2be5eb"
+          initialPosition={0.08}
+          crawlSpeed={200}
+          height={4}
+          crawl={true}
+          showSpinner={false}
+          easing="ease"
+          speed={200}
+          shadow="0 0 10px #2299DD, 0 0 5px #2299DD"
+        />
+
         <NextIntlClientProvider messages={messages}>
           <div id="wrapper-block-page">
             <Header />
