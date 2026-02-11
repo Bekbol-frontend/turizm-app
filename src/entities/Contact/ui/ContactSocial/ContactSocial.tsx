@@ -22,6 +22,7 @@ function ContactSocial({ data }: IProps) {
     telegram_url,
     instagram_url,
     facebook_url,
+    whatsapp_phone,
   } = data;
 
   return (
@@ -41,13 +42,22 @@ function ContactSocial({ data }: IProps) {
         </div>
       </div>
       <div className={styles.item}>
+        <span className={clsx([styles.iconSpan, styles.whatsapp])}>
+          <i className={clsx(["fa-brands fa-whatsapp", styles.whatsappIcon])} />
+        </span>
+        <div className={styles.right}>
+          <Paragraph type="small">{whatsapp_phone}</Paragraph>
+        </div>
+      </div>
+
+      <div className={styles.item}>
         <a href={instagram_url} target="_blank" className={styles.link} />
         <span className={clsx([styles.iconSpan, styles.instagram])}>
           <Image
             src={InstagramIcon}
             alt={instagram_url}
-            width={18}
-            height={18}
+            width={20}
+            height={20}
             className={styles.img}
           />
         </span>

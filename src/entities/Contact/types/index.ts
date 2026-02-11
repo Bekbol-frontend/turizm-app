@@ -10,4 +10,5 @@ export interface IContact {
   instagram_url: string;
   facebook_url: string;
   youtube_url: string;
+  whatsapp_phone: string;
 }

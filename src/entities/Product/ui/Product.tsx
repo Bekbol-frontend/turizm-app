@@ -99,7 +99,7 @@ function Product({ data }: IProps) {
                 href={`${appRoutes.catalog}/${id}`}
                 className={styles.productLinkLearnMore}
               />
-              Подробнее
+              {t("Подробнее")}
             </Button>
           </div>
         </div>
