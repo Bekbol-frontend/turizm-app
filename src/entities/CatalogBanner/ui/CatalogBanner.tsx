@@ -1,4 +1,3 @@
-import { Paragraph } from "@/shared/ui/Paragraph";
 import styles from "./CatalogBanner.module.scss";
 import { Heading } from "@/shared/ui/Heading";
 import { Title } from "@/shared/ui/Title";
