@@ -1,14 +1,49 @@
 {
+  "HomeSEO": {
+    "title": "Aral Sea Tour - Aral Sea tours",
+    "description": "The best tours to the Aral Sea, Muynak, and Karakalpakstan with the Aral Sea Tour.",
+    "keywords": [
+      "Aral Sea tour",
+      "Orol dengizi sayohati",
+      "Muynoq tour",
+      "Qoraqalpog‘iston travel"
+    ]
+  },
+
+  "Home": {
+    "title": "Home page width",
+    "Popular tours": "Popular tours",
+    "heroTitle": "Unforgettable trips to the Aral Sea"
+  },
+
+  "AboutSEO": {
+    "title": "About Aral Sea Tour – Aral Sea Travel Company",
+    "description": "Aral Sea Tour is a professional travel company offering tours to the Aral Sea and Karakalpakstan.",
+    "keywords": ["Aral Sea Tour", "Aral Sea travel company", "Uzbekistan tours"]
+  },
+
+  "ContactSEO": {
+    "title": "Contact Aral Sea Tour – Aral Sea Tours",
+    "description": "Contact Aral Sea Tour for professional tours to the Aral Sea and Karakalpakstan.",
+    "keywords": [
+      "Aral Sea Tour contact",
+      "Aral Sea tours contact",
+      "Uzbekistan travel contact"
+    ]
+  },
+
+  "CatalogSEO": {
+    "title": "Aral Sea Tours – Aral Sea Tour",
+    "description": "Browse the best tours to the Aral Sea, Muynak and Karakalpakstan with Aral Sea Tour.",
+    "keywords": ["Aral Sea tours", "Aral Sea tour catalog", "Muynak tours"]
+  },
+
   "Navigation": {
     "home": "Home",
     "about": "About",
     "contact": "Contact",
     "catalog": "Catalog",
     "reviews": "Reviews"
-  },
-  "Home": {
-    "title": "Bosh sahifa en",
-    "Popular tours": "Popular tours"
   },
   "NotFound": {
     "It seems you took a wrong turn": "It seems you took a wrong turn...",

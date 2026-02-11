@@ -1,14 +1,53 @@
 {
+  "HomeSEO": {
+    "title": "Aral Sea Tour - путешествия по Аральскому морю",
+    "description": "Лучшие туры по Аральскому морю, Муйнаку и Каракалпакстану с Aral Sea Tour.",
+    "keywords": [
+      "Aral Sea tour",
+      "Путешествие на Аральское море",
+      "Путешествие на Аральское море",
+      "Путешествие по Каракалпакстану"
+    ]
+  },
+
+  "Home": {
+    "title": "Bosh sahifa ru",
+    "Popular tours": "Популярные туры",
+    "heroTitle": "Orol dengizi bo‘ylab unutilmas sayohatlar"
+  },
+
+  "AboutSEO": {
+    "title": "О компании Aral Sea Tour – Туры по Аральскому морю",
+    "description": "Aral Sea Tour — туристическая компания, организующая туры по Аральскому морю и Каракалпакстану.",
+    "keywords": [
+      "о компании Aral Sea Tour",
+      "туры Арал",
+      "туризм Каракалпакстан"
+    ]
+  },
+
+  "ContactSEO": {
+    "title": "Связаться с Aral Sea Tour – Туры по Аральскому морю",
+    "description": "Свяжитесь с Aral Sea Tour и получите консультацию по турам на Аральское море и Каракалпакстан.",
+    "keywords": [
+      "контакты Aral Sea Tour",
+      "туры Арал контакты",
+      "туристическая компания связь"
+    ]
+  },
+
+  "CatalogSEO": {
+    "title": "Туры на Аральское море – Aral Sea Tour",
+    "description": "Выберите лучшие туры на Аральское море, Муйнак и Каракалпакстан с Aral Sea Tour.",
+    "keywords": ["туры Аральское море", "каталог туров Aral Sea", "Муйнак туры"]
+  },
+
   "Navigation": {
     "home": "Главная",
     "about": "О нас",
     "contact": "Контакты",
     "catalog": "Каталог туров",
     "reviews": "Отзывы"
-  },
-  "Home": {
-    "title": "Bosh sahifa ru",
-    "Popular tours": "Популярные туры"
   },
   "NotFound": {
     "It seems you took a wrong turn": "Похоже, вы свернули не туда...",

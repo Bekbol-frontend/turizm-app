@@ -24,8 +24,6 @@ function ContactSocial({ data }: IProps) {
     facebook_url,
   } = data;
 
-  console.log(data);
-
   return (
     <div className={styles.wrapper}>
       <div className={styles.item}>

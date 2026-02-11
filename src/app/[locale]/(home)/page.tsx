@@ -6,6 +6,33 @@ import { PopularTours } from "@/entities/PopularTours";
 import { Reviews } from "@/entities/Reviews";
 import { SectionTitle } from "@/shared/ui/SectionTitle";
 import { useTranslations } from "next-intl";
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+
+type Props = {
+  params: Promise<{ locale: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({
+    locale,
+    namespace: "HomeSEO",
+  });
+
+  return {
+    title: t("title"),
+    description: t("description"),
+    keywords: t.raw("keywords"),
+
+    metadataBase: new URL("https://aralseatour.uz"),
+
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
+}
 
 function HomePage() {
   const t = useTranslations("Home");

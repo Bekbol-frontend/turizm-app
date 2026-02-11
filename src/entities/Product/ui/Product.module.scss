@@ -117,6 +117,7 @@
 
     .btns {
       display: flex;
+      align-items: center;
       gap: 10px;
 
       @media screen and (max-width: 768px) {
@@ -126,6 +127,16 @@
       .btnBook {
         position: relative;
         z-index: 2;
+      }
+
+      .btnLink {
+        position: relative;
+        z-index: 2;
+
+        .productLinkLearnMore {
+          position: absolute;
+          inset: 0;
+        }
       }
     }
   }

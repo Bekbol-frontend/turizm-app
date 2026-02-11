@@ -33,6 +33,7 @@ function Product({ data }: IProps) {
   }, []);
 
   const {
+    id,
     main_image,
     title,
     rating,
@@ -92,6 +93,13 @@ function Product({ data }: IProps) {
               onClick={onShowModal}
             >
               {t("Забронировать")}
+            </Button>
+            <Button className={styles.btnLink}>
+              <Link
+                href={`${appRoutes.catalog}/${id}`}
+                className={styles.productLinkLearnMore}
+              />
+              Подробнее
             </Button>
           </div>
         </div>

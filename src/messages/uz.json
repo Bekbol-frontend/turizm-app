@@ -1,14 +1,58 @@
 {
+  "HomeSEO": {
+    "title": "Aral Sea Tour – Orol dengizi bo‘ylab sayohatlar",
+    "description": "Aral Sea Tour bilan Orol dengizi, Mo‘ynoq va Qoraqalpog‘iston bo‘ylab eng yaxshi sayohatlar.",
+    "keywords": [
+      "Aral Sea tour",
+      "Orol dengizi sayohati",
+      "Muynoq tour",
+      "Qoraqalpog‘iston travel"
+    ]
+  },
+
+  "Home": {
+    "title": "Bosh sahifa uz",
+    "Popular tours": "Mashhur sayohatlar",
+    "heroTitle": "Orol dengizi bo‘ylab unutilmas sayohatlar"
+  },
+
+  "AboutSEO": {
+    "title": "Aral Sea Tour haqida – Orol dengizi sayohat kompaniyasi",
+    "description": "Aral Sea Tour — Orol dengizi va Qoraqalpog‘iston bo‘ylab professional sayohat xizmatlarini ko‘rsatuvchi kompaniya.",
+    "keywords": [
+      "Aral Sea Tour haqida",
+      "Orol dengizi tur kompaniyasi",
+      "Qoraqalpog‘iston sayohat"
+    ]
+  },
+
+  "ContactSEO": {
+    "title": "Aral Sea Tour bilan bog‘laning – Orol dengizi turlari",
+    "description": "Aral Sea Tour bilan bog‘laning. Orol dengizi va Qoraqalpog‘iston bo‘ylab turlar haqida bepul maslahat oling.",
+    "keywords": [
+      "Aral Sea Tour kontakt",
+      "Orol dengizi turlari aloqa",
+      "sayohat kompaniyasi bog‘lanish"
+    ]
+  },
+
+  "CatalogSEO": {
+    "title": "Orol dengizi turlari – Aral Sea Tour",
+    "description": "Aral Sea Tour bilan Orol dengizi, Mo‘ynoq va Qoraqalpog‘iston bo‘ylab eng yaxshi sayohat turlarini tanlang.",
+    "keywords": [
+      "Orol dengizi turlari",
+      "Aral Sea Tour katalog",
+      "Muynoq turlari",
+      "Qoraqalpog‘iston sayohat"
+    ]
+  },
+
   "Navigation": {
     "home": "Bosh sahifa",
     "about": "Biz haqimizda",
     "contact": "Bog'lanish",
     "catalog": "Katalog",
     "reviews": "Sharhlar"
-  },
-  "Home": {
-    "title": "Bosh sahifa uz",
-    "Popular tours": "Mashhur sayohatlar"
   },
   "NotFound": {
     "It seems you took a wrong turn": "Siz noto'g'ri yo'l tutganga o'xshaysiz...",

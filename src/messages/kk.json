@@ -1,14 +1,58 @@
 {
+  "HomeSEO": {
+    "title": "Aral teńizi boylap sayaxat - Aral teńizine sayaxatlar",
+    "description": "Aral Sea Tour menen Aral teńizi, Moynaq hám Qaraqalpaqstan boylap eń jaqsı sayaxatlar.",
+    "keywords": [
+      "Aral Sea tour",
+      "Aral teńizi sayaxatı",
+      "Moynaq sayaxatı.",
+      "Qaraqalpaqstan boylap sayaxat"
+    ]
+  },
+
+  "Home": {
+    "title": "Bosh sahifa qq",
+    "Popular tours": "Belgili turlar",
+    "heroTitle": "Orol dengizi bo‘ylab unutilmas sayohatlar"
+  },
+
+  "AboutSEO": {
+    "title": "Aral Sea Tour haqqında - Aral teńizi sayaxat kompaniyası",
+    "description": "Aral Sea Tour - Aral teńizi hám Qaraqalpaqstan boylap professional sayaxat xızmetlerin kórsetiwshi kompaniya.",
+    "keywords": [
+      "Aral Sea Tour haqqında",
+      "Aral teńizi tur kompaniyası",
+      "Qaraqalpaqstan sayaxatı"
+    ]
+  },
+
+  "ContactSEO": {
+    "title": "Aral Sea Tour menen baylanısıń - Aral teńizi túrleri",
+    "description": "Aral Sea Tour menen baylanısıń. Aral teńizi hám Qaraqalpaqstan boylap turlar haqqında biypul másláhát alıń.",
+    "keywords": [
+      "Aral Sea Tour kontaktı",
+      "Aral teńizi túrleri baylanıs",
+      "sayaxat kompaniyası baylanısıw"
+    ]
+  },
+
+  "CatalogSEO": {
+    "title": "Aral teńizi túrleri - Aral Sea Tour",
+    "description": "Aral Sea Tour menen Aral teńizi, Moynaq hám Qaraqalpaqstan boylap eń jaqsı sayaxat túrlerin tańlań.",
+    "keywords": [
+      "Aral teńizi túrleri",
+      "Aral Sea Tour katalogi",
+      "Moynaq túrleri",
+      "Qaraqalpaqstan sayaxatı"
+    ]
+  },
+
   "Navigation": {
     "home": "Bas bet",
     "about": "Biz haqqımızda",
     "contact": "Baylanıs",
     "catalog": "Katalog",
     "reviews": "Sholıwlar"
-  },
-  "Home": {
-    "title": "Bosh sahifa qq",
-    "Popular tours": "Belgili turlar"
   },
   "NotFound": {
     "It seems you took a wrong turn": "Siz nadurıs jolǵa túsip ketipsiz...",

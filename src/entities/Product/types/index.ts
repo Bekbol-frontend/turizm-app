@@ -1,3 +1,5 @@
+import { IFAQ } from "@/entities/FAQ";
+
 export interface IProduct {
   id: number;
   title: string;
@@ -36,4 +38,5 @@ export interface IProduct {
     is_included: boolean;
     name: string;
   }[];
+  faqs: IFAQ[];
 }
