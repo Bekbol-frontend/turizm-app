@@ -11,6 +11,7 @@ import TourProgram from "./TourProgram/TourProgram";
 import ThePriseCatalog from "./ThePriseCatalog/ThePriseCatalog";
 import ImportantInformation from "./ImportantInformation/ImportantInformation";
 import CatalogFAQ from "@/app/[locale]/catalog/[id]/CatalogFAQ/CatalogFAQ";
+import CatalogTopLink from "@/app/[locale]/catalog/[id]/CatalogTopLink/CatalogTopLink";
 
 interface IProps {
   tour: IProduct;
@@ -23,6 +24,7 @@ function CatalogDetail({ tour }: IProps) {
     <>
       <section className={styles.section}>
         <Container>
+          <CatalogTopLink title={tour.title} />
           <div className={styles.content}>
             <Title
               type={mobile ? "small" : "medium"}
