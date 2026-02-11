@@ -11,7 +11,6 @@ type Props = {
   params: Promise<{ locale: string }>;
 };
 
-// 🔥 ABOUT PAGE SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
