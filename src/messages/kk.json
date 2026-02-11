@@ -52,7 +52,10 @@
     "about": "Biz haqqımızda",
     "contact": "Baylanıs",
     "catalog": "Katalog",
-    "reviews": "Sholıwlar"
+    "reviews": "Sholıwlar",
+
+    "Мы в соцсетях": "Biz sociallıq tarmaqdamız",
+    "Карта сайта": "Sayt kartası"
   },
   "NotFound": {
     "It seems you took a wrong turn": "Siz nadurıs jolǵa túsip ketipsiz...",

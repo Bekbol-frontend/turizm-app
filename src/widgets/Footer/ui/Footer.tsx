@@ -3,7 +3,7 @@ import styles from "./Footer.module.scss";
 import { API } from "@/shared/api";
 import { IData } from "@/shared/types/data";
 import { IContact } from "@/entities/Contact/types";
-import { getLocale } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Title } from "@/shared/ui/Title";
 import { Paragraph } from "@/shared/ui/Paragraph";
 import Link from "next/link";
@@ -27,6 +27,8 @@ const getContactData = async (lang: string) => {
 async function Footer() {
   const locale = await getLocale();
   const { data } = await getContactData(locale);
+  const t = await getTranslations("Navigation");
+
   const {
     data: {
       phone,
@@ -54,26 +56,10 @@ async function Footer() {
             <Paragraph className={styles.address}>{address}</Paragraph>
           </div>
           <div className={styles.right}>
-            <div className={styles.linksWrapper}>
-              <Paragraph className={styles.topDesc}>Карта сайта</Paragraph>
-              <div className={styles.links}>
-                <Link className={styles.link} href={appRoutes.catalog}>
-                  Каталог туров
-                </Link>
-                <Link className={styles.link} href={appRoutes.about}>
-                  О нас
-                </Link>
-                <Link className={styles.link} href={appRoutes.reviews}>
-                  Отзывы
-                </Link>
-                <Link className={styles.link} href={appRoutes.contacts}>
-                  Контакты
-                </Link>
-              </div>
-            </div>
-
             <div className={styles.socialWrapper}>
-              <Paragraph className={styles.topDesc}>Мы в соцсетях</Paragraph>
+              <Paragraph className={styles.topDesc}>
+                {t("Мы в соцсетях")}
+              </Paragraph>
               <div className={styles.social}>
                 <a
                   href={telegram_url}
@@ -83,8 +69,8 @@ async function Footer() {
                   <Image
                     src={TelegramIcon}
                     alt={telegram_username}
-                    width={24}
-                    height={24}
+                    width={27}
+                    height={27}
                   />
                 </a>
                 <a
@@ -95,8 +81,8 @@ async function Footer() {
                   <Image
                     src={InstagramIcon}
                     alt="tokarbay_aga_tours"
-                    width={24}
-                    height={24}
+                    width={27}
+                    height={27}
                   />
                 </a>
                 <a
@@ -107,8 +93,8 @@ async function Footer() {
                   <Image
                     src={YoutubeIcon}
                     alt="tokarbay_aga_tours"
-                    width={24}
-                    height={24}
+                    width={27}
+                    height={27}
                   />
                 </a>
                 <a
@@ -119,10 +105,30 @@ async function Footer() {
                   <Image
                     src={FacebookIcon}
                     alt="tokarbay_aga_tours"
-                    width={24}
-                    height={24}
+                    width={27}
+                    height={27}
                   />
                 </a>
+              </div>
+            </div>
+
+            <div className={styles.linksWrapper}>
+              <Paragraph className={styles.topDesc}>
+                {t("Карта сайта")}
+              </Paragraph>
+              <div className={styles.links}>
+                <Link className={styles.link} href={appRoutes.catalog}>
+                  {t("catalog")}
+                </Link>
+                <Link className={styles.link} href={appRoutes.about}>
+                  {t("about")}
+                </Link>
+                <Link className={styles.link} href={appRoutes.reviews}>
+                  {t("reviews")}
+                </Link>
+                <Link className={styles.link} href={appRoutes.contacts}>
+                  {t("contact")}
+                </Link>
               </div>
             </div>
           </div>

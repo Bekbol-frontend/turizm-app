@@ -43,7 +43,10 @@
     "about": "About",
     "contact": "Contact",
     "catalog": "Catalog",
-    "reviews": "Reviews"
+    "reviews": "Reviews",
+
+    "Мы в соцсетях": "We're on social media",
+    "Карта сайта": "Site map"
   },
   "NotFound": {
     "It seems you took a wrong turn": "It seems you took a wrong turn...",

@@ -52,7 +52,10 @@
     "about": "Biz haqimizda",
     "contact": "Bog'lanish",
     "catalog": "Katalog",
-    "reviews": "Sharhlar"
+    "reviews": "Sharhlar",
+
+    "Мы в соцсетях": "Biz ijtimoiy tarmoqdamiz",
+    "Карта сайта": "Sayt xaritasi"
   },
   "NotFound": {
     "It seems you took a wrong turn": "Siz noto'g'ri yo'l tutganga o'xshaysiz...",
