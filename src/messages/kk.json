@@ -138,5 +138,9 @@
   "Empty": {
     "Hech narsa topilmadi": "Hesh nárse tabılmadı",
     "Filter sozlamalarini ozgartirib koring": "Filtr sazlamaların ózgertip kóriń."
+  },
+
+  "MapContact": {
+    "Point": "Noqat"
   }
 }

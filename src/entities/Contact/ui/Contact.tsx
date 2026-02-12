@@ -7,12 +7,15 @@ import ContactSocial from "./ContactSocial/ContactSocial";
 import { ContactMapComponent } from "./ContactMap";
 import { IContact } from "../types";
 import { useTranslations } from "next-intl";
+import { IRouteProduct } from "@/entities/Product";
 
 interface IProps {
   data: IContact;
+  detailRoute?: boolean;
+  route?: IRouteProduct[];
 }
 
-function Contact({ data }: IProps) {
+function Contact({ data, detailRoute, route }: IProps) {
   const t = useTranslations("Contact");
 
   return (
@@ -24,6 +27,8 @@ function Contact({ data }: IProps) {
           <ContactMapComponent
             latitude={+data.latitude}
             longitude={+data.longitude}
+            detailRoute={detailRoute}
+            route={route}
           />
         </Container>
       </section>

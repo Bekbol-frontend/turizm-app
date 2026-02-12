@@ -138,5 +138,9 @@
   "Empty": {
     "Hech narsa topilmadi": "Hech narsa topilmadi",
     "Filter sozlamalarini ozgartirib koring": "Filter sozlamalarini ozgartirib koring"
+  },
+
+  "MapContact": {
+    "Point": "Nuqta"
   }
 }

@@ -133,5 +133,9 @@
   "Empty": {
     "Hech narsa topilmadi": "Нет записей",
     "Filter sozlamalarini ozgartirib koring": "Попробуйте изменить настройки фильтра"
+  },
+
+  "MapContact": {
+    "Point": "Точка"
   }
 }

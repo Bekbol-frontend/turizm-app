@@ -128,5 +128,9 @@
   "Empty": {
     "Hech narsa topilmadi": "No results",
     "Filter sozlamalarini ozgartirib koring": "Try changing your filter settings"
+  },
+
+  "MapContact": {
+    "Point": "Point"
   }
 }

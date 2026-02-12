@@ -1,5 +1,11 @@
 import { IFAQ } from "@/entities/FAQ";
 
+export interface IRouteProduct {
+  sort_order: number;
+  latitude: number;
+  longitude: number;
+}
+
 export interface IProduct {
   id: number;
   title: string;
@@ -39,4 +45,5 @@ export interface IProduct {
     name: string;
   }[];
   faqs: IFAQ[];
+  route: IRouteProduct[];
 }
