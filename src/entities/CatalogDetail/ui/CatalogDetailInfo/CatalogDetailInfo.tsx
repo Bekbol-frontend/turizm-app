@@ -91,7 +91,7 @@ function CatalogDetailInfo({ data }: IProps) {
           <div className={styles.infoCountInner}>
             <div className={styles.top}>
               <Image src={Team} alt={slogan} width={20} height={20} />
-              <Title type="medium">{max_people}</Title>
+              <Title type="medium">{max_people}+</Title>
             </div>
             <Paragraph type="small" className={styles.desc}>
               {t("Max number of travelers")}
@@ -100,7 +100,7 @@ function CatalogDetailInfo({ data }: IProps) {
           <div className={styles.infoCountInner}>
             <div className={styles.top}>
               <Image src={UserFollow} alt={slogan} width={20} height={20} />
-              <Title type="medium">{min_age}</Title>
+              <Title type="medium">{min_age}+</Title>
             </div>
             <Paragraph type="small" className={styles.desc}>
               {t("Age")}

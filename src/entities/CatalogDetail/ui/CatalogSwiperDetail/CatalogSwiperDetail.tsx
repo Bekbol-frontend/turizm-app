@@ -62,7 +62,6 @@ function CatalogSwiperDetail({ data }: IProps) {
           ))}
         </Swiper>
 
-        {/* Custom Navigation Buttons */}
         <button
           className={`${styles.navButton} ${styles.navButtonPrev}`}
           onClick={() => swiperRef.current?.slidePrev()}
