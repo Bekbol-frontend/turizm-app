@@ -13,7 +13,7 @@
 
   .content {
     background-color: var(--base-white, #fff);
-    padding: 24px;
+    padding: 10px;
     border-radius: var(--rounded, 12px);
     max-width: 1000px;
     width: 100%;
@@ -127,7 +127,6 @@
     padding: 10px;
 
     .content {
-      padding: 20px;
       max-height: 95vh;
     }
 
