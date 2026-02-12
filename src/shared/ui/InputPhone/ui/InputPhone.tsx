@@ -40,7 +40,6 @@ function InputPhone(props: IProps) {
         {label}
       </label>
       <div className={styles.inputBlock}>
-        <span className={styles.spanStartNumber}>+998</span>
         <input
           className={clsx([styles.input], {
             [styles.errorInput]: error,

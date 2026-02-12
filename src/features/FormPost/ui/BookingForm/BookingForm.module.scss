@@ -44,10 +44,20 @@
 
       .countWrapper {
         display: flex;
+        align-items: center;
         gap: 10px;
 
-        .inputCount {
-          flex: 1;
+        .spanCount {
+          border: 1px solid var(--base-border);
+          border-radius: var(--rounded);
+          background-color: var(--base-white);
+          padding: 10px;
+          width: 100px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
         }
 
         .btn {

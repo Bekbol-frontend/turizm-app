@@ -338,12 +338,7 @@ function BookingForm({ productId, selectTour }: IProps) {
                 />
               </svg>
             </Button>
-            <Input
-              type="number"
-              className={styles.inputCount}
-              min={1}
-              value={count}
-            />
+            <span className={styles.spanCount}>{count}</span>
             <Button
               variyant="secondary"
               type="button"

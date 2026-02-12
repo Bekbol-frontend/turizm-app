@@ -13,9 +13,10 @@ interface IProps {
 function ContactMap({ longitude, latitude }: IProps) {
   const customIcon = new L.Icon({
     iconUrl: "/map/map.png",
+    iconRetinaUrl: "/map/map.png",
     iconSize: [54, 64],
-    iconAnchor: [20, 40],
-    popupAnchor: [0, -40],
+    iconAnchor: [27, 64],
+    popupAnchor: [0, -60],
   });
 
   return (
@@ -25,7 +26,10 @@ function ContactMap({ longitude, latitude }: IProps) {
         zoom={15}
         style={{ height: "400px", width: "100%", borderRadius: 6 }}
       >
-        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+        <TileLayer
+          url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
+          attribution="&copy; OpenStreetMap &copy; CARTO"
+        />
         <Marker position={[latitude, longitude]} icon={customIcon}>
           <Popup>Toqtarbay Tours</Popup>
         </Marker>
