@@ -43,7 +43,7 @@ function CatalogDetail({ tour }: IProps) {
           </div>
         </Container>
       </section>
-      {tour.faqs.length ? <CatalogFAQ data={tour.faqs} /> : null}
+      {tour.faq.length ? <CatalogFAQ data={tour.faq} /> : null}
     </>
   );
 }

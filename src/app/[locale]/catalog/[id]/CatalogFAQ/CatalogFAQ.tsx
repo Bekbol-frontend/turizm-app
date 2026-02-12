@@ -1,11 +1,11 @@
 import { Container } from "@/shared/ui/Container";
 import styles from "./CatalogFAQ.module.scss";
 import { SectionTitle } from "@/shared/ui/SectionTitle";
-import { Accordion } from "@/shared/ui/Accordion";
-import { IFAQ } from "@/entities/FAQ";
+import { IProductFAQ } from "@/entities/Product";
+import { ProductAccordion } from "@/shared/ui/ProductAccordion";
 
 interface IProps {
-  data: IFAQ[];
+  data: IProductFAQ[];
 }
 
 function CatalogFAQ({ data }: IProps) {
@@ -15,8 +15,8 @@ function CatalogFAQ({ data }: IProps) {
       <section className={styles.section}>
         <Container>
           <div className={styles.accordionList}>
-            {data.map((item) => (
-              <Accordion data={item} key={item.id} />
+            {data.map((faqSection, index) => (
+              <ProductAccordion key={index} data={faqSection} index={index} />
             ))}
           </div>
         </Container>

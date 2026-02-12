@@ -1,0 +1,131 @@
+.accordionSection {
+  background: var(--base-white);
+  border: 1px solid var(--base-border);
+  border-radius: var(--rounded);
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.sectionHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: left;
+
+  &:hover {
+    background-color: var(--base-bg);
+  }
+
+  &.active {
+    background-color: var(--base-bg);
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 15px;
+  }
+}
+
+.sectionTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  flex: 1;
+
+  @media screen and (max-width: 768px) {
+    font-size: 18px;
+  }
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.iconWrapperSmall {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.icon {
+  display: block;
+  object-fit: contain;
+}
+
+.questionsWrapper {
+  overflow: hidden;
+  padding: 0 20px 10px 20px;
+
+  @media screen and (max-width: 768px) {
+    padding: 0 15px 10px 15px;
+  }
+}
+
+.questionItem {
+  border-bottom: 1px solid var(--base-border);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.questionHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  text-align: left;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 12px 0;
+  }
+}
+
+.questionTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  flex: 1;
+
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+  }
+}
+
+.answerContent {
+  overflow: hidden;
+}
+
+.answerInner {
+  padding: 0 0 15px 0;
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.6;
+
+  @media screen and (max-width: 768px) {
+    padding: 0 0 12px 0;
+    font-size: 13px;
+  }
+}

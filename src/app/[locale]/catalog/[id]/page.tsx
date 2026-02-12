@@ -79,7 +79,7 @@ async function CatalogDetailPage({ params }: PageProps) {
   return (
     <>
       <CatalogDetail tour={res.data.data} />
-      <ContactServer detailRoute route={res.data.data.route} />
+      <ContactServer detailRoute />
     </>
   );
 }

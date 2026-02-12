@@ -1,9 +1,11 @@
-import { IFAQ } from "@/entities/FAQ";
+export interface IProductQuestion {
+  question: string;
+  answer: string;
+}
 
-export interface IRouteProduct {
-  sort_order: number;
-  latitude: number;
-  longitude: number;
+export interface IProductFAQ {
+  title: string;
+  questions: IProductQuestion[];
 }
 
 export interface IProduct {
@@ -44,6 +46,5 @@ export interface IProduct {
     is_included: boolean;
     name: string;
   }[];
-  faqs: IFAQ[];
-  route: IRouteProduct[];
+  faq: IProductFAQ[];
 }

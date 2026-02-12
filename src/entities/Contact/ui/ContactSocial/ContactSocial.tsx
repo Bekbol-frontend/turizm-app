@@ -21,6 +21,7 @@ function ContactSocial({ data }: IProps) {
     telegram_username,
     telegram_url,
     instagram_url,
+    instagram_username,
     facebook_url,
     whatsapp_phone,
   } = data;
@@ -62,7 +63,7 @@ function ContactSocial({ data }: IProps) {
           />
         </span>
         <div className={styles.right}>
-          <Paragraph type="small">toktarbay_instagram</Paragraph>
+          <Paragraph type="small">{instagram_username}</Paragraph>
         </div>
       </div>
       <div className={styles.item}>

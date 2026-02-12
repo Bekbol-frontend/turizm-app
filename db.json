@@ -1,0 +1,30 @@
+{
+  "faq": [
+    {
+      "title": "General Information",
+      "questions": [
+        {
+          "question": "Soraw1",
+          "answer": "Javob1"
+        },
+        {
+          "question": "Soraw2",
+          "answer": "Javob2"
+        }
+      ]
+    },
+    {
+      "title": "Comfort & Travel Experience",
+      "questions": [
+        {
+          "question": "Soraw1",
+          "answer": "Javob1"
+        },
+        {
+          "question": "Soraw2",
+          "answer": "Javob2"
+        }
+      ]
+    }
+  ]
+}
