@@ -106,9 +106,20 @@
     }
   }
 
-  .btnBron {
+  .btnBronAndPhoneBlock {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
     @media screen and (max-width: 768px) {
-      width: 100%;
+      flex-direction: column;
+    }
+
+    .btnBron,
+    .btnPhone {
+      @media screen and (max-width: 768px) {
+        width: 100% !important;
+      }
     }
   }
 

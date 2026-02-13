@@ -16,6 +16,7 @@ export interface IProduct {
   routes: string;
   important_info: string;
   price: number;
+  phone: string;
   duration_days: number;
   duration_nights: number;
   min_age: number;

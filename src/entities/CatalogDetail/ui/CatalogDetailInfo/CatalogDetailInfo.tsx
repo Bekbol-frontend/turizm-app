@@ -15,6 +15,7 @@ import { Modal } from "@/shared/ui/Modal";
 import { FormPost } from "@/features/FormPost";
 import { useCallback, useState } from "react";
 import { formatPrice } from "@/shared/lib/formatPrice";
+import { PhoneBtn } from "@/shared/ui/PhoneBtn";
 
 interface IProps {
   data: IProduct;
@@ -28,6 +29,7 @@ function CatalogDetailInfo({ data }: IProps) {
     reviews_count,
     slogan,
     price,
+    phone,
     max_people,
     min_age,
     routes,
@@ -108,13 +110,17 @@ function CatalogDetailInfo({ data }: IProps) {
           </div>
         </div>
 
-        <Button
-          variyant="secondary"
-          className={styles.btnBron}
-          onClick={onShowModal}
-        >
-          {t("Забронировать")}
-        </Button>
+        <div className={styles.btnBronAndPhoneBlock}>
+          <Button
+            variyant="secondary"
+            className={styles.btnBron}
+            onClick={onShowModal}
+          >
+            {t("Забронировать")}
+          </Button>
+
+          <PhoneBtn phone={phone} className={styles.btnPhone} />
+        </div>
 
         <div className={styles.routesWrapper}>
           <span className={styles.routesIconSpan}>

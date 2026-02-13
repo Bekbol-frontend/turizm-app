@@ -1,4 +1,10 @@
 .phoneBtn {
   align-items: center;
   gap: 7px;
+  position: relative;
+
+  .link {
+    position: absolute;
+    inset: 0;
+  }
 }
