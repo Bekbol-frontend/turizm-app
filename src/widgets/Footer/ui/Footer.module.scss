@@ -20,6 +20,12 @@
       .phone,
       .email {
         color: var(--base-white);
+        position: relative;
+
+        .leftLink {
+          position: absolute;
+          inset: 0;
+        }
       }
 
       .address {

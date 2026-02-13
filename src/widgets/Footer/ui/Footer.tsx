@@ -48,9 +48,11 @@ async function Footer() {
         <div className={styles.inner}>
           <div className={styles.left}>
             <Title type="small" className={styles.phone}>
+              <a href={`tel:${phone}`} className={styles.leftLink} />
               {phone}
             </Title>
             <Title type="small" className={styles.email}>
+              <a href={`mailto:${email}`} className={styles.leftLink} />
               {email}
             </Title>
             <Paragraph className={styles.address}>{address}</Paragraph>

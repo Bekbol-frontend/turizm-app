@@ -43,6 +43,11 @@ function ContactSocial({ data }: IProps) {
         </div>
       </div>
       <div className={styles.item}>
+        <a
+          href={`https://wa.me/${whatsapp_phone}`}
+          target="_blank"
+          className={styles.link}
+        />
         <span className={clsx([styles.iconSpan, styles.whatsapp])}>
           <i className={clsx(["fa-brands fa-whatsapp", styles.whatsappIcon])} />
         </span>
@@ -67,6 +72,7 @@ function ContactSocial({ data }: IProps) {
         </div>
       </div>
       <div className={styles.item}>
+        <a href={`tel:${phone}`} className={styles.link} />
         <span className={clsx([styles.iconSpan, styles.phone])}>
           <Image
             src={PhoneIcon}
