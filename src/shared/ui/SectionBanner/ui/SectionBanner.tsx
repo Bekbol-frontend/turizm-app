@@ -36,7 +36,7 @@ function SectionBanner({ data }: IProps) {
             <div
               className={styles.item}
               style={{
-                backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, .3)), url(${imgUrl}/${el})`,
+                backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, .4)), url(${imgUrl}/${el})`,
               }}
             >
               <div className={styles.inner}>

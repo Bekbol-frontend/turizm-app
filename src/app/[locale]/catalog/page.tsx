@@ -1,7 +1,9 @@
-import { CatalogBanner } from "@/entities/CatalogBanner";
 import { CatalogProducts } from "@/entities/CatalogProducts";
 import { ContactServer } from "@/entities/Contact";
 import { FAQ } from "@/entities/FAQ";
+import { API } from "@/shared/api";
+import { IData } from "@/shared/types/data";
+import { ISectionBanner, SectionBanner } from "@/shared/ui/SectionBanner";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
@@ -39,10 +41,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-function CatalogPage() {
+const getBannerCatalog = async () => {
+  return await API.get<IData<ISectionBanner>>("/categories/banner");
+};
+
+async function CatalogPage() {
+  const res = await getBannerCatalog();
+
   return (
     <>
-      <CatalogBanner />
+      <SectionBanner data={res.data.data} />
       <CatalogProducts />
       <FAQ />
       <ContactServer />
