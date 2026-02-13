@@ -12,6 +12,7 @@ import ThePriseCatalog from "./ThePriseCatalog/ThePriseCatalog";
 import ImportantInformation from "./ImportantInformation/ImportantInformation";
 import CatalogFAQ from "@/app/[locale]/catalog/[id]/CatalogFAQ/CatalogFAQ";
 import CatalogTopLink from "@/app/[locale]/catalog/[id]/CatalogTopLink/CatalogTopLink";
+import CatalogMapGIF from "./CatalogMapGIF/CatalogMapGIF";
 
 interface IProps {
   tour: IProduct;
@@ -35,10 +36,11 @@ function CatalogDetail({ tour }: IProps) {
 
             <div className={styles.block}>
               <CatalogSwiperDetail data={tour} />
+              <CatalogMapGIF gif_map={tour.gif_map} title={tour.title} />
               <CatalogDetailInfo data={tour} />
               <TourProgram data={tour} />
               <ThePriseCatalog data={tour} />
-              <ImportantInformation />
+              <ImportantInformation important_info={tour.important_info} />
             </div>
           </div>
         </Container>

@@ -48,4 +48,5 @@ export interface IProduct {
     name: string;
   }[];
   faq: IProductFAQ[];
+  gif_map: string;
 }

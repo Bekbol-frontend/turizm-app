@@ -4,21 +4,17 @@
   }
 
   .textBlockWrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    padding-block: 5px;
 
-    .textInfoBlock {
-      .title {
-        font-weight: 500;
-        color: var(--base-black);
-        display: inline-block;
-        font-size: 17px;
+    .importantInfo {
+      line-height: 1.6;
+
+      b {
+        font-weight: 600;
       }
-      .desc {
-        font-weight: 400;
-        color: var(--gray-150);
-        display: inline-block;
+
+      br {
+        margin-bottom: 8px;
       }
     }
   }
