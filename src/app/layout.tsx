@@ -1,8 +1,8 @@
+import { metaURL } from "@/shared/api";
 import type { Metadata, Viewport } from "next";
 
 export const metadata: Metadata = {
-  // metadataBase: new URL("https://aralseatour.uz"), test bunga etibor bermang!
-  metadataBase: new URL("https://aralseatour.webclub.uz"),
+  metadataBase: new URL(metaURL),
 };
 
 export const viewport: Viewport = {

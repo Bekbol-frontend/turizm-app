@@ -9,8 +9,7 @@ import "../styles/main.scss";
 import { Footer } from "@/widgets/Footer";
 import type { Metadata } from "next";
 import { LANGS } from "@/shared/types/langs";
-
-const baseUrl = "https://aralseatour.webclub.uz";
+import { metaURL } from "@/shared/api";
 
 const seoContent: Record<LANGS, any> = {
   en: {
@@ -57,30 +56,30 @@ export async function generateMetadata({
   };
 
   return {
-    metadataBase: new URL(baseUrl),
+    metadataBase: new URL(metaURL),
 
     title: t.title,
     description: t.description,
 
     alternates: {
       languages: {
-        en: `${baseUrl}/en`,
-        ru: `${baseUrl}/ru`,
-        uz: `${baseUrl}/uz`,
-        kk: `${baseUrl}/kk`,
+        en: `${metaURL}/en`,
+        ru: `${metaURL}/ru`,
+        uz: `${metaURL}/uz`,
+        kk: `${metaURL}/kk`,
       },
     },
 
     openGraph: {
       title: t.title,
       description: t.description,
-      url: `${baseUrl}/${locale}`,
+      url: `${metaURL}/${locale}`,
       siteName: "Aral Sea Tour",
       locale: localeMap[locale],
       type: "website",
       images: [
         {
-          url: `${baseUrl}/catalog/bg.jpg`,
+          url: `/catalog/bg.jpg`,
           width: 1200,
           height: 630,
           alt: "Aral Sea Tour Uzbekistan",
@@ -92,7 +91,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: t.title,
       description: t.description,
-      images: [`${baseUrl}/catalog/bg.jpg`],
+      images: [`/catalog/bg.jpg`],
     },
   };
 }
