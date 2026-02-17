@@ -7,6 +7,87 @@ import { notFound } from "next/navigation";
 import { getMessages } from "next-intl/server";
 import "../styles/main.scss";
 import { Footer } from "@/widgets/Footer";
+import type { Metadata } from "next";
+import { LANGS } from "@/shared/types/langs";
+
+const seoContent: Record<LANGS, any> = {
+  en: {
+    title: "Aral Sea Tours from Moynaq, Karakalpakstan | Discover the Aral Sea",
+    description:
+      "Travel to the legendary Aral Sea in Moynaq, Republic of Karakalpakstan. Explore the ship cemetery, vast Ustyurt Plateau, and dramatic desert landscapes with experienced local guides. Authentic cultural and adventure tours in Uzbekistan.",
+  },
+
+  ru: {
+    title:
+      "Туры на Аральское море из Муйнака, Каракалпакстан | Путешествие к Аралу",
+    description:
+      "Откройте для себя Аральское море в Муйнаке, Республика Каракалпакстан. Кладбище кораблей, плато Устюрт и бескрайние пустынные пейзажи ждут вас. Настоящие экспедиции с местными гидами по уникальным местам Узбекистана.",
+  },
+
+  uz: {
+    title:
+      "Moynaqdan Aral dengizi sayohatlari | Qoraqalpog‘istondagi noyob manzil",
+    description:
+      "Qoraqalpog‘iston Respublikasining Moynaq shahridan Aral dengiziga unutilmas sayohat qiling. Mashhur kemalar qabristoni, Ustyurt platosi va cheksiz cho‘l manzaralarini mahalliy tajribali gidlar bilan kashf eting. O‘zbekistondagi eng betakror sarguzasht yo‘nalishlaridan biri.",
+  },
+
+  kk: {
+    title:
+      "Moynaqtan Aral teńizi sayaxatları | Qaraqalpaqstandaǵı siyrek ushırasatuǵın mánzil",
+    description:
+      "Qaraqalpaqstan Respublikasınıń Moynaq qalasınan Aral teńizine umıtılmas sayaxat etiń. Belgili kemeler qoyımshılıǵı, Ústirt platosı hám sheksiz shól kórinislerin jergilikli tájiriybeli gidler menen ashıń. Ózbekstandaǵı eń biytákirar sarguzasht baǵdarlarınan biri.",
+  },
+};
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: LANGS }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  const t = seoContent[locale];
+
+  const localeMap: Record<LANGS, LANGS> = {
+    en: "en",
+    ru: "ru",
+    uz: "uz",
+    kk: "kk",
+  };
+
+  return {
+    title: t.title,
+    description: t.description,
+
+    alternates: {
+      languages: localeMap,
+    },
+
+    openGraph: {
+      title: t.title,
+      description: t.description,
+      url: `https://aralseatour.uz/${locale}`,
+      siteName: "Aral Sea Tour",
+      locale: localeMap[locale],
+      type: "website",
+      images: [
+        {
+          url: "/og-image.jpg",
+          width: 630,
+          height: 630,
+          alt: "Aral Sea Tour Uzbekistan | Qaraqalpaqstan",
+        },
+      ],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: t.title,
+      description: t.description,
+      images: ["/og-image.jpg"],
+    },
+  };
+}
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -18,7 +99,7 @@ const geist = Geist({
   variable: "--font-geist",
 });
 
-export default async function RootLayout({
+export default async function LocaleLayout({
   children,
   params,
 }: Readonly<{
