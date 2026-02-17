@@ -10,6 +10,8 @@ import { Footer } from "@/widgets/Footer";
 import type { Metadata } from "next";
 import { LANGS } from "@/shared/types/langs";
 
+const baseUrl = "https://aralseatour.webclub.uz";
+
 const seoContent: Record<LANGS, any> = {
   en: {
     title: "Aral Sea Tours from Moynaq, Karakalpakstan | Discover the Aral Sea",
@@ -66,16 +68,16 @@ export async function generateMetadata({
     openGraph: {
       title: t.title,
       description: t.description,
-      url: `https://aralseatour.uz/${locale}`,
+      url: `${baseUrl}/${locale}`,
       siteName: "Aral Sea Tour",
       locale: localeMap[locale],
       type: "website",
       images: [
         {
-          url: "/catalog/bg.jpg",
+          url: `${baseUrl}/catalog/bg.jpg`,
           width: 1200,
           height: 630,
-          alt: "Aral Sea Tour Uzbekistan | Qaraqalpaqstan",
+          alt: "Aral Sea Tour Uzbekistan",
         },
       ],
     },
@@ -84,7 +86,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: t.title,
       description: t.description,
-      images: ["/catalog/bg.jpg"],
+      images: [`${baseUrl}/catalog/bg.jpg`],
     },
   };
 }
