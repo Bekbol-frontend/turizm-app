@@ -79,7 +79,7 @@ export async function generateMetadata({
       type: "website",
       images: [
         {
-          url: `/catalog/bg.jpg`,
+          url: `${metaURL}/catalog/bg.jpg`,
           width: 1200,
           height: 630,
           alt: "Aral Sea Tour Uzbekistan",
@@ -91,7 +91,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: t.title,
       description: t.description,
-      images: [`/catalog/bg.jpg`],
+      images: [`${metaURL}/catalog/bg.jpg`],
     },
   };
 }
