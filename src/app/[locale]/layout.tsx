@@ -72,8 +72,8 @@ export async function generateMetadata({
       type: "website",
       images: [
         {
-          url: "/logo.svg",
-          width: 630,
+          url: "/catalog/bg.jpg",
+          width: 1200,
           height: 630,
           alt: "Aral Sea Tour Uzbekistan | Qaraqalpaqstan",
         },
@@ -84,7 +84,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: t.title,
       description: t.description,
-      images: ["/logo.svg"],
+      images: ["/catalog/bg.jpg"],
     },
   };
 }
