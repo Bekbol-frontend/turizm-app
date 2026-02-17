@@ -47,10 +47,9 @@ export async function generateMetadata({
   params: Promise<{ locale: LANGS }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-
   const t = seoContent[locale];
 
-  const localeMap: Record<LANGS, LANGS> = {
+  const localeMap: Record<LANGS, string> = {
     en: "en",
     ru: "ru",
     uz: "uz",
@@ -58,11 +57,18 @@ export async function generateMetadata({
   };
 
   return {
+    metadataBase: new URL(baseUrl),
+
     title: t.title,
     description: t.description,
 
     alternates: {
-      languages: localeMap,
+      languages: {
+        en: `${baseUrl}/en`,
+        ru: `${baseUrl}/ru`,
+        uz: `${baseUrl}/uz`,
+        kk: `${baseUrl}/kk`,
+      },
     },
 
     openGraph: {
