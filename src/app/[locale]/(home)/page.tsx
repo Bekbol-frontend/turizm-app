@@ -8,6 +8,7 @@ import { SectionTitle } from "@/shared/ui/SectionTitle";
 import { useTranslations } from "next-intl";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { metaURL } from "@/shared/api";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -25,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: t("description"),
     keywords: t.raw("keywords"),
 
-    metadataBase: new URL("https://aralseatour.uz"),
+    metadataBase: new URL(metaURL),
 
     robots: {
       index: true,
