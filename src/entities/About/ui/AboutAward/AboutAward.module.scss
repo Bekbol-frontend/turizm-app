@@ -1,0 +1,128 @@
+.block {
+  padding-block: 40px;
+  border-bottom: 2px solid var(--base-border);
+  margin-bottom: 30px;
+
+  @media screen and (max-width: 768px) {
+    padding-block: 20px;
+    margin-bottom: 25px;
+  }
+}
+
+.title {
+  color: var(--primary-250);
+  text-align: center;
+  font-size: 30px !important;
+
+  @media screen and (max-width: 768px) {
+    font-size: 24px !important;
+  }
+}
+
+.description {
+  font-size: 18px !important;
+  font-weight: 400;
+  color: var(--gray-150);
+  max-width: 640px;
+  text-align: center;
+  margin: 20px auto 30px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 16px !important;
+  }
+}
+
+// ── Masonry ───────────────────────────────────────────────────────────────────
+
+.masonry {
+  columns: 4;
+  gap: 5px;
+
+  @media (max-width: 1024px) {
+    columns: 3;
+  }
+
+  @media (max-width: 640px) {
+    columns: 2;
+    gap: 5px;
+  }
+}
+
+// ── Card ──────────────────────────────────────────────────────────────────────
+
+.card {
+  position: relative;
+  break-inside: avoid;
+  margin-bottom: 12px;
+  border-radius: var(--rounded);
+  border: 1px solid rgba(17, 178, 184, 0.1);
+  background: var(--primary-400);
+  overflow: hidden;
+  cursor: pointer;
+  transition:
+    transform 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+
+  @media (max-width: 640px) {
+    margin-bottom: 8px;
+  }
+
+  &:hover {
+    transform: translateY(-3px) scale(1.01);
+    border-color: rgba(240, 216, 27, 0.4);
+    box-shadow:
+      0 12px 36px rgba(0, 0, 0, 0.4),
+      0 0 0 1px rgba(240, 216, 27, 0.08);
+
+    .overlay {
+      opacity: 1;
+    }
+
+    .image {
+      transform: scale(1.05);
+      filter: drop-shadow(0 0 20px rgba(43, 229, 235, 0.25));
+    }
+
+    .accent {
+      width: 100%;
+    }
+  }
+}
+
+// ── Image ─────────────────────────────────────────────────────────────────────
+
+.image {
+  padding: 16px;
+  transition:
+    transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+    filter 0.4s ease;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
+}
+
+// ── Overlay ───────────────────────────────────────────────────────────────────
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(1, 14, 14, 0.5);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: var(--secondary-350);
+}
+
+// ── Accent ────────────────────────────────────────────────────────────────────
+
+.accent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: linear-gradient(90deg, var(--primary-200), var(--secondary-350));
+  transition: width 0.4s ease;
+}
