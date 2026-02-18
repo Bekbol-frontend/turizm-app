@@ -8,6 +8,15 @@ export interface IProductFAQ {
   questions: IProductQuestion[];
 }
 
+export interface IAccommodations {
+  day_number: number;
+  type: string;
+  name: string;
+  description: string;
+  price: number;
+  image: string;
+}
+
 export interface IProduct {
   id: number;
   title: string;
@@ -49,4 +58,6 @@ export interface IProduct {
   }[];
   faq: IProductFAQ[];
   gif_map: string;
+
+  accommodations: IAccommodations[];
 }

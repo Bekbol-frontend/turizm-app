@@ -77,10 +77,12 @@
     "from": "from",
     "sum": "$",
     "Забронировать": "Book",
-    "Подробнее": "Show more..."
+    "Подробнее": "Show more...",
+    "Comfortable location and relaxation": "Comfortable location and relaxation"
   },
   "About": {
-    "About": "About"
+    "About": "About",
+    "Award": "Award"
   },
   "Reviews": {
     "Reviews": "Reviews",

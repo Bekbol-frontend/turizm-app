@@ -7,6 +7,7 @@ import { Paragraph } from "@/shared/ui/Paragraph";
 import { useMemo, useState } from "react";
 import { clsx } from "@/shared/lib/clsx";
 import { useTranslations } from "next-intl";
+import CatalogAccommodation from "../CatalogAccommodation/CatalogAccommodation";
 
 interface IProps {
   data: IProduct;
@@ -63,6 +64,8 @@ function TourProgram({ data }: IProps) {
           ))}
         </div>
       </div>
+
+      <CatalogAccommodation activeTab={activeTab} data={data.accommodations} />
     </div>
   );
 }
