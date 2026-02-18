@@ -35,21 +35,17 @@
     .infoBlock {
       flex: 2;
 
+      @media screen and (max-width: 768px) {
+        text-align: center;
+      }
+
       .title {
         color: var(--primary-250);
-
-        @media screen and (max-width: 768px) {
-          text-align: center;
-        }
       }
 
       .desc {
         font-weight: 400;
         margin-block: 7px;
-
-        @media screen and (max-width: 768px) {
-          text-align: center;
-        }
       }
 
       .price {

@@ -43,8 +43,8 @@ function CatalogAccommodation(props: IProps) {
             {name}
           </Title>
           <Paragraph className={styles.desc}>{description}</Paragraph>
-          <Title className={styles.price}>
-            {price} {t("sum")}
+          <Title type="small" className={styles.price}>
+            {t("Cost of living")}: {price} {t("sum")}
           </Title>
         </div>
       </div>
