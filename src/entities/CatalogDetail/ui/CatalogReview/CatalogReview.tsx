@@ -7,6 +7,7 @@ import { Modal } from "@/shared/ui/Modal";
 import CatalogReviewForm from "../CatalogReviewForm/CatalogReviewForm";
 import { IProduct } from "@/entities/Product";
 import { useTranslations } from "next-intl";
+import CatalogReviewSwiper from "../CatalogReviewSwiper/CatalogReviewSwiper";
 
 interface IProps {
   data: IProduct;
@@ -33,6 +34,8 @@ function CatalogReview({ data }: IProps) {
             {t("Write a review")}
           </Button>
         </div>
+
+        <CatalogReviewSwiper data={data.reviews} />
       </div>
 
       <Modal title="Sharh yozish" isOpen={modal} onClose={onCloseModal}>

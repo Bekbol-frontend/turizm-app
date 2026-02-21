@@ -1,2 +1,7 @@
 export { default as Product } from "./ui/Product";
-export type { IProduct, IProductFAQ, IAccommodations } from "./types";
+export type {
+  IProduct,
+  IProductFAQ,
+  IAccommodations,
+  IProductReviews,
+} from "./types";

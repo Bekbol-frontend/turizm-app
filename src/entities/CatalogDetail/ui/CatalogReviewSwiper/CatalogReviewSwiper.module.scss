@@ -1,0 +1,49 @@
+.block {
+  padding-block: 40px;
+  margin-block: 10px;
+
+  @media screen and (max-width: 768px) {
+    padding-block: 25px;
+    margin-block: 5px;
+  }
+
+  .swiper {
+    .item {
+      border: 2px solid var(--base-border);
+      border-radius: var(--rounded);
+      padding: 20px;
+
+      .itemInner {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .comment {
+          text-align: center;
+          font-weight: 400;
+        }
+
+        .username,
+        .email {
+          font-weight: 500;
+        }
+
+        .date {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  .navigationBtns {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    .btn {
+      position: relative;
+    }
+  }
+}

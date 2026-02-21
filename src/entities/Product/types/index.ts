@@ -17,6 +17,15 @@ export interface IAccommodations {
   image: string;
 }
 
+export interface IProductReviews {
+  id: number;
+  user_name: string;
+  email: string;
+  rating: number;
+  comment: string;
+  created_at: string;
+}
+
 export interface IProduct {
   id: number;
   slug: string;
@@ -61,4 +70,5 @@ export interface IProduct {
   gif_map: string;
 
   accommodations: IAccommodations[];
+  reviews: IProductReviews[];
 }

@@ -123,7 +123,7 @@ function CatalogReviewForm({ tour_id }: IProps) {
           setRating(0);
         } catch (error) {
           setResult(
-            t("There was an error sending the comment. Please try again later"),
+            t("There was an error sending the comment Please try again later"),
           );
           setResultError(true);
         } finally {
