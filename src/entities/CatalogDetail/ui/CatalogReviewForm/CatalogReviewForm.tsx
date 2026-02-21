@@ -16,6 +16,7 @@ import { API } from "@/shared/api";
 import { IData } from "@/shared/types/data";
 import { style } from "framer-motion/client";
 import { Title } from "@/shared/ui/Title";
+import { useTranslations } from "next-intl";
 
 interface IProps {
   tour_id: number;
@@ -36,6 +37,8 @@ function CatalogReviewForm({ tour_id }: IProps) {
   const [result, setResult] = useState("");
   const [resultError, setResultError] = useState(false);
   const [postLoading, setPostLoading] = useState(false);
+
+  const t = useTranslations("CatalogReview");
 
   const onChangeName = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
@@ -108,7 +111,7 @@ function CatalogReviewForm({ tour_id }: IProps) {
             throw new Error("Error");
           }
 
-          setResult("Rahmat! Fikringiz tez orada saytda ko‘rinadi.");
+          setResult(t("Thank you! Your comment will appear on the site soon"));
           setResultError(false);
 
           setNameError(false);
@@ -120,7 +123,7 @@ function CatalogReviewForm({ tour_id }: IProps) {
           setRating(0);
         } catch (error) {
           setResult(
-            "Sharhni yuborishda xatolik yuz berdi. Iltimos, birozdan so‘ng qayta urinib ko‘ring.",
+            t("There was an error sending the comment. Please try again later"),
           );
           setResultError(true);
         } finally {
@@ -128,7 +131,7 @@ function CatalogReviewForm({ tour_id }: IProps) {
         }
       }
     },
-    [tour_id, name, email, comment, rating],
+    [tour_id, name, email, comment, rating, t],
   );
 
   useEffect(() => {
@@ -147,17 +150,17 @@ function CatalogReviewForm({ tour_id }: IProps) {
           value={name}
           onChange={onChangeName}
           error={nameError}
-          label="Your name"
+          label={t("Your full name")}
         />
         <Input
           type="email"
           value={email}
           onChange={onChangeEmail}
           error={emailError}
-          label="Email"
+          label={t("Email")}
         />
         <Textarea
-          label="Comment"
+          label={t("Comment")}
           value={comment}
           onChange={onChangeComment}
           error={commentError}
@@ -171,7 +174,7 @@ function CatalogReviewForm({ tour_id }: IProps) {
           className={styles.btn}
           disabled={postLoading}
         >
-          {postLoading ? "Sending..." : "Send"}
+          {postLoading ? t("Sending") : t("Send")}
         </Button>
 
         <div className={styles.resultTextBlock}>

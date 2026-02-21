@@ -140,5 +140,18 @@
 
   "MapContact": {
     "Point": "Noqat"
+  },
+
+  "CatalogReview": {
+    "What memories did this trip leave you with": "Bul sayaxat sizde qanday estelikler qaldırdı?",
+    "Write a review": "Pikir jazıw",
+    "Thank you! Your comment will appear on the site soon": "Raxmet! Pikiriniz tez arada saytta kórinedi.",
+    "There was an error sending the comment. Please try again later": "Pikirdi jiberiwde qátelik júz berdi. Iltimas, birazdan keyin qayta urınıp kóriń.",
+    "Your full name": "Tolıq atıńız",
+    "Email": "Elektron pochta",
+    "Comment": "Túsindirme",
+    "Sending": "Jiberilmekte...",
+    "Send": "Jiberiw",
+    "Rate": "Bahalań"
   }
 }

@@ -140,5 +140,18 @@
 
   "MapContact": {
     "Point": "Nuqta"
+  },
+
+  "CatalogReview": {
+    "What memories did this trip leave you with": "Bu sayohat sizda qanday xotiralar qoldirdi?",
+    "Write a review": "Sharh yozish",
+    "Thank you! Your comment will appear on the site soon": "Rahmat! Fikringiz tez orada saytda ko‘rinadi.",
+    "There was an error sending the comment. Please try again later": "Sharhni yuborishda xatolik yuz berdi. Iltimos, birozdan so‘ng qayta urinib ko‘ring.",
+    "Your full name": "To'liq ismingiz",
+    "Email": "Elektron pochta",
+    "Comment": "Izoh",
+    "Sending": "Yuborilmoqda...",
+    "Send": "Yuborish",
+    "Rate": "Baholang"
   }
 }

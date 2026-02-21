@@ -6,6 +6,7 @@ import { useCallback, useState } from "react";
 import { Modal } from "@/shared/ui/Modal";
 import CatalogReviewForm from "../CatalogReviewForm/CatalogReviewForm";
 import { IProduct } from "@/entities/Product";
+import { useTranslations } from "next-intl";
 
 interface IProps {
   data: IProduct;
@@ -13,6 +14,7 @@ interface IProps {
 
 function CatalogReview({ data }: IProps) {
   const [modal, setModal] = useState(false);
+  const t = useTranslations("CatalogReview");
 
   const onShowModal = useCallback(() => {
     setModal(true);
@@ -26,9 +28,9 @@ function CatalogReview({ data }: IProps) {
     <>
       <div className={styles.block}>
         <div className={styles.top}>
-          <Title>Bu sayohat sizda qanday xotiralar qoldirdi?</Title>
+          <Title>{t("What memories did this trip leave you with")}</Title>
           <Button variyant="secondary" onClick={onShowModal}>
-            Sharh yozish
+            {t("Write a review")}
           </Button>
         </div>
       </div>

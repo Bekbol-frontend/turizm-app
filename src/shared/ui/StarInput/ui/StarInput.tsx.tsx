@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import styles from "./StarInput.module.scss";
+import { useTranslations } from "next-intl";
 
 interface IProps {
   value: number;
@@ -9,10 +10,11 @@ interface IProps {
 
 function StarInput({ value, onChange }: IProps) {
   const [hoverValue, setHoverValue] = useState<number | null>(null);
+  const t = useTranslations("CatalogReview");
 
   return (
     <div className={styles.block}>
-      <label>Baholang</label>
+      <label>{t("Rate")}</label>
       <div className={styles.starWrapper}>
         {Array(5)
           .fill(0)
