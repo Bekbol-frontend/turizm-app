@@ -1,9 +1,7 @@
-"use client";
-
 import { Title } from "@/shared/ui/Title";
 import styles from "./ImportantInformation.module.scss";
 import { useTranslations } from "next-intl";
-import DOMPurify from "dompurify";
+import DOMPurify from "isomorphic-dompurify";
 
 interface IProps {
   important_info: string;
