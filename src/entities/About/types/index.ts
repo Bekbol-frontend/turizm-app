@@ -25,5 +25,5 @@ export interface IAbout {
       sort_order: number;
     },
   ];
-  award: IAboutAward;
+  award: IAboutAward | null;
 }

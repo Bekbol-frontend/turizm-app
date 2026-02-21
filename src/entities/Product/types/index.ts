@@ -19,6 +19,7 @@ export interface IAccommodations {
 
 export interface IProduct {
   id: number;
+  slug: string;
   title: string;
   slogan: string;
   description: string;

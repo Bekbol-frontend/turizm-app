@@ -13,6 +13,7 @@ import ImportantInformation from "./ImportantInformation/ImportantInformation";
 import CatalogFAQ from "@/app/[locale]/catalog/[id]/CatalogFAQ/CatalogFAQ";
 import CatalogTopLink from "@/app/[locale]/catalog/[id]/CatalogTopLink/CatalogTopLink";
 import CatalogMapGIF from "./CatalogMapGIF/CatalogMapGIF";
+import CatalogReview from "./CatalogReview/CatalogReview";
 
 interface IProps {
   tour: IProduct;
@@ -43,6 +44,8 @@ function CatalogDetail({ tour }: IProps) {
               <ImportantInformation important_info={tour.important_info} />
             </div>
           </div>
+
+          <CatalogReview  data={tour}/>
         </Container>
       </section>
       {tour.faq.length ? <CatalogFAQ data={tour.faq} /> : null}

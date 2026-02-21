@@ -10,7 +10,7 @@ import { Paragraph } from "@/shared/ui/Paragraph";
 import { Title } from "@/shared/ui/Title";
 import { useTranslations } from "next-intl";
 
-// Har bir rasimga random balandlik — album effekti
+
 const HEIGHTS = [220, 280, 200, 260, 240, 300, 210, 270, 190, 250];
 
 interface IProps {

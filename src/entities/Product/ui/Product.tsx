@@ -33,7 +33,7 @@ function Product({ data }: IProps) {
   }, []);
 
   const {
-    id,
+    slug,
     main_image,
     title,
     rating,
@@ -47,10 +47,7 @@ function Product({ data }: IProps) {
   return (
     <>
       <div className={styles.product}>
-        <Link
-          href={`${appRoutes.catalog}/${data.id}`}
-          className={styles.link}
-        />
+        <Link href={`${appRoutes.catalog}/${slug}`} className={styles.link} />
         <div className={styles.imgBlock}>
           <Image
             src={`${imgUrl}/${main_image}`}
@@ -96,7 +93,7 @@ function Product({ data }: IProps) {
             </Button>
             <Button className={styles.btnLink}>
               <Link
-                href={`${appRoutes.catalog}/${id}`}
+                href={`${appRoutes.catalog}/${slug}`}
                 className={styles.productLinkLearnMore}
               />
               {t("Подробнее")}

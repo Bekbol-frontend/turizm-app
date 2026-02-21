@@ -34,7 +34,7 @@ async function About() {
       <section className={styles.section}>
         <Container>
           <div className={styles.content}>
-            <AboutAward data={award} />
+            {award && <AboutAward data={award} />}
 
             <div className={styles.mainImgWrapper}>
               <Image

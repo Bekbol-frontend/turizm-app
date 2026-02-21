@@ -1,0 +1,30 @@
+.block {
+  padding: 10px 0;
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .btn {
+      align-self: flex-end;
+
+      @media screen and (max-width: 768px) {
+        align-self: auto;
+        flex: 1;
+      }
+    }
+
+    .resultTextBlock {
+      .successTitle {
+        color: var(--success);
+        font-weight: 400;
+      }
+
+      .errorTitle {
+        color: var(--danger);
+        font-weight: 400;
+      }
+    }
+  }
+}
